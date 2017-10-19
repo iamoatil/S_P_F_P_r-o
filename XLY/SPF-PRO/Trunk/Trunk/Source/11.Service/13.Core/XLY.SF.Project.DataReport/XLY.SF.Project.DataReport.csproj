@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03285108-4BF0-40E8-8F85-7D783F6E6FA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XLY.SF.Project.DataReport</RootNamespace>
+    <AssemblyName>XLY.SF.Project.DataReport</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter\DataSourceToBcpConverter.cs" />
+    <Compile Include="DataReportAdapter.cs" />
+    <Compile Include="Converter\DataSourceToJsonConverter.cs" />
+    <Compile Include="Converter\JsonExportTree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportModule\AbstractDataReportModulePlugin.cs" />
+    <Compile Include="ReportModule\HtmlDataReportModulePlugin.cs" />
+    <Compile Include="ReportPlugin\AbstractDataReportPlugin.cs" />
+    <Compile Include="ReportPlugin\BcpReportPlugin.cs" />
+    <Compile Include="ReportPlugin\Bcp\BcpColumn.cs" />
+    <Compile Include="ReportPlugin\Bcp\BcpConverter.cs" />
+    <Compile Include="ReportPlugin\Bcp\BcpConverterParam.cs" />
+    <Compile Include="ReportPlugin\Bcp\BcpNode.cs" />
+    <Compile Include="ReportPlugin\Bcp\BcpStandardFile.cs" />
+    <Compile Include="ReportPlugin\Bcp\BcpTable.cs" />
+    <Compile Include="ReportPlugin\HtmlReportPlugin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.BaseUtility\XLY.SF.Framework.BaseUtility.csproj">
+      <Project>{e58b3baa-0f89-4e6d-b34e-4607dfa8f805}</Project>
+      <Name>XLY.SF.Framework.BaseUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Core.Base\XLY.SF.Framework.Core.Base.csproj">
+      <Project>{28682fe4-ec72-42a3-bb2c-27d19f55e14f}</Project>
+      <Name>XLY.SF.Framework.Core.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Log4NetService\XLY.SF.Framework.Log4NetService.csproj">
+      <Project>{6e3193b7-7316-415a-b529-0f743d5f267b}</Project>
+      <Name>XLY.SF.Framework.Log4NetService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\11.Domains\XLY.SF.Project.Domains\XLY.SF.Project.Domains.csproj">
+      <Project>{68f2d8a3-05a8-4aaa-a9e2-00071188595b}</Project>
+      <Name>XLY.SF.Project.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\14.Plugin\XLY.SF.Project.Plugin.Adapter\XLY.SF.Project.Plugin.Adapter.csproj">
+      <Project>{78424848-06cb-4d68-81d2-6338f56aacad}</Project>
+      <Name>XLY.SF.Project.Plugin.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XLY.SF.Project.DataFilter\XLY.SF.Project.DataFilter.csproj">
+      <Project>{22661B55-AD41-4232-8EE7-485CAE0F4F3D}</Project>
+      <Name>XLY.SF.Project.DataFilter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Config\bcp.cfg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Config\BcpStandardFile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

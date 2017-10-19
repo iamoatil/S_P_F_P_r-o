@@ -1,0 +1,73 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="$(TargetDir)XLY.SF.Framework.Language.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Xml.Serialization" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="XLY.SF.Framework.Language" #>
+<#@ import namespace="System.IO" #>
+<#@ output extension=".txt" #>
+<#
+	string enXmlContent =UpdateEnXml();
+	Write(enXmlContent);
+#>
+
+<#+
+        /// <summary>
+        /// 更新英文XML文件结构（只针对string类型和自定义类型）
+        /// </summary>
+        public string UpdateEnXml()
+        {
+			string languageXmlPath = Host.ResolveAssemblyReference("$(ProjectDir)")+"Language\\Language_Cn.xml";
+            XmlSerializer xml = new XmlSerializer(typeof(LanguageResource));
+            using (FileStream fs = File.OpenRead(languageXmlPath))
+            {
+                var value = xml.Deserialize(fs) as LanguageResource;
+                //清空值
+                foreach (var item in value.GetType().GetProperties())
+                {
+                    if (item.PropertyType == typeof(string))
+                    {
+                        //属性
+                        item.SetValue(value, "Fill Content");
+                    }
+                    else
+                    {
+                        //自定义类型
+                        UpdateCustromClass(item.PropertyType, item.GetValue(value));
+                    }
+                }
+
+                //反序列化更新XML结构
+                MemoryStream ms = new MemoryStream();
+                StreamWriter ffff = new StreamWriter(ms);
+                xml.Serialize(ffff, value);
+                ffff.Flush();
+                byte[] buffer = new byte[ms.Length];
+                ms.Seek(0, SeekOrigin.Begin);
+                ffff.BaseStream.Read(buffer, 0, buffer.Length);
+
+                string a = Encoding.UTF8.GetString(buffer);
+				return a;
+            }
+        }
+
+        public void UpdateCustromClass(Type targetType, object instance)
+        {
+            foreach (var item in targetType.GetProperties())
+            {
+                if (item.PropertyType == typeof(string))
+                {
+                    //属性
+                    item.SetValue(instance, "Fill Content");
+                }
+                else
+                {
+                    //自定义类型
+                    UpdateCustromClass(item.PropertyType, item.GetValue(instance));
+                }
+            }
+        }
+#>

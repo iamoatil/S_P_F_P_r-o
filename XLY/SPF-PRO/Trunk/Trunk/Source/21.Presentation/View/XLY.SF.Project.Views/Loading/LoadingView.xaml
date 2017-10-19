@@ -1,0 +1,24 @@
+﻿<core:UcViewBase x:Class="XLY.SF.Project.Views.Loading.LoadingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="clr-namespace:XLY.SF.Framework.Core.Base.ViewModel;assembly=XLY.SF.Framework.Core.Base"
+             xmlns:Lang="clr-namespace:XLY.SF.Framework.Language.PageLanguage;assembly=XLY.SF.Framework.Language"
+             mc:Ignorable="d" Width="500" Height="200">
+    <core:UcViewBase.InputBindings>
+        <KeyBinding Key="F" Command="{Binding ShutdownProgramCommand}"/>
+    </core:UcViewBase.InputBindings>
+    <core:UcViewBase.Resources>
+        <ResourceDictionary>
+            <!--引用基础样式-->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Pack://application:,,,/XLY.SF.Project.Themes;Component/BaseThemes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </core:UcViewBase.Resources>
+    <Grid Background="DarkCyan">
+        <TextBlock Text="{Binding XPath=ViewLanguage/View_Loading,Source={x:Static Lang:PageLanguageHelper.XmlProvider}}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35"></TextBlock>
+    </Grid>
+</core:UcViewBase>

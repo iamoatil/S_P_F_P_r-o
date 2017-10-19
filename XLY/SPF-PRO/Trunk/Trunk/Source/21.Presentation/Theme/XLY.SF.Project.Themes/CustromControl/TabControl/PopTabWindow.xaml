@@ -1,0 +1,111 @@
+﻿<Window x:Class="XLY.SF.Project.Themes.CustromControl.TabControl.PopTabWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        MinHeight="500" MinWidth="900" 
+        WindowState="Normal" WindowStyle="None" SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize" AllowsTransparency="True"
+        WindowStartupLocation="Manual" Background="Transparent"
+        Loaded="Window2_Loaded">
+    <Window.Style>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Window}">
+                        <ControlTemplate.Resources>
+                            <Storyboard x:Key="OnLoaded1" RepeatBehavior="1x" AutoReverse="False">
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="adornerDecorator">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.8">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <BackEase EasingMode="EaseIn"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="adornerDecorator">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.8">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <BackEase EasingMode="EaseIn"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+                                        <EasingDoubleKeyFrame.EasingFunction>
+                                            <CubicEase EasingMode="EaseOut"/>
+                                        </EasingDoubleKeyFrame.EasingFunction>
+                                    </EasingDoubleKeyFrame>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border1">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+                                    <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </ControlTemplate.Resources>
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Border.RenderTransform>
+                            <Grid x:Name="grid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Background="White">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="border1" Background="Black" Height="30" MinWidth="120" HorizontalAlignment="Left" 
+                                        PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown"
+                                        PreviewMouseLeftButtonUp="Border_PreviewMouseLeftButtonUp"
+                                        MouseMove="Border_MouseMove">
+                                        <TextBlock Text="{TemplateBinding Title}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+                                    </Border>
+                                    <Button Grid.Column="1" Background="White" MouseDoubleClick="Button_MouseDoubleClick">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Background="{TemplateBinding Background}"></Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </Grid>
+                                <AdornerDecorator x:Name="adornerDecorator" Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+                                    <AdornerDecorator.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </AdornerDecorator.RenderTransform>
+                                    <ContentPresenter/>
+                                </AdornerDecorator>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Style>
+    <Grid Background="Beige">
+        
+    </Grid>
+</Window>

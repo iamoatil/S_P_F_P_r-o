@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageResource>
+  <ViewLanguage Prompt="界面显示语言">
+    <!--登录、加载-->
+    <View_Loading>系统加载中，请稍等</View_Loading>
+    <View_Login>登录</View_Login>
+    <View_Login_ExitSys>退出</View_Login_ExitSys>
+    <View_Login_UserName>用户名</View_Login_UserName>
+    <View_Login_Password>密码</View_Login_Password>
+
+    <!--主页-->
+    <View_MainWinTitle>SPF9139智能手机数据恢复取证系统</View_MainWinTitle>
+    <View_MainWinTitle_En>SmartPhone Forensic System</View_MainWinTitle_En>
+    <View_MainWin_ToolKitName>工具箱</View_MainWin_ToolKitName>
+    <View_MainWin_MinSize>最小化</View_MainWin_MinSize>
+    <View_MainWin_Close>关闭</View_MainWin_Close>
+    <View_MainWin_DataExport>数据导出</View_MainWin_DataExport>
+
+    <!--首页-->
+    <View_HomePageOpen>打开</View_HomePageOpen>
+    <View_HomePageOpenAllCase>所有案例</View_HomePageOpenAllCase>
+    <View_HomePageOpenLocalCase>本地案例</View_HomePageOpenLocalCase>
+    <View_HomePageCreateCase>新建案例</View_HomePageCreateCase>
+    <View_HomePageLatelyCase>最近案例</View_HomePageLatelyCase>
+    <View_HomePageFunctionIllustration>功能说明</View_HomePageFunctionIllustration>
+    <View_HomePageUpdateInfo>升级详情</View_HomePageUpdateInfo>
+    <View_HomePageMore>查看更多</View_HomePageMore>
+    
+    <!--案例-->
+    <View_CaseName>案例名称</View_CaseName>
+    <View_CaseAuthor>创建人</View_CaseAuthor>
+    <View_CaseCreateTime>创建时间</View_CaseCreateTime>
+    <View_UpdateRecentError>更新失败</View_UpdateRecentError>
+    <View_CaseListViewTitle>案例管理</View_CaseListViewTitle>
+    <View_DeleteCase>删除</View_DeleteCase>
+    <View_SearchCase>搜索</View_SearchCase>
+    <View_CaseKeyword>关键字</View_CaseKeyword>
+    <View_CaseSelectAll>全选</View_CaseSelectAll>
+    <View_CaseIndex>序号</View_CaseIndex>
+    <View_CaseNumber>案例编号</View_CaseNumber>
+    <View_CaseType>案例类型</View_CaseType>
+    <View_StorePath>存放路径</View_StorePath>
+    <View_CaseDeviceCount>设备数量</View_CaseDeviceCount>
+    <View_CaseOperation>操作</View_CaseOperation>
+    <View_CaseCreationConfirm>确认</View_CaseCreationConfirm>
+    <View_CaseCreationSkip>跳过</View_CaseCreationSkip>
+    <View_CaseTypeEdition>增/删</View_CaseTypeEdition>
+    <View_CaseNotExist>案例不存在</View_CaseNotExist>
+
+    <!--消息提示-->
+    <View_MessageBox_Error>错误消息</View_MessageBox_Error>
+    <View_MessageBox_Notice>提示消息</View_MessageBox_Notice>
+  </ViewLanguage>
+
+  <!--其他-->
+  <DeviceLanguage Prompt="设备相关语言资源">
+    <DeviceType_IOS>IOS</DeviceType_IOS>
+    <DeviceUseableValidation_InUse>当前设备正在使用中, 请稍后再试</DeviceUseableValidation_InUse>
+    <DeviceUseableValidation_Offline>当前设备未正常链接, 请检测该任务是否正确连接设备。</DeviceUseableValidation_Offline>
+    <DeviceUseableValidation_IsInvalid>当前设备不可用, 请检测该任务是否正确连接设备。</DeviceUseableValidation_IsInvalid>
+    <Partition_all>全部存储芯片</Partition_all>
+    <Partition_data>数据区</Partition_data>
+    <Partition_system>系统区</Partition_system>
+    <Partition_sdcard>内置存储区</Partition_sdcard>
+    <Partition_cache>缓存区</Partition_cache>
+    <Partition_IsInvalid>无可用镜像源</Partition_IsInvalid>
+    <IOSExtractLocalApps>系统正在从{0}设备中提取内置应用数据...</IOSExtractLocalApps>
+    <IOSExtractNotLocalApps>系统正在从{0}设备中提取{1}应用数据...</IOSExtractNotLocalApps>
+    <IOSExtractNotLocalAppsOver> {0} 应用数据提取完成</IOSExtractNotLocalAppsOver>
+    <IOSInitProgress>初始化完成了{0}%</IOSInitProgress>
+    <IOSCopyProgress>已拷贝{0}MB数据</IOSCopyProgress>
+    <IOSCopyDataOver>数据拷贝完成, 准备后期合并处理……</IOSCopyDataOver>
+    <IOSExtractLocalOver>内置应用数据提取完成</IOSExtractLocalOver>
+    <IOSLastStepProgress>正在后期合并, 完成了{0}%</IOSLastStepProgress>
+    <IOSCopyError>拷贝过程出错</IOSCopyError>
+    <IOSUserExit>用户终止</IOSUserExit>
+    <IOSExtractLocalAppsReport>系统正从{0}设备提取内置应用数据, {1}</IOSExtractLocalAppsReport>
+    <IOSExtractNotLocalAppProgress>系统正在提取{0}应用数据, 正在提取{1}文件, 大小{2}</IOSExtractNotLocalAppProgress>
+    <IOSDeviceCopyError>设备:{0} 在拷贝IOS用户数据时出错, 出错步骤 {1},原因:{2}</IOSDeviceCopyError>
+  </DeviceLanguage>
+
+  <MessageLanguage Prompt="提示信息语言资源">
+    <Notes_ZhunBeiKaiShi>准备开始备份, 请注意点亮屏幕进入手机主界面, 注意手机弹出的操作请求提示, 并确定(允许)请求的操作！</Notes_ZhunBeiKaiShi>
+    <Notes_BeiFenChengGong>备份成功</Notes_BeiFenChengGong>
+    <Notes_BeiFenShiBai>备份失败</Notes_BeiFenShiBai>
+    <Notes_BeiFenWanChengYingYong>备份完成, 应用数据文件提取</Notes_BeiFenWanChengYingYong>
+    <Notes_WeiXuanZeYingYong>未选择任何应用提取</Notes_WeiXuanZeYingYong>
+    <Notes_YingYongTiQuShiBai>应用数据文件提取失败</Notes_YingYongTiQuShiBai>
+    <Notes_TiQuWenJian>提取文件:</Notes_TiQuWenJian>
+    <Notes_TiQuWenJianShiBai>提取文件失败:</Notes_TiQuWenJianShiBai>
+    <Notes_QiDongAppFuWu>启动app服务</Notes_QiDongAppFuWu>
+    <Notes_QiDongAppShiBai>启动app服务出现了小状况</Notes_QiDongAppShiBai>
+    <Notes_JieXiDuanXinXiZhong>解析短信息中</Notes_JieXiDuanXinXiZhong>
+    <Notes_JieXiAnZhuangBaoZhong>解析安装包中</Notes_JieXiAnZhuangBaoZhong>
+    <Notes_JieXiLianXiRenZhong>解析联系人中</Notes_JieXiLianXiRenZhong>
+    <Notes_JieXiTongHuaJiLu>解析通话记录</Notes_JieXiTongHuaJiLu>
+    <Notes_JieXiLanYa>解析蓝牙中</Notes_JieXiLanYa>
+    <Notes_JieXiWifi>解析Wifi中</Notes_JieXiWifi>
+    <Notes_JieXiIMEI>解析Imei中</Notes_JieXiIMEI>
+    <Notes_KeNengXuYaoNinZaiShou>可能需要您在手机内允许通过安装app来获取应用版本信息。(允许程序运行)</Notes_KeNengXuYaoNinZaiShou>
+    <Notes_AnZhuangBaoXinXi>安装包信息、短信、联系人、通话记录解析失败</Notes_AnZhuangBaoXinXi>
+    <Notes_AnZhuangAppTiQu>通过安装App提取基本信息</Notes_AnZhuangAppTiQu>
+    <Notes_YinYongShuJuTiQuShiBai>应用数据文件提取失败</Notes_YinYongShuJuTiQuShiBai>
+    <Notes_BeiFengWeiKong>备份应用数据为空</Notes_BeiFengWeiKong>
+    <Notes_YinYongTiQuChengGong>应用数据文件提取成功</Notes_YinYongTiQuChengGong>
+    <Notes_AnZhuangBaoJieXiSB>安装包信息解析失败：</Notes_AnZhuangBaoJieXiSB>
+  </MessageLanguage>
+
+  <ErrorMessageLanguage Prompt="错误提示信息语言资源">
+    <ErrMsg_NotFindTable>未找到表</ErrMsg_NotFindTable>
+    <ErrMsg_NotDeviceConnect>没有设备连接</ErrMsg_NotDeviceConnect>
+    <ErrMsg_WriteFileFail>文件写失败</ErrMsg_WriteFileFail>
+    <ErrMsg_PhoneAccessFail>手机访问失败</ErrMsg_PhoneAccessFail>
+    <ErrMsg_NotExistAccessFile>不存在需要访问的文件</ErrMsg_NotExistAccessFile>
+    <ErrMsg_ReadFileFail>读取失败</ErrMsg_ReadFileFail>
+    <ErrMsg_IOSDllErrorID>IOS设备读取底层读取发生错误, 错误码</ErrMsg_IOSDllErrorID>
+  </ErrorMessageLanguage>
+
+  <OtherLanguage Prompt="其他语言资源">
+    <PluginModule_WeiZhi>未知</PluginModule_WeiZhi>
+    <PluginModule_ZhengChang>正常</PluginModule_ZhengChang>
+    <PluginModule_ShanChu>删除</PluginModule_ShanChu>
+    <PluginModule_SuiPian>碎片</PluginModule_SuiPian>
+    <DateTimeFormat_Year>年</DateTimeFormat_Year>
+    <DateTimeFormat_Month>月</DateTimeFormat_Month>
+    <DateTimeFormat_Day>日</DateTimeFormat_Day>
+    <DateTimeFormat_Hour>时</DateTimeFormat_Hour>
+    <DateTimeFormat_Minite>分</DateTimeFormat_Minite>
+    <DateTimeFormat_Second>秒</DateTimeFormat_Second>
+    <DeviceType_IOS>苹果</DeviceType_IOS>
+    <DeviceType_Android>安卓</DeviceType_Android>
+    <DeviceType_BlackBerry>黑莓</DeviceType_BlackBerry>
+    <Device_IOS_IsRoot_Root>已越狱</Device_IOS_IsRoot_Root>
+    <Device_IOS_IsRoot_NotRoot>未越狱</Device_IOS_IsRoot_NotRoot>
+    <Device_Android_IsRoot_Root>已Root</Device_Android_IsRoot_Root>
+    <Device_Android_IsRoot_NotRoot>未Root</Device_Android_IsRoot_NotRoot>
+    <FileXProperty_FileName>文件名称</FileXProperty_FileName>
+    <FileXProperty_FullPath>完整路径</FileXProperty_FullPath>
+    <FileXProperty_ExtName>扩展名称</FileXProperty_ExtName>
+    <FileXProperty_FileType>类型</FileXProperty_FileType>
+    <FileXProperty_FileSize>大小</FileXProperty_FileSize>
+    <FileXProperty_Property>属性</FileXProperty_Property>
+    <FileXProperty_CreateDate>创建日期</FileXProperty_CreateDate>
+    <FileXProperty_LastAccessDate>最后访问日期</FileXProperty_LastAccessDate>
+    <FileXProperty_LastEditDate>最后编辑日期</FileXProperty_LastEditDate>
+    <EntityDescAttribute_Name>名称</EntityDescAttribute_Name>
+    <EntityDescAttribute_Age>年龄</EntityDescAttribute_Age>
+    <EnumCallType_Unknown>未知</EnumCallType_Unknown>
+    <EnumCallType_CallIn>呼入</EnumCallType_CallIn>
+    <EnumCallType_CallOut>呼出</EnumCallType_CallOut>
+    <EnumCallType_MissedCallIn>呼入未接</EnumCallType_MissedCallIn>
+    <EnumCallType_MissedCallInNotViewed>呼入未接(未查看)</EnumCallType_MissedCallInNotViewed>
+    <EnumCallType_MissedCallInAlreadyOpen>呼入未接(未打开)</EnumCallType_MissedCallInAlreadyOpen>
+    <EnumCallType_MissedCallOut>呼出未接</EnumCallType_MissedCallOut>
+    <AddressBook_Work>工作</AddressBook_Work>
+    <AddressBook_House>住宅</AddressBook_House>
+    <AddressBook_Mobile>手机</AddressBook_Mobile>
+    <ResultType_YouXiaoShuJu>有效数据</ResultType_YouXiaoShuJu>
+    <ResultType_WuXiaoShuJu>无效数据</ResultType_WuXiaoShuJu>
+    <Status_Yes>是</Status_Yes>
+    <Status_No>否</Status_No>
+    <Message_Send>发送</Message_Send>
+    <Message_Receive>接收</Message_Receive>
+    <Message_SendFail>发送失败</Message_SendFail>
+    <MessageStatus_Read>已读</MessageStatus_Read>
+    <MessageStatus_UnRead>未读</MessageStatus_UnRead>
+  </OtherLanguage>
+
+  <FileServiceLanguage Prompt="镜像语言资源">
+    <File_ZuZhuangFenQuDeWenJianXiTongSh>组装分区[{0}]的文件系统树....</File_ZuZhuangFenQuDeWenJianXiTongSh>
+    <File_SaoMiaoWenJianXiTongJieShuDeDa>扫描文件系统结束, 得到文件/文件夹数:{0}</File_SaoMiaoWenJianXiTongJieShuDeDa>
+    <File_WenJianXiTongZuZhuangWanBi>文件系统组装完毕...</File_WenJianXiTongZuZhuangWanBi>
+    <File_ZhuangZaiXiTongFenQuMingChengM>装载系统分区(名称:{0},描述:{1},大小:{2})失败!</File_ZhuangZaiXiTongFenQuMingChengM>
+    <File_JiaZaiXiTongFenQuLieBiao>加载系统分区列表...</File_JiaZaiXiTongFenQuLieBiao>
+    <File_HuoQuWenJianXiTongMingChengMia>获取文件系统(名称:{0},描述:{1},大小:{2},Mount:{3})时底层dll出错, 信息:{4}, \r\n位置:{5}</File_HuoQuWenJianXiTongMingChengMia>
+    <File_HuoQuRawWenJianLeiXingShiBai>获取Raw文件类型失败！</File_HuoQuRawWenJianLeiXingShiBai>
+    <File_FenQu>分区:</File_FenQu>
+    <File_TiQuWenJianShiDiCengKuFileServ1>提取文件时底层库FileServiceCoreDll.ReadFileByBottom出现异常！信息:{0}, 位置:{1}</File_TiQuWenJianShiDiCengKuFileServ1>
+    <File_TiQuWenJianShiDiCengKuFileServ2>提取文件时底层库FileServiceCoreDll.RecoveryFile失败！错误码:{0}</File_TiQuWenJianShiDiCengKuFileServ2>
+    <File_TiQuWenJianShiDiCengKuFileServ3>提取文件时底层库FileServiceCoreDll.RecoveryFile出现异常！信息:{0}, 位置:{1}</File_TiQuWenJianShiDiCengKuFileServ3>
+    <File_WenJianHuiFuChengGong>文件[{0}]恢复成功!</File_WenJianHuiFuChengGong>
+    <File_KaiShiHuiFuYingYongWenJianLieB>开始恢复应用文件列表数据...</File_KaiShiHuiFuYingYongWenJianLieB>
+    <File_KaiShiHuiFuMeiTiWenJianShuJu>开始恢复媒体文件数据...</File_KaiShiHuiFuMeiTiWenJianShuJu>
+  </FileServiceLanguage>
+
+  <DescAttributeLanguage Prompt="特性语言">
+    <Test></Test>
+  </DescAttributeLanguage>
+  
+</LanguageResource>
+
+

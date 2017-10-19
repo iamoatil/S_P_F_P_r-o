@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XLY.SF.Project.Themes.ThemesStyle.ButtonStyle">
+    
+    <!--空Btn样式-->
+    <ControlTemplate x:Key="btn_EmptyCT" TargetType="Button">
+        <Border Background="{TemplateBinding Background}" 
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter/>
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

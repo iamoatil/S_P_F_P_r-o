@@ -1,0 +1,107 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml"  #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension="LanguageElement.cs" #>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace XLY.SF.Framework.Language
+{
+
+public class Languagekeys
+{
+<#
+		foreach(var item in LoadPro())
+		{#>
+		
+        /// <summary>
+        /// <#= item.PropertyValue #>
+        /// </summary>
+		public const string <#= item.PropertyName#> = "<#= item.XmlInnerPath#>";
+		<#}
+#>
+}
+
+
+
+
+}
+
+<#+
+        public class ClassPropertyElement
+        {
+            /// <summary>
+            /// 是否为自定义类
+            /// </summary>
+            public bool IsCustromClass { get; set; }
+            public string PropertyName { get; set; }
+
+            public string PropertyValue { get; set; }
+
+            public string XmlInnerPath { get; set; }
+        }
+
+        public string GetAttributeValue(XmlElement xml)
+        {
+            var attTmp = xml.Attributes.GetNamedItem("Prompt");
+            if (attTmp != null)
+                return attTmp.Value;
+            return string.Empty;
+        }
+
+        public List<ClassPropertyElement> FFFF(XmlNode node, string xmlNodePath, string firstNodeName)
+        {
+            List<ClassPropertyElement> result = new List<ClassPropertyElement>();
+
+            foreach (XmlNode item in node.ChildNodes)
+            {
+                var xmlItem = item as XmlElement;
+                if (xmlItem == null)
+                    continue;
+
+                //得到最外层模块名
+                ClassPropertyElement emt = new ClassPropertyElement();
+                if (xmlItem.HasChildNodes && xmlItem.FirstChild.NodeType != XmlNodeType.Text)
+                {
+                    //类型
+                    emt.IsCustromClass = true;
+                    emt.PropertyName = xmlItem.LocalName;
+                    emt.PropertyValue = xmlItem.HasAttributes ? GetAttributeValue(xmlItem) : xmlItem.FirstChild != null && xmlItem.FirstChild.NodeType == XmlNodeType.Text ? xmlItem.InnerText : "";
+                    string tmp = string.Format("{0}/{1}", xmlNodePath, xmlItem.LocalName);
+                    result.AddRange(FFFF(item, tmp, firstNodeName));
+                }
+                else if (!xmlItem.HasChildNodes || xmlItem.FirstChild.NodeType == XmlNodeType.Text)
+                {
+                    //属性
+                    emt.IsCustromClass = false;
+                    emt.PropertyName = string.Format("{0}_{1}", xmlNodePath, xmlItem.LocalName).TrimStart((firstNodeName + "/").ToArray());
+                    emt.PropertyValue = xmlItem.HasAttributes ? GetAttributeValue(xmlItem) : xmlItem.FirstChild != null && xmlItem.FirstChild.NodeType == XmlNodeType.Text ? xmlItem.InnerText : "";
+                    emt.XmlInnerPath = string.Format("{0}/{1}", xmlNodePath, xmlItem.LocalName);
+                    result.Add(emt);
+                }
+            }
+            return result;
+        }
+
+		public List<ClassPropertyElement> LoadPro()
+		{
+			string languageXmlPath = Host.ResolveAssemblyReference("$(ProjectDir)")+"Language\\Language_Cn.xml";
+            XmlDocument xml = new XmlDocument();
+            xml.Load(languageXmlPath);
+            
+            List<ClassPropertyElement> pro = new List<ClassPropertyElement>();
+            foreach (XmlNode item in xml.ChildNodes)
+            {
+                pro.AddRange(FFFF(item, "LanguageResource","LanguageResource"));
+            }
+			return pro;
+		}
+#>

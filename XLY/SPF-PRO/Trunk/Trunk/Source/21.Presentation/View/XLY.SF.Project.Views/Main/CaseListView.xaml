@@ -1,0 +1,110 @@
+﻿<core:UcViewBase x:Class="XLY.SF.Project.Views.Main.CaseListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:core="clr-namespace:XLY.SF.Framework.Core.Base.ViewModel;assembly=XLY.SF.Framework.Core.Base"
+             xmlns:Lang="clr-namespace:XLY.SF.Framework.Language.PageLanguage;assembly=XLY.SF.Framework.Language"
+		     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+		     xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+             mc:Ignorable="d"
+                 Title="{Binding XPath=ViewLanguage/View_CaseListViewTitle,Source={x:Static Lang:PageLanguageHelper.XmlProvider}}"
+                 Width="800"
+                 Height="600">
+    <core:UcViewBase.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Pack://application:,,,/XLY.SF.Project.Themes;Component/BaseThemes.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--此处以下添加自己的引用-->
+
+        </ResourceDictionary>
+    </core:UcViewBase.Resources>
+    <DockPanel x:Name="Root"
+               Margin="20">
+        <DockPanel DockPanel.Dock="Top" 
+                   LastChildFill="False">
+            <TextBlock Text="关键字" />
+            <TextBox Width="100"
+                     Margin="10,0,0,0"
+                     Text="{Binding FilterArgs.Keyword,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock Text="创建时间"
+                       Margin="20,0,0,0" />
+            <DatePicker Width="100"
+                        Margin="10,0,0,0"
+                        SelectedDate="{Binding FilterArgs.Begin,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="至"
+                       Margin="10,0,0,0" />
+            <DatePicker Width="100"
+                        Margin="10,0,0,0"
+                        SelectedDate="{Binding FilterArgs.End,Mode=OneWayToSource,UpdateSourceTrigger=PropertyChanged}" />
+
+            <Button Content="删除"
+                    Command="{Binding DeleteCommand}"
+                    Margin=" 10,0,0,0"
+                    DockPanel.Dock="Right" />
+            <Button Content="搜索"
+                    Command="{Binding SearchCommand}"
+                    Margin=" 10,0,0,0" 
+                    DockPanel.Dock="Right"/>
+        </DockPanel>
+        <DataGrid Margin="0,10,0,0"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Items}"
+                  CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="全选">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="全选" />
+                                <CheckBox Command="{Binding DataContext.SelectAllCommand,ElementName=Root}"
+                                          CommandParameter="{Binding IsChecked,RelativeSource={RelativeSource Self}}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsChecked,Mode=TwoWay}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="序号"
+                                    Width="50"
+                                    Binding="{Binding Index,Mode=OneTime}" />
+                <DataGridTextColumn Header="案例名称"
+                                    Width="120"
+                                    Binding="{Binding CaseInfo.Name,Mode=OneTime}" />
+                <DataGridTextColumn Header="案例编号"
+                                    Width="100"
+                                    Binding="{Binding CaseInfo.Number,Mode=OneTime}" />
+                <DataGridTextColumn Header="创建人"
+                                    Width="80"
+                                    Binding="{Binding CaseInfo.Author,Mode=OneTime}" />
+                <DataGridTextColumn Header="创建时间"
+                                    Width="120"
+                                    Binding="{Binding CaseInfo.Timestamp,Mode=OneTime,StringFormat='yyyy-MM-dd HH:mm:ss'}" />
+                <DataGridTextColumn Header="案例类型"
+                                    Width="80"
+                                    Binding="{Binding CaseInfo.Type,Mode=OneTime}" />
+                <DataGridTextColumn Header="设备数量"
+                                    Width="80" />
+                <DataGridTemplateColumn Header="操作"
+                                        Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="打开"
+                                    Command="{Binding DataContext.OpenCommand,ElementName=Root}"
+                                    CommandParameter="{Binding CaseInfo}"
+                                    HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</core:UcViewBase>

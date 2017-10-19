@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="81acdd4b-e899-42e0-86b1-50b3c947f4a3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9957/X86Service?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="X86Service3.xsd" MetadataType="Schema" ID="dbdfd48f-6d59-4633-83b4-ddae15dc6612" SourceId="1" SourceUrl="http://localhost:9957/X86Service?xsd=xsd3" />
+    <MetadataFile FileName="X86DLLService.wsdl" MetadataType="Wsdl" ID="075330f5-f921-4c44-8ea8-e0bcdcda9cdc" SourceId="1" SourceUrl="http://localhost:9957/X86Service?wsdl" />
+    <MetadataFile FileName="X86Service.xsd" MetadataType="Schema" ID="04714994-d017-444d-95ba-8c3159d688ca" SourceId="1" SourceUrl="http://localhost:9957/X86Service?xsd=xsd0" />
+    <MetadataFile FileName="X86Service1.xsd" MetadataType="Schema" ID="bfce7904-2777-41ac-be23-af7e809540c1" SourceId="1" SourceUrl="http://localhost:9957/X86Service?xsd=xsd1" />
+    <MetadataFile FileName="X86Service2.xsd" MetadataType="Schema" ID="8d282540-fc4b-4621-851b-56922a897395" SourceId="1" SourceUrl="http://localhost:9957/X86Service?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

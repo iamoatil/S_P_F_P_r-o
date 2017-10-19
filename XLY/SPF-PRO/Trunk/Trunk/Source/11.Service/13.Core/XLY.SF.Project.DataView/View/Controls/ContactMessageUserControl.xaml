@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="XLY.SF.Project.DataView.ContactMessageUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XLY.SF.Project.DataView"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <local:TreeNodeSelectMultiConverter x:Key="treeNodeConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="lsb1" ItemsSource="{Binding Items}" SelectionChanged="lsb1_SelectionChanged">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border BorderThickness="0,0,0,1" BorderBrush="LightGray" Background="{TemplateBinding Background}">
+                                    <Grid x:Name="bk1">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="30"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Orientation="Horizontal"  Grid.Column="0" Grid.Row="0">
+                                            <TextBlock Text="{Binding WeChatId}"/>
+                                            <TextBlock Text="(0/0)"/>
+                                        </StackPanel>
+                                        <TextBlock Text="{Binding Nick}" Grid.Column="0" Grid.Row="1"/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="Green"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="LightGreen"/>
+                            <Setter Property="Foreground" Value="Red"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <GridSplitter VerticalAlignment="Stretch" Width="3"/>
+        <TabControl x:Name="tbdetail" Grid.Column="1" >
+            <!--<TabItem Header="表格视图">
+                <DataGrid ItemsSource="{Binding Items}" AutoGenerateColumns="True" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible">
+                    <DataGrid.DataContext>
+                        <MultiBinding Converter="{StaticResource treeNodeConverter}">
+                            <Binding Path="SelectedValue" ElementName="lsb1"></Binding>
+                            <Binding Path="DataContext" ElementName="lsb1"></Binding>
+                        </MultiBinding>
+                    </DataGrid.DataContext>
+                </DataGrid>
+            </TabItem>-->
+        </TabControl>
+    </Grid>
+</UserControl>

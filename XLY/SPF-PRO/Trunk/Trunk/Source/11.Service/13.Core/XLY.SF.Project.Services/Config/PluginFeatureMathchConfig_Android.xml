@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--安卓联系人-->
+  <PluginFeatureMathch app="联系人">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.android.providers.contacts\databases" FileName="contacts2.db"
+      Success="App,联系人,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--Vivo联系人-->
+  <PluginFeatureMathch app="联系人" Manufacture="Vivo">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="contact" FileName="contact.vcf"
+      Success="App,联系人,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--Oppo联系人-->
+  <PluginFeatureMathch app="联系人" Manufacture="Oppo">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="Contact" FileName="contact.vcf"
+      Success="App,联系人,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--华为联系人-->
+  <PluginFeatureMathch app="联系人" Manufacture="Huawei">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="contact" FileName="contact.db"
+      Success="App,联系人,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--酷派联系人-->
+  <PluginFeatureMathch app="联系人" Manufacture="KuPai">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="contacts" FileName="contacts.vcf"
+      Success="App,联系人,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--小米联系人-->
+  <PluginFeatureMathch app="联系人" Manufacture="XiaoMi">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="contacts\miui_bak" FileName="_tmp_bak"
+      Success="App,联系人,1.0"  Failure="Next,2"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="contacts" FileName="addressbook.store"
+      Success="App,联系人,2.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+  
+  <!--安卓通话记录-->
+  <PluginFeatureMathch app="通话记录">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.android.providers.contacts\databases" FileName="contacts2.db"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--三星通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="Samsung">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.sec.android.provider.logsprovider/databases" FileName="logs.db"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--Vivo通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="Vivo">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="calllog" FileName="calllog.json"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--魅族通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="Meizu">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="CallLog" FileName="calllog.vcl"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--Oppo通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="Oppo">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="CallRecord" FileName="callrecord_backup.xml"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--华为通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="Huawei">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="calllog" FileName="calllog.db"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--酷派通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="KuPai">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="recentcalls" FileName="calls.xml"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--中兴通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="ZhongXing">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="CallHistory" FileName="CallHistory.db"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--小米通话记录-->
+  <PluginFeatureMathch app="通话记录" Manufacture="XiaoMi">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.android.contacts\miui_bak" FileName="_tmp_bak"
+      Success="App,通话记录,1.0"  Failure="Next,2"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="com.android.contacts" FileName="calllog.store"
+      Success="App,通话记录,2.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--安卓短信-->
+  <PluginFeatureMathch app="短信">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.android.providers.telephony\databases" FileName="mmssms.db"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--三星短信-->
+  <PluginFeatureMathch app="短信" Manufacture="Samsung">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.sec.android.provider.logsprovider/databases" FileName="logs.db"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--Vivo短信-->
+  <PluginFeatureMathch app="短信" Manufacture="Vivo">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="sms" FileName="sms.json"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--Oppo短信-->
+  <PluginFeatureMathch app="短信" Manufacture="Oppo">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="Sms" FileName="sms.vmsg"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--酷派短信-->
+  <PluginFeatureMathch app="短信" Manufacture="KuPai">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="sms" FileName="sms.vmg"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--华为短信-->
+  <PluginFeatureMathch app="短信" Manufacture="Huawei">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="sms" FileName="sms.db"
+      Success="Next,2"  Failure="Null"/>
+    <Rule ID="2" Type="TableExistPluginFeatureRule" Path="sms" DbFileName="sms.db" TableName="sms_tb"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--小米短信-->
+  <PluginFeatureMathch app="短信" Manufacture="XiaoMi">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="com.android.mms\miui_bak" FileName="_tmp_bak"
+      Success="App,短信,1.0"  Failure="Next,2"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="com.android.mms" FileName="sms.store"
+      Success="App,短信,2.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+  
+  <!--安卓微信-->
+  <PluginFeatureMathch app="微信">
+    <Rule ID="1" Type="PathExistPluginFeatureRule" Path="MicroMsg"
+          Success="Next,2"  Failure="Null"/>  
+    <Rule ID="2" Type="FieldExistPluginFeatureRule" Path="MicroMsg" DbFileName="EnMicroMsg.db" TableName="message" FiledName="flag" Decryted="true"
+          Success="App,微信,6.3.9"  Failure="Next,3"/>
+    <Rule ID="3" Type="FieldExistPluginFeatureRule" Path="MicroMsg" DbFileName="EnMicroMsg.db" TableName="message" FiledName="transBrandWording" Decryted="true"
+          Success="App,微信,6.3.5"  Failure="App,微信,5.3.0"/>
+  </PluginFeatureMathch>
+
+  <!--安卓QQ-->
+  <PluginFeatureMathch app="QQ">
+    <Rule ID="1" Type="PathExistPluginFeatureRule" Path="com.tencent.mobileqq"
+      Success="Next,2"  Failure="Null"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="com.tencent.mobileqq\shared_prefs" FileName="mobileQQ.xml"
+          Success="Next,4"  Failure="Next,3"/>
+    <Rule ID="3" Type="FileExistPluginFeatureRule" Path="com.tencent.mobileqq\shared_prefs" FileName="appcenter_mobileinfo.xml"
+          Success="Next,4"  Failure="Null"/>
+    <Rule ID="4" Type="FieldExistPluginFeatureRule" Path="com.tencent.mobileqq\databases" DbFileName="^\d+\.db$" TableName="Friends" FiledName="gathtertype"
+          Success="App,QQ,6.3.0"  Failure="Next,5"/>
+    <Rule ID="5" Type="FieldExistPluginFeatureRule" Path="com.tencent.mobileqq\databases" DbFileName="^\d+\.db$" TableName="Friends" FiledName="remark"
+          Success="App,QQ,4.7.0"  Failure="Next,6"/>
+    <Rule ID="6" Type="FieldExistPluginFeatureRule" Path="com.tencent.mobileqq\databases" DbFileName="^\d+\.db$" TableName="Friends" FiledName="name"
+          Success="App,QQ,2.3.0"  Failure="App,QQ,1.0"/>
+  </PluginFeatureMathch>
+</root>

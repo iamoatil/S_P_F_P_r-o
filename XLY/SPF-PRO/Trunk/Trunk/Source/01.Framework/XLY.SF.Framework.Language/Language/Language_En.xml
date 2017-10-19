@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Modules>
+    <LoadingModule>
+      <LoadingPromptMessage>Fill Content</LoadingPromptMessage>
+    </LoadingModule>
+    <LoginModule>
+      <UserName>Fill Content</UserName>
+      <Password>Fill Content</Password>
+    </LoginModule>
+  </Modules>
+  <MessageBoxModule>
+    <MsgTitle>
+      <MsgTitleOfError>Fill Content</MsgTitleOfError>
+      <MsgTitleOfNotice>Fill Content</MsgTitleOfNotice>
+      <MsgTitleOfSystem>Fill Content</MsgTitleOfSystem>
+    </MsgTitle>
+    <MsgContent>
+      <MsgContentOfSystem_CloseProgram>Fill Content</MsgContentOfSystem_CloseProgram>
+    </MsgContent>
+  </MessageBoxModule>
+  <Common>
+    <Cancel>Fill Content</Cancel>
+    <Exit>Fill Content</Exit>
+    <Confirm>Fill Content</Confirm>
+  </Common>
+  <LogModule>
+    <SysCrash>Fill Content</SysCrash>
+  </LogModule>
+  <PluginModule>
+    <PluginType>Fill Content</PluginType>
+    <DataState>
+      <WeiZhi>Fill Content</WeiZhi>
+      <ZhengChang>Fill Content</ZhengChang>
+      <ShanChu>Fill Content</ShanChu>
+      <SuiPian>Fill Content</SuiPian>
+    </DataState>
+    <AndroidPluginModule>Fill Content</AndroidPluginModule>
+  </PluginModule>
+  <DateTimeFormat>
+    <Year>Fill Content</Year>
+    <Month>Fill Content</Month>
+    <Day>Fill Content</Day>
+    <Hour>Fill Content</Hour>
+    <Minite>Fill Content</Minite>
+    <Second>Fill Content</Second>
+  </DateTimeFormat>
+  <EroMsg>
+    <NotFindTable>Fill Content</NotFindTable>
+    <NotDeviceConnect>Fill Content</NotDeviceConnect>
+    <WriteFileFail>Fill Content</WriteFileFail>
+    <PhoneAccessFail>Fill Content</PhoneAccessFail>
+    <NotExistAccessFile>Fill Content</NotExistAccessFile>
+    <ReadFileFail>Fill Content</ReadFileFail>
+  </EroMsg>
+  <DeviceType>
+    <DeviceType_IOS>Fill Content</DeviceType_IOS>
+    <DeviceType_Android>Fill Content</DeviceType_Android>
+    <DeviceType_BlackBerry>Fill Content</DeviceType_BlackBerry>
+    <Device_IOS_IsRoot_Root>Fill Content</Device_IOS_IsRoot_Root>
+    <Device_IOS_IsRoot_NotRoot>Fill Content</Device_IOS_IsRoot_NotRoot>
+    <Device_Android_IsRoot_Root>Fill Content</Device_Android_IsRoot_Root>
+    <Device_Android_IsRoot_NotRoot>Fill Content</Device_Android_IsRoot_NotRoot>
+  </DeviceType>
+  <FileXProperty>
+    <FileName>Fill Content</FileName>
+    <FullPath>Fill Content</FullPath>
+    <ExtName>Fill Content</ExtName>
+    <FileType>Fill Content</FileType>
+    <FileSize>Fill Content</FileSize>
+    <Property>Fill Content</Property>
+    <CreateDate>Fill Content</CreateDate>
+    <LastAccessDate>Fill Content</LastAccessDate>
+    <LastEditDate>Fill Content</LastEditDate>
+  </FileXProperty>
+  <EntityDescAttribute>
+    <Name>Fill Content</Name>
+    <Age>Fill Content</Age>
+    <FFF>Fill Content</FFF>
+    <DDD>Fill Content</DDD>
+  </EntityDescAttribute>
+  <Unknown>Fill Content</Unknown>
+  <CallIn>Fill Content</CallIn>
+  <CallOut>Fill Content</CallOut>
+  <MissedCallIn>Fill Content</MissedCallIn>
+  <MissedCallInNotViewed>Fill Content</MissedCallInNotViewed>
+  <MissedCallInAlreadyOpen>Fill Content</MissedCallInAlreadyOpen>
+  <MissedCallOut>Fill Content</MissedCallOut>
+  <LANGKEY_GongZuo_00120>Fill Content</LANGKEY_GongZuo_00120>
+  <LANGKEY_GongZuo_00121>Fill Content</LANGKEY_GongZuo_00121>
+  <LANGKEY_GongZuo_00122>Fill Content</LANGKEY_GongZuo_00122>
+  <LANGKEY_ZhuZhai_00123>Fill Content</LANGKEY_ZhuZhai_00123>
+  <LANGKEY_ZhuZhai_00124>Fill Content</LANGKEY_ZhuZhai_00124>
+  <LANGKEY_ZhuZhai_00125>Fill Content</LANGKEY_ZhuZhai_00125>
+  <LANGKEY_ShouJi_00126>Fill Content</LANGKEY_ShouJi_00126>
+  <LANGKEY_ShouJi_00127>Fill Content</LANGKEY_ShouJi_00127>
+  <LANGKEY_ShouJi_00128>Fill Content</LANGKEY_ShouJi_00128>
+  <LANGKEY_GongZuo_00129>Fill Content</LANGKEY_GongZuo_00129>
+  <LANGKEY_GongZuo_00130>Fill Content</LANGKEY_GongZuo_00130>
+  <LANGKEY_GongZuo_00131>Fill Content</LANGKEY_GongZuo_00131>
+  <LANGKEY_ZhuZhai_00132>Fill Content</LANGKEY_ZhuZhai_00132>
+  <LANGKEY_ZhuZhai_00133>Fill Content</LANGKEY_ZhuZhai_00133>
+  <LANGKEY_ZhuZhai_00134>Fill Content</LANGKEY_ZhuZhai_00134>
+  <LANGKEY_YouXiaoShuJu_04367>Fill Content</LANGKEY_YouXiaoShuJu_04367>
+  <LANGKEY_WuXiaoShuJu_04368>Fill Content</LANGKEY_WuXiaoShuJu_04368>
+  <Yes>Fill Content</Yes>
+  <No>Fill Content</No>
+  <LANGKEY_FaSong_04493>Fill Content</LANGKEY_FaSong_04493>
+  <LANGKEY_JieShou_04494>Fill Content</LANGKEY_JieShou_04494>
+  <LANGKEY_FaSongShiBai_04495>Fill Content</LANGKEY_FaSongShiBai_04495>
+  <LANGKEY_YiDu_04424>Fill Content</LANGKEY_YiDu_04424>
+  <LANGKEY_WeiDu_04425>Fill Content</LANGKEY_WeiDu_04425>
+</LanguageResource>

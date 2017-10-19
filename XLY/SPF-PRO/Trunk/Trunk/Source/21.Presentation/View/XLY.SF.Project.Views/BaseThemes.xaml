@@ -1,0 +1,4 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <XmlDataProvider x:Key="Lang" IsAsynchronous="False" Source="Pack://application:,,,/XLY.SF.Framework.Language;Component/Language/Language_Cn.xml"/>
+</ResourceDictionary>

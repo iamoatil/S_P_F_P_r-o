@@ -1,0 +1,922 @@
+<?xml version="1.0"?>
+<BcpStandardFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Tables>
+    <Table TableName="WA_MFORENSICS_010100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号，编码方法：组织机构代码+负责人证件号码+采集时间+厂商组织机构代码+IMEI/ESN/MEID" />
+        <Item Key="C010010" Name="厂商名称" Description="MANUFACTURER" Type="c..128" Memo="此采集设备的制造商名称" />
+        <Item Key="G020013" Name="厂商组织机构代码" Description="SECURITY_SOFTWARE_ORGCODE" Type="c9" Memo="此采集设备的制造商的厂商组织机构代码" />
+        <Item Key="B010001" Name="对象姓名" Description="NAME" Type="c..64" Memo="智能终端持有者姓名" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="智能终端持有者有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="智能终端持有者有效身份证件号" />
+        <Item Key="H010014" Name="采集时间" Description="CAPTURE_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="E020012" Name="采集人姓名" Description="PRINCIPAL_NAME" Type="c..32" Memo="采集者的警员姓名" />
+        <Item Key="B010028" Name="负责人证件号码" Description="POLICE_NO" Type="c6" Memo="警员编号" />
+        <Item Key="G020032" Name="管辖地网安部门" Description="INCHARGE_WA_DEPARTMENT" Type="c12" Memo="管辖地网安部门机构代码" />
+        <Item Key="I050001" Name="案件编号" Description="CASE_NO" Type="c15" Memo="案件编号" />
+        <Item Key="I050003" Name="案件类型" Description="CASE_TYPE" Type="c4" Memo="案件类型" />
+        <Item Key="I050002" Name="案件名称" Description="CASE_NAME" Type="c..120" Memo="案件名称" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C010001" Name="设备名称" Description="MATERIALS_NAME" Type="c..128" Memo="设备名称，如自定义名称等。" />
+        <Item Key="C050001" Name="IMEI/ESN/MEID" Description="IMEI_ESN_MEID" Type="c..64" Memo="手机的IMEI/ESN/MEID号" />
+        <Item Key="C040002" Name="终端MAC地址" Description="MAC" Type="c17" Memo="设备的MAC地址" />
+        <Item Key="C040006" Name="蓝牙MAC地址" Description="BLUETOOTH_MAC" Type="c17" Memo="设备的蓝牙MAC地址，由17位字符组成，所有的字符大写，每两个字符用半角“-”分隔，类似00-E0-4C-3B-7D-2F" />
+        <Item Key="C010010" Name="厂商名称" Description="MANUFACTURER" Type="c..128" Memo="设备的制造商" />
+        <Item Key="C010003" Name="型号" Description="MODEL" Type="c..64" Memo="设备的型号" />
+        <Item Key="C010009" Name="特征描述" Description="CHARACTERISTIC_DESC" Type="c..4000" Memo="设备的特征描述信息" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B020005" Name="本机号码" Description="MSISDN" Type="c..32" Memo="MSISDN=CC+DNC+SN，例：86 + 139 + ********" />
+        <Item Key="B020007" Name="SIM卡IMSI" Description="IMSI" Type="c..64" Memo="IMSI=MCC+MNC+MSIN " />
+        <Item Key="B020020" Name="短信中心号码" Description="CENTER_NUMBER" Type="c..32" Memo="短信中心号码，CC+NDC+SN" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="J020011" Name="通讯录ID" Description="SEQUENCE_NAME" Type="c32" Memo="用于表的关联，从31个0，1个1开始递增" />
+        <Item Key="B070002" Name="联系人姓名" Description="RELATIONSHIP_NAME" Type="c..64" Memo="通讯录中的联系人姓名" />
+        <Item Key="H100034" Name="加密状态" Description="PRIVACYCONFIG" Type="c1" Memo="是否加密，0公开未加密（public），1加密仅本人可见（private），2部分加密仅部分人可见（limited），9其他" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010500">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="J020011" Name="通讯录ID" Description="SEQUENCE_NAME" Type="c32" Memo="用于表的关联，从31个0，1个1开始递增" />
+        <Item Key="I010051" Name="通讯录字段类型" Description="PHONE_VALUE_TYPE" Type="c2" Memo="01电话号码，02Email，03地址，04即时通讯，05网站，06纪念日，07备注，08群组，99其他" />
+        <Item Key="B020017" Name="字段标签" Description="PHONE_NUMBER_TYPE" Type="c..256" Memo="手机、家庭、工作等系统内置或自定义的字段标签，无则为空，字段类型为群组时字段标签也为空" />
+        <Item Key="B070003" Name="字段值" Description="RELATIONSHIP_ACCOUNT" Type="c..128" Memo="字段值、号码、地址、群组名" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010600">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B020005" Name="本机号码" Description="MSISDN" Type="c..128" Memo="本机号码" />
+        <Item Key="B070003" Name="对方号码" Description="RELATIONSHIP_ACCOUNT" Type="c..128" Memo="对方号码" />
+        <Item Key="B070002" Name="联系人姓名" Description="RELATIONSHIP_NAME" Type="c..64" Memo="对方的联系人姓名" />
+        <Item Key="B020019" Name="通话状态" Description="CALL_STATUS" Type="c1" Memo="0未接、1接通、9其他" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H010015" Name="通话开始时间" Description="START_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H010016" Name="通话结束时间" Description="END_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H010030" Name="通话时长" Description="DUAL_TIME" Type="n..10" Memo="单位为秒" />
+        <Item Key="H100034" Name="加密状态" Description="PRIVACYCONFIG" Type="c1" Memo="是否加密" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010700">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B020005" Name="本机号码" Description="MSISDN" Type="c..128" Memo="本机号码" />
+        <Item Key="B070003" Name="对方号码" Description="RELATIONSHIP_ACCOUNT" Type="c..128" Memo="对方号码" />
+        <Item Key="B070002" Name="联系人姓名" Description="RELATIONSHIP_NAME" Type="c..64" Memo="短消息中的联系人姓名" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H030008" Name="发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040001" Name="短消息内容" Description="CONTENT" Type="c..4000" Memo="短消息的正文" />
+        <Item Key="H030009" Name="查看状态" Description="MAIL_VIEW_STATUS" Type="c1" Memo="0未读，1已读，9其它" />
+        <Item Key="H030010" Name="存储位置" Description="MAIL_SAVE_FOLDER" Type="c2" Memo="01收件箱、02发件箱、03草稿箱、04垃圾箱、99其他" />
+        <Item Key="H100034" Name="加密状态" Description="PRIVACYCONFIG" Type="c1" Memo="是否加密" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010800">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B020005" Name="本机号码" Description="MSISDN" Type="c..128" Memo="本机号码" />
+        <Item Key="B070003" Name="对方号码" Description="RELATIONSHIP_ACCOUNT" Type="c..128" Memo="对方号码" />
+        <Item Key="B070002" Name="联系人姓名" Description="RELATIONSHIP_NAME" Type="c..64" Memo="" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H030008" Name="发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040001" Name="彩信文本" Description="CONTENT" Type="c..4000" Memo="彩信文本" />
+        <Item Key="H010019" Name="彩信文件" Description="MAINFILE" Type="c..256" Memo="彩信的实体文件的相对路径，包含实体文件名，要求能采用IE浏览器或用厂商提供的插件打开" />
+        <Item Key="H030009" Name="查看状态" Description="MAIL_VIEW_STATUS" Type="c1" Memo="0未读，1已读，9其它" />
+        <Item Key="H030010" Name="存储位置" Description="MAIL_SAVE_FOLDER" Type="c2" Memo="01收件箱、02发件箱、03草稿箱、04垃圾箱、99其他" />
+        <Item Key="H100034" Name="加密状态" Description="PRIVACYCONFIG" Type="c1" Memo="是否加密" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_010900">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="H020001" Name="标题" Description="TITLE" Type="c..128" Memo="记录中的标题" />
+        <Item Key="H010015" Name="开始时间" Description="START_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H010016" Name="结束时间" Description="END_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="I020017" Name="地点" Description="EVENT_PLACE" Type="c..256" Memo="记录中的地点" />
+        <Item Key="C080004" Name="描述" Description="DESCRIPTION" Type="c..128" Memo="记录中的描述" />
+        <Item Key="C110002" Name="创建时间" Description="CREATE_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="I010005" Name="最后修改时间" Description="LATEST_MOD_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_011000">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040002" Name="本机同步账号" Description="ACCOUNT" Type="c..64" Memo="系统自带同步信息所用账号" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="用于关联，无用户ID或无法读取的本项为空" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="为登录使用的账号，用于关联，无账号或无法读取的本项为空， " />
+        <Item Key="B040004" Name="昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="密码明文或加密后的密文" />
+        <Item Key="C020018" Name="安装日期" Description="INSTALL_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="MSISDN=CC+NDC+SN" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="账号信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="账号信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="0未知，1男性，2女性，9其他" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="真实姓名" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID，无用户ID或无法读取的本项为空" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号，无法读取账号的本项为空" />
+        <Item Key="B060004" Name="好友用户ID" Description="FRIEND_ID" Type="c..64" Memo="好友用户ID，无用户ID或无法读取的本项为空" />
+        <Item Key="B060002" Name="好友账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="好友账号，无账号或无法读取的本项为空" />
+        <Item Key="B060005" Name="好友昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="好友昵称" />
+        <Item Key="B060006" Name="好友分组信息" Description="FRIEND_GROUP" Type="c..64" Memo="好友的默认或者自定义分组" />
+        <Item Key="B060003" Name="好友备注" Description="FRIEND_REMARK" Type="c..64" Memo="好友备注" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="MSISDN=CC+NDC+SN" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="好友信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="好友信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="0未知，1男性，2女性，9其他" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="真实姓名" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040017" Name="群组ID" Description="GROUP_NUM" Type="c..128" Memo="" />
+        <Item Key="B040024" Name="群组名称" Description="GROUP_NAME" Type="c..128" Memo="" />
+        <Item Key="B060004" Name="创建者ID" Description="FRIEND_ID" Type="c..64" Memo="群创建者、群主的用户ID，无用户ID或无法读取的本项为空" />
+        <Item Key="B060002" Name="创建者账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="群创建者、群主的账号，无账号或无法读取的本项为空" />
+        <Item Key="D010014" Name="创建者昵称" Description="GROUP_OWNER_NICKNAME" Type="c..256" Memo="群创建者、群主的昵称" />
+        <Item Key="D010019" Name="人数" Description="GROUP_MEMBER_COUNT" Type="n..10" Memo="" />
+        <Item Key="D010020" Name="最大成员数" Description="GROUP_MAX_MEMBER_COUT" Type="n..10" Memo="" />
+        <Item Key="D010017" Name="群公告" Description="GROUP_NOTICE" Type="c..4000" Memo="" />
+        <Item Key="D010018" Name="群简介" Description="GROUP_DESCRIPTION" Type="c..4000" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除或退出(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040017" Name="群组ID" Description="GROUP_NUM" Type="c..128" Memo="" />
+        <Item Key="B040024" Name="群组名称" Description="GROUP_NAME" Type="c..128" Memo="" />
+        <Item Key="B060004" Name="群成员ID" Description="FRIEND_ID" Type="c..64" Memo="" />
+        <Item Key="B060002" Name="群成员账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B060005" Name="群成员昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="" />
+        <Item Key="B060003" Name="群成员备注" Description="FRIEND_REMARK" Type="c..64" Memo="" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="成员信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="成员信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="是否已删除或退出(0未删除，1已删除)" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="19700101000000基准" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020500">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040004" Name="昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="本机昵称" />
+        <Item Key="B060004" Name="好友用户ID" Description="FRIEND_ID" Type="c..64" Memo="好友用户ID " />
+        <Item Key="B060002" Name="好友账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="好友账号" />
+        <Item Key="B060005" Name="好友昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="好友昵称" />
+        <Item Key="H040001" Name="即时信息内容" Description="CONTENT" Type="c..4000" Memo="包括语音、文本、图片、音视频、文件等各类信息，需将文件保存" />
+        <Item Key="H030008" Name="发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H040006" Name="聊天记录ID" Description="TALK_ID" Type="c..32" Memo="单条聊天记录的全局唯一性标识ID，不是会话ID" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020600">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040017" Name="群组ID" Description="GROUP_NUM" Type="c..128" Memo="" />
+        <Item Key="B040024" Name="群组名称" Description="GROUP_NAME" Type="c..128" Memo="" />
+        <Item Key="B060004" Name="发送者ID" Description="FRIEND_ID" Type="c..64" Memo="发送群消息的用户ID" />
+        <Item Key="B060002" Name="发送者账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="发送群消息的用户账号" />
+        <Item Key="B060005" Name="发送者昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="发送群消息的用户昵称" />
+        <Item Key="H040001" Name="即时信息内容" Description="CONTENT" Type="c..4000" Memo="包括文本、图片、音视频、文件等各类信息。" />
+        <Item Key="H030008" Name="发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H040006" Name="聊天记录ID" Description="TALK_ID" Type="c..32" Memo="单条聊天记录的全局唯一性标识ID，不是会话ID" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020700">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B060004" Name="发布者ID" Description="FRIEND_ID" Type="c..64" Memo="发布动态消息的用户ID" />
+        <Item Key="B060002" Name="发布者账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="发布动态消息的用户账号" />
+        <Item Key="B060005" Name="发布者昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="发布动态消息的用户昵称" />
+        <Item Key="H100027" Name="消息类型" Description="WEIBO_MESSAGE_TYPE" Type="c1" Memo="0原创、1转发、2评论、点赞、9其他" />
+        <Item Key="H030008" Name="时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="" />
+        <Item Key="H100006" Name="内容" Description="WEIBO_MESSAGE" Type="c..4000" Memo="消息类型为原创时，此项为原创发布的内容；消息类型为转发或评论时，此项为评论内容；消息类型为点赞时，此项为空。" />
+        <Item Key="H100047" Name="评论数" Description="WEIBO_REPLY_COUNTER" Type="n..10" Memo="单条消息的评论数，无则为0" />
+        <Item Key="H100048" Name="转发数" Description="WEIBO_RETWEET_COUNTER" Type="n..10" Memo="单条消息的转发数，无则为0" />
+        <Item Key="H100049" Name="点赞数" Description="WEIBO_LIKE_COUNTER" Type="n..10" Memo="单条消息的点赞数，无则为0" />
+        <Item Key="H100001" Name="动态消息ID" Description="MBLOG_ID" Type="c..128" Memo="标识一条动态消息的唯一性ID" />
+        <Item Key="H100002" Name="相关动态消息ID" Description="RELEVANT_MBLOG_ID" Type="c..128" Memo="转发、评论、点赞时的直接对象动态消息ID，消息类型为原创时此项为空" />
+        <Item Key="H100050" Name="原始动态消息ID" Description="IDROOT_MBLOG_ID" Type="c..128" Memo="转发、评论、点赞时的最原始的根动态消息ID，消息类型为原创时此项为空" />
+        <Item Key="B040017" Name="群组ID" Description="GROUP_NUM" Type="c..128" Memo="来往扎堆、陌陌小组等群组编号" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020800">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="编码方法：组织机构代码+负责人证件号码+采集时间+厂商组织机构代码+IMEI/ESN/MEID" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="C110004" Name="时间" Description="CREATE_TIME" Type="n..20" Memo="搜索时间" />
+        <Item Key="H020005" Name="关键词" Description="KEYWORD" Type="c..256" Memo="搜索关键词" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_020900">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID，无用户ID或无法读取的本项为空" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号，无法读取账号的本项为空" />
+        <Item Key="B060004" Name="好友用户ID" Description="FRIEND_ID" Type="c..64" Memo="好友用户ID，无用户ID或无法读取的本项为空" />
+        <Item Key="B060002" Name="好友账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="好友账号，无账号或无法读取的本项为空" />
+        <Item Key="B060005" Name="好友昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="好友昵称" />
+        <Item Key="B060006" Name="好友分组信息" Description="FRIEND_GROUP" Type="c..64" Memo="好友的默认或者自定义分组" />
+        <Item Key="B060003" Name="好友备注" Description="FRIEND_REMARK" Type="c..64" Memo="好友备注" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="MSISDN=CC+NDC+SN" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="好友信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="好友信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="0未知，1男性，2女性，9其他" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="真实姓名" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_021000">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="即时通讯应用类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040017" Name="群组ID" Description="GROUP_NUM" Type="c..128" Memo="" />
+        <Item Key="B040024" Name="群组名称" Description="GROUP_NAME" Type="c..128" Memo="" />
+        <Item Key="B060004" Name="发送者ID" Description="FRIEND_ID" Type="c..64" Memo="发送群消息的用户ID" />
+        <Item Key="B060002" Name="发送者账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="发送群消息的用户账号" />
+        <Item Key="B060005" Name="发送者昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="发送群消息的用户昵称" />
+        <Item Key="H040001" Name="即时信息内容" Description="CONTENT" Type="c..4000" Memo="包括文本、图片、音视频、文件等各类信息。" />
+        <Item Key="H030008" Name="发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H040006" Name="聊天记录ID" Description="TALK_ID" Type="c..32" Memo="单条聊天记录的全局唯一性标识ID，不是会话ID" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_030100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="微博类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="用于关联，无用户ID或无法读取的本项为空" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="用于关联，无账号或无法读取的本项为空" />
+        <Item Key="B040004" Name="用户昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="" />
+        <Item Key="H100051" Name="粉丝数量" Description="FANS_COUNTER" Type="n..10" Memo="关注本机用户的用户数量" />
+        <Item Key="H100052" Name="关注数量" Description="FOLLOW_COUNTER" Type="n..10" Memo="本机用户关注的用户数量" />
+        <Item Key="H100053" Name="博文数量" Description="MESSAGE_COUNTER" Type="n..10" Memo="本机用户发表的博文数量" />
+        <Item Key="H100054" Name="私信数量" Description="PREVACY_MESSAGE_COUNTER" Type="n..10" Memo="本机用户收发的私信数量" />
+        <Item Key="C020018" Name="安装日期" Description="INSTALL_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="账号信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="账号信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_030200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="微博类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040004" Name="昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="本机昵称" />
+        <Item Key="B060004" Name="好友用户ID" Description="FRIEND_ID" Type="c..64" Memo="微博好友的用户ID" />
+        <Item Key="B060002" Name="好友账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="微博好友的账号" />
+        <Item Key="B060005" Name="好友昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="微博好友的昵称" />
+        <Item Key="B060006" Name="好友分组信息" Description="FRIEND_GROUP" Type="c..64" Memo="好友的默认或者自定义分组" />
+        <Item Key="B060003" Name="好友备注" Description="FRIEND_REMARK" Type="c..64" Memo="好友备注" />
+        <Item Key="G010002" Name="主页" Description="URL" Type="c..4000" Memo="好友的主页URL" />
+        <Item Key="H100055" Name="关注方式" Description="WEIBO_FOLLOW_TYPE" Type="c1" Memo="0未知、1关注人、2粉丝、9其他" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="好友信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="好友信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_030300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="微博类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B060004" Name="发布者ID" Description="FRIEND_ID" Type="c..64" Memo="发布动态消息的用户ID" />
+        <Item Key="B060002" Name="发布者账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="发布动态消息的用户账号" />
+        <Item Key="B060005" Name="发布者昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="发布动态消息的用户昵称" />
+        <Item Key="H100027" Name="消息类型" Description="WEIBO_MESSAGE_TYPE" Type="c1" Memo="0原创、1转发、2评论、点赞、9其他" />
+        <Item Key="H030008" Name="时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="" />
+        <Item Key="H100010" Name="微博话题信息" Description="WEIBO_TOPIC" Type="c..140" Memo="##之间的话题信息" />
+        <Item Key="H100006" Name="内容" Description="WEIBO_MESSAGE" Type="c..4000" Memo="消息类型为原创时，此项为原创发布的内容；消息类型为转发或评论时，此项为评论内容；消息类型为点赞时，此项为空。" />
+        <Item Key="H100047" Name="评论数" Description="WEIBO_REPLY_COUNTER" Type="n..10" Memo="" />
+        <Item Key="H100048" Name="转发数" Description="WEIBO_RETWEET_COUNTER" Type="n..10" Memo="" />
+        <Item Key="H100049" Name="点赞数" Description="WEIBO_LIKE_COUNTER" Type="n..10" Memo="" />
+        <Item Key="H100001" Name="博文ID" Description="MBLOG_ID" Type="c..128" Memo="标识一条微博博文的唯一性ID " />
+        <Item Key="H100002" Name="相关博文ID" Description="RELEVANT_MBLOG_ID" Type="c..128" Memo="转发、评论、点赞时的直接对象博文ID，消息类型为原创时此项为空" />
+        <Item Key="H100050" Name="原始博文ID" Description="IDROOT_MBLOG_ID" Type="c..128" Memo="转发、评论、点赞时的最原始的原创博文ID，消息类型为原创时此项为空" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_030400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="微博类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040004" Name="昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="本机昵称" />
+        <Item Key="B060004" Name="好友用户ID" Description="FRIEND_ID" Type="c..64" Memo="对方用户ID " />
+        <Item Key="B060002" Name="好友账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="对方账号" />
+        <Item Key="B060005" Name="好友昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="对方昵称" />
+        <Item Key="H040001" Name="私信内容" Description="CONTENT" Type="c..4000" Memo="" />
+        <Item Key="H030008" Name="发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H040006" Name="私信ID" Description="TALK_ID" Type="c..32" Memo="单条私信的全局唯一性标识ID" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_030500">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="B040006" Name="账号类型" Description="CONTACT_ACCOUNT_TYPE" Type="c7" Memo="微博类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="C110004" Name="时间" Description="CREATE_TIME" Type="n..20" Memo="搜索时间" />
+        <Item Key="H020005" Name="关键词" Description="KEYWORD" Type="c..256" Memo="搜索关键词" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_040100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="H030006" Name="邮箱软件类型" Description="MAIL_TOOL_TYPE" Type="c5" Memo="电子邮件收发工具" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="账号为邮箱名的，本项为邮箱全名" />
+        <Item Key="B040004" Name="昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="" />
+        <Item Key="C020018" Name="安装日期" Description="INSTALL_TIME" Type="n..20" Memo="" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="账号信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="账号信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_040200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="H030006" Name="邮箱软件类型" Description="MAIL_TOOL_TYPE" Type="c5" Memo="" />
+        <Item Key="B040002" Name="本机账号" Description="ACCOUNT" Type="c..64" Memo="账号为邮箱名的，本项为邮箱全名" />
+        <Item Key="B060002" Name="联系人账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="账号为邮箱名的，本项为邮箱全名" />
+        <Item Key="B060005" Name="联系人昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="" />
+        <Item Key="B060006" Name="联系人分组信息" Description="FRIEND_GROUP" Type="c..64" Memo="联系人的默认或者自定义分组" />
+        <Item Key="B060003" Name="联系人备注" Description="FRIEND_REMARK" Type="c..64" Memo="联系人备注" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="联系人信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="联系人信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_040300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="H030006" Name="邮箱软件类型" Description="MAIL_TOOL_TYPE" Type="c5" Memo="" />
+        <Item Key="B040002" Name="本机账号" Description="ACCOUNT" Type="c..64" Memo="账号为邮箱名的，本项为邮箱全名" />
+        <Item Key="J020011" Name="邮件ID" Description="SEQUENCE_NAME" Type="c32" Memo="用于表的关联，从31个0，1个1开始递增" />
+        <Item Key="H030002" Name="发信人地址" Description="FROM" Type="c..128" Memo="发信人邮箱地址" />
+        <Item Key="H030003" Name="收信人地址" Description="TO" Type="c..128" Memo="收件人邮箱地址" />
+        <Item Key="H030004" Name="抄送人" Description="CC" Type="c..128" Memo="多个抄送人以逗号分隔。" />
+        <Item Key="H030005" Name="密送人" Description="BCC" Type="c..128" Memo="多个密送人以逗号分隔" />
+        <Item Key="H030008" Name="邮件发送时间" Description="MAIL_SEND_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H030001" Name="邮件主题" Description="MAIL_SUBJECT" Type="c..512" Memo="电子邮件主题" />
+        <Item Key="H010019" Name="邮件内容" Description="MAINFILE" Type="c..256" Memo="邮件内容，以txt文件形式保存" />
+        <Item Key="H030009" Name="查看状态" Description="MAIL_VIEW_STATUS" Type="c1" Memo="0未读，1已读，9其它" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_040400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="H030006" Name="邮箱软件类型" Description="MAIL_TOOL_TYPE" Type="c5" Memo="" />
+        <Item Key="B040002" Name="本机账号" Description="ACCOUNT" Type="c..64" Memo="账号为邮箱名的，本项为邮箱全名" />
+        <Item Key="J020011" Name="邮件ID" Description="SEQUENCE_NAME" Type="c32" Memo="用于表的关联，从31个0，1个1开始递增" />
+        <Item Key="C010001" Name="显示名" Description="MATERIALS_NAME" Type="c..128" Memo="邮件中显示的附件名" />
+        <Item Key="H010020" Name="附件路径" Description="FILE_NAME" Type="c..4000" Memo="邮件附件的实体文件的相对路径，包含实体文件名" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_040500">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="H030006" Name="邮箱软件类型" Description="MAIL_TOOL_TYPE" Type="c5" Memo="" />
+        <Item Key="B040002" Name="本机账号" Description="ACCOUNT" Type="c..64" Memo="账号为邮箱名的，本项为邮箱全名" />
+        <Item Key="C110004" Name="时间" Description="CREATE_TIME" Type="n..20" Memo="搜索时间" />
+        <Item Key="H020005" Name="关键词" Description="KEYWORD" Type="c..256" Memo="搜索关键词" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_050100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="浏览器类型" Description="BROWSE_TYPE" Type="c5" Memo="浏览器类型" />
+        <Item Key="G010002" Name="网址" Description="URL" Type="c..4000" Memo="保存用户名密码的网页URL地址" />
+        <Item Key="B040002" Name="用户名" Description="ACCOUNT" Type="c..64" Memo="保存的账号" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="保存的密码" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_050200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="浏览器类型" Description="BROWSE_TYPE" Type="c5" Memo="浏览器类型" />
+        <Item Key="C110001" Name="名称" Description="NAME" Type="c..128" Memo="收藏夹中的网页显示名称" />
+        <Item Key="G010002" Name="URL地址" Description="URL" Type="c..4000" Memo="收藏夹中的网页URL地址" />
+        <Item Key="C110002" Name="创建时间" Description="CREATE_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_050300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="浏览器类型" Description="BROWSE_TYPE" Type="c5" Memo="浏览器类型" />
+        <Item Key="H020002" Name="网页标题" Description="WEB_TITLE" Type="c..128" Memo="历史记录中的网页标题" />
+        <Item Key="G010002" Name="URL地址" Description="URL" Type="c..4000" Memo="历史记录中的网页URL地址" />
+        <Item Key="C110004" Name="访问时间" Description="VISIT_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="C110003" Name="访问次数" Description="VISITS" Type="c..128" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_050400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="浏览器类型" Description="BROWSE_TYPE" Type="c5" Memo="浏览器类型" />
+        <Item Key="G010002" Name="URL地址" Description="URL" Type="c..4000" Memo="收藏页中网站显示名称" />
+        <Item Key="C110006" Name="COOKIE键名" Description="KEY_NAME" Type="c..128" Memo="" />
+        <Item Key="C110007" Name="COOKIE键值" Description="KEY_VALUE" Type="c..128" Memo="" />
+        <Item Key="C110002" Name="创建时间" Description="CREATE_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="C110005" Name="过期时间" Description="EXPIRE_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="C110004" Name="最后访问时间" Description="VISIT_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="C110003" Name="访问次数" Description="VISITS" Type="c..128" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_060100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="软件名称" Description="BROWSE_TYPE" Type="c5" Memo="地理信息类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="用于关联，无用户ID或无法读取的本项为空" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="用于关联，无账号或无法读取的本项为空" />
+        <Item Key="B040004" Name="用户昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="" />
+        <Item Key="C020018" Name="安装日期" Description="INSTALL_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="账号信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="账号信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_060200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="软件名称" Description="BROWSE_TYPE" Type="c5" Memo="地理信息类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="F040008" Name="地点类别" Description="LOCATE_TYPE" Type="c1" Memo="本地定位，其他方式定位（搜索、导航等非本地定位的）" />
+        <Item Key="H090006" Name="时间" Description="LOGIN_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H090012" Name="地点名称" Description="CITY_CODE" Type="c6" Memo="采用GB/T 2260－2007《中华人民共和国行政区划代码》" />
+        <Item Key="E020007" Name="详细地址" Description="COMPANY_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="F010001" Name="经度" Description="LONGITUDE" Type="c..10" Memo="正负+十进制度数，度数采用3位整数5位小数，小数位数不足补零，正为东经（可省略）、负为西经，例如123.23000 表示东经123.23000度" />
+        <Item Key="F010002" Name="纬度" Description="LATITUDE" Type="c..10" Memo="正负+十进制度数，度数采用3位整数5位小数，小数位数不足补零，正为北纬（可省略）、负为南纬" />
+        <Item Key="F010009" Name="海拔" Description="ABOVE_SEALEVEL" Type="c..10" Memo="单位为米，采用“正负+十进制小数”的格式表示。不足8位在小数位补0，使用正符号表示海平面上（可省略），负符号表示海平面下，例如123.00000 表示海平面上123米" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_060300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="软件名称" Description="BROWSE_TYPE" Type="c5" Memo="地理信息类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="H010015" Name="出发时间" Description="START_TIME" Type="n..20" Memo="" />
+        <Item Key="F010003" Name="出发地名称" Description="DEPART" Type="c6" Memo="" />
+        <Item Key="F010014" Name="出发地详细地址" Description="DEPART_ADDRESS" Type="c..128" Memo="" />
+        <Item Key="F010010" Name="出发地经度" Description="START_LONGITUDE" Type="c..10" Memo="" />
+        <Item Key="F010011" Name="出发地纬度" Description="START_LATITUDE" Type="c..10" Memo="" />
+        <Item Key="F040009" Name="出发地海拔" Description="START_ABOVE_SEALEVEL" Type="c..10" Memo="" />
+        <Item Key="H010016" Name="到达时间" Description="END_TIME" Type="n..20" Memo="" />
+        <Item Key="F010004" Name="目的地名称" Description="DESTINATION" Type="c6" Memo="" />
+        <Item Key="F010015" Name="目的地详细地址" Description="DESTINATION_ADDRESS" Type="c..128" Memo="" />
+        <Item Key="F010012" Name="目的地经度" Description="DESTINATION_LONGITUDE" Type="c..10" Memo="" />
+        <Item Key="F010013" Name="目的地纬度" Description="DESTINATION_LATITUDE" Type="c..10" Memo="" />
+        <Item Key="F040010" Name="目的地海拔" Description="DESTINATION_ABOVE_SEALEVEL" Type="c..10" Memo="" />
+        <Item Key="H090002" Name="航班号或车次号" Description="FLIGHTID" Type="c..20" Memo="" />
+        <Item Key="C010007" Name="价格" Description="PURCHASE_PRICE" Type="n..10,2" Memo="" />
+        <Item Key="E010002" Name="运输公司" Description="AIRCOM" Type="c..128" Memo="" />
+        <Item Key="H090001" Name="票号" Description="ORDER_NUM" Type="c..128" Memo="机票、火车票等的全局唯一性标示" />
+        <Item Key="H150003" Name="票物使用状态" Description="TICKET_STATUS" Type="c1" Memo="0未知、1已使用、2未使用、3已退票、9其他" />
+        <Item Key="H090004" Name="创建时间" Description="ORDER_TIME" Type="n..20" Memo="" />
+        <Item Key="I010005" Name="更改时间" Description="LATEST_MOD_TIME" Type="n..20" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_060400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020006" Name="软件名称" Description="BROWSE_TYPE" Type="c5" Memo="地理信息类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="C110004" Name="时间" Description="CREATE_TIME" Type="n..20" Memo="搜索时间" />
+        <Item Key="H020005" Name="关键词" Description="KEYWORD" Type="c..256" Memo="搜索关键词" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_070100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="G020031" Name="软件类型" Description="NETWORK_APP" Type="c6" Memo="电子商务类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="用于关联，无用户ID或无法读取的本项为空" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="用于关联，无账号或无法读取的本项为空" />
+        <Item Key="B040004" Name="用户昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="" />
+        <Item Key="C020018" Name="安装日期" Description="INSTALL_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="B030001" Name="国家代号" Description="AREA" Type="c3" Memo="" />
+        <Item Key="B030002" Name="行政区划" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020004" Name="电话号码" Description="FIXED_PHONE" Type="c..32" Memo="" />
+        <Item Key="B020005" Name="手机号码" Description="MSISDN" Type="c..32" Memo="" />
+        <Item Key="B040023" Name="邮箱地址" Description="EMAIL_ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="B030004" Name="对象证件类型" Description="CERTIFICATE_TYPE" Type="c3" Memo="账号信息里提取的有效身份证件类型" />
+        <Item Key="B030005" Name="对象证件号码" Description="CERTIFICATE_CODE" Type="c..128" Memo="账号信息里提取的有效身份证件号" />
+        <Item Key="B010011" Name="性别" Description="SEXCODE" Type="c1" Memo="" />
+        <Item Key="B010015" Name="年龄" Description="AGE" Type="n..3" Memo="" />
+        <Item Key="B020008" Name="联系地址" Description="POSTAL_ADDRESS" Type="c..256" Memo="" />
+        <Item Key="B020009" Name="邮政编码" Description="POSTAL_CODE" Type="c6" Memo="" />
+        <Item Key="B030024" Name="职业名称" Description="OCCUPATION_NAME" Type="c..128" Memo="" />
+        <Item Key="B010016" Name="血型" Description="BLOOD_TYPE" Type="c1" Memo="" />
+        <Item Key="B010001" Name="真实名" Description="NAME" Type="c..64" Memo="" />
+        <Item Key="B040029" Name="个性签名" Description="SIGN_NAME" Type="c..4000" Memo="" />
+        <Item Key="B040030" Name="个人说明" Description="PERSONAL_DESC" Type="c..4000" Memo="" />
+        <Item Key="B040031" Name="城市" Description="REG_CITY" Type="c..256" Memo="" />
+        <Item Key="B030018" Name="毕业院校" Description="GRADUATESCHOOL" Type="c..256" Memo="" />
+        <Item Key="B040034" Name="生肖" Description="ZODIAC" Type="c..128" Memo="" />
+        <Item Key="B040035" Name="星座" Description="CONSTALLATION" Type="c..256" Memo="" />
+        <Item Key="B010014" Name="出生年月" Description="BIRTHDAY" Type="d8" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_070200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="G020031" Name="软件类型" Description="NETWORK_APP" Type="c6" Memo="电子商务类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="" />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="H150004" Name="商品来源" Description="MATERIALS_SOURCE" Type="c2" Memo="00未知、01收藏夹、02购物车、03已购买、04普通浏览、99其他" />
+        <Item Key="C020016" Name="商品ID" Description="OS_PRODUCT_ID" Type="c..128" Memo="" />
+        <Item Key="C010001" Name="商品名称" Description="MATERIALS_NAME" Type="c..128" Memo="" />
+        <Item Key="C110004" Name="时间" Description="CREATE_TIME" Type="n..20" Memo="商品收藏、购买、浏览的时间" />
+        <Item Key="C010007" Name="价格" Description="MONEY" Type="n..10,2" Memo="" />
+        <Item Key="G010002" Name="网址" Description="URL" Type="c..4000" Memo="" />
+        <Item Key="H090017" Name="商品内容描述" Description="EXTRACT_DESC" Type="c..512" Memo="" />
+        <Item Key="C010006" Name="销售量" Description="BUYCOUNT" Type="n..10" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_070300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="G020031" Name="软件类型" Description="NETWORK_APP" Type="c6" Memo="电子商务类软件类型" />
+        <Item Key="B040003" Name="本机用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="" />
+        <Item Key="B040002" Name="本机账号" Description="ACCOUNT" Type="c..64" Memo="" />
+        <Item Key="H140009" Name="店铺ID" Description="SHOP_ID" Type="c..128" Memo="" />
+        <Item Key="H140010" Name="店铺名称" Description="SHOP_NAME" Type="" Memo="" />
+        <Item Key="B060004" Name="店主用户ID" Description="FRIEND_ID" Type="c..64" Memo="店主用户ID，无用户ID或无法读取的本项为空" />
+        <Item Key="B060002" Name="店主账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="店主账号，无账号或无法读取的本项为空" />
+        <Item Key="B060005" Name="店主昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_070400">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="G020031" Name="软件类型" Description="NETWORK_APP" Type="c6" Memo="电子商务类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="B040004" Name="昵称" Description="REGIS_NICKNAME" Type="c..256" Memo="本机昵称" />
+        <Item Key="B060004" Name="对方用户ID" Description="FRIEND_ID" Type="c..64" Memo="对方用户ID " />
+        <Item Key="B060002" Name="对方账号" Description="FRIEND_ACCOUNT" Type="c..64" Memo="对方账号" />
+        <Item Key="B060005" Name="对方昵称" Description="FRIEND_NICKNAME" Type="c..64" Memo="对方昵称" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="I010015" Name="交易时间" Description="BUSINESS_TIME" Type="n..20" Memo="" />
+        <Item Key="C010007" Name="价格" Description="MONEY" Type="n..10,2" Memo="交易金额" />
+        <Item Key="H150005" Name="交易状态" Description="DEAL_STATUS" Type="c1" Memo="0未知、1交易未开始、2交易中、3交易完成、4交易关闭、9其他" />
+        <Item Key="I010016" Name="详细描述" Description="RELAFULLDESC" Type="c..4000" Memo="" />
+        <Item Key="H040006" Name="交易记录ID" Description="TALK_ID" Type="c..32" Memo="单条交易记录的全局唯一性标识ID" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_070500">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="G020031" Name="软件类型" Description="NETWORK_APP" Type="c6" Memo="电子商务类软件类型" />
+        <Item Key="B040003" Name="用户ID" Description="ACCOUNT_ID" Type="c..32" Memo="本机用户ID " />
+        <Item Key="B040002" Name="账号" Description="ACCOUNT" Type="c..64" Memo="本机账号" />
+        <Item Key="C110004" Name="时间" Description="CREATE_TIME" Type="n..20" Memo="搜索时间" />
+        <Item Key="H020005" Name="关键词" Description="KEYWORD" Type="c..256" Memo="搜索关键词" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_080100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="F030001" Name="SSID" Description="SSID" Type="c..64" Memo="Wi-Fi热点信息中的SSID" />
+        <Item Key="B030002" Name="城市代码" Description="CITY_CODE" Type="c6" Memo="" />
+        <Item Key="B020001" Name="运营商" Description="OPERATOR_NET" Type="c2" Memo="" />
+        <Item Key="F030006" Name="单位类型" Description="Wi-Fi_UNIT_TYPE" Type="c2" Memo="" />
+        <Item Key="G020010" Name="接入方式" Description="ACCESS_TYPE" Type="c2" Memo="" />
+        <Item Key="F020001" Name="终端IP地址" Description="IP_ADDRESS" Type="n..10" Memo="无符号整型主机序表示，如：288036141" />
+        <Item Key="B040025" Name="加密方式" Description="ENCRYPT_ALGORITHM" Type="c2" Memo="01WEP;02WPA;03WPA2;04PSK; 99其他" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="" />
+        <Item Key="F030011" Name="APMAC地址" Description="AP_MAC" Type="c17" Memo="" />
+        <Item Key="F030012" Name="AP厂商组织机构代码" Description="AP_FIRMCODE" Type="c..128" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_080200">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C040007" Name="对方蓝牙MAC地址" Description="FRIEND_BLUETOOTH_MAC" Type="c17" Memo="对方的蓝牙MAC地址" />
+        <Item Key="C010001" Name="设备名称" Description="MATERIALS_NAME" Type="c..128" Memo="对方蓝牙设备名称" />
+        <Item Key="B060003" Name="备注名称" Description="FRIEND_REMARK" Type="c..64" Memo="本机为对方所备注的名称" />
+        <Item Key="C040008" Name="蓝牙设备类型" Description="BLUETOOTH_TYPE" Type="c2" Memo="01智能终端、02计算机、03耳机、04扬声器/音响、05照相机/摄像机、99其他" />
+        <Item Key="B050014" Name="最后发现时间" Description="LAST_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="C110004" Name="最后连接时间" Description="VISIT_TIME" Type="n.20" Memo="19700101000000基准" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_080300">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C040006" Name="本机蓝牙MAC地址" Description="BLUETOOTH_MAC" Type="c17" Memo="设备的蓝牙MAC地址" />
+        <Item Key="C040007" Name="对方蓝牙MAC地址" Description="FRIEND_BLUETOOTH_MAC" Type="c17" Memo="对方的蓝牙MAC地址" />
+        <Item Key="B080003" Name="文件名" Description="MIME_NAME" Type="c..256" Memo="" />
+        <Item Key="B080005" Name="文件路径" Description="MIME_PATH" Type="c..512" Memo="" />
+        <Item Key="B080004" Name="文件类型" Description="MIME_TYPE" Type="c..15" Memo="采用通用的文件夹扩展名方式表示" />
+        <Item Key="H010015" Name="传输开始时间" Description="START_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H010016" Name="传输结束时间" Description="END_TIME" Type="n..20" Memo="19700101000000基准" />
+        <Item Key="H040002" Name="本地动作" Description="LOCAL_ACTION" Type="c2" Memo="标示本机是收方还是发方，01接收方、02发送方、99其他" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+    <Table TableName="WA_MFORENSICS_090100">
+      <Items>
+        <Item Key="I050008" Name="手机取证采集目标编号" Description="COLLECT_TARGET_ID" Type="c57" Memo="单次取证唯一性编号" />
+        <Item Key="C020021" Name="软件名称" Description="SOFTWARE_NAME" Type="c..128" Memo="中文全名" />
+        <Item Key="B040026" Name="用户名" Description="USER_NAME" Type="c..64" Memo="" />
+        <Item Key="B040005" Name="密码" Description="PASSWORD" Type="c..64" Memo="" />
+        <Item Key="H010029" Name="删除状态" Description="DELETE_STATUS" Type="c1" Memo="" />
+        <Item Key="B040033" Name="删除时间" Description="DELETE_TIME" Type="n..20" Memo="" />
+      </Items>
+    </Table>
+  </Tables>
+</BcpStandardFile>

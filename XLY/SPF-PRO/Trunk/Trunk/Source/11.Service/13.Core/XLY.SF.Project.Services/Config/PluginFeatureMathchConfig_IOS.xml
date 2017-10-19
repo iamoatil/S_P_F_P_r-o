@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+  <!--IOS 联系人-->
+  <PluginFeatureMathch app="联系人">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="HomeDomain\Library\AddressBook\" FileName="AddressBook.sqlitedb"
+      Success="App,联系人,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--IOS 通话记录-->
+  <PluginFeatureMathch app="通话记录">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="WirelessDomain\Library\CallHistory" FileName="call_history.db"
+      Success="App,通话记录,1.0"  Failure="Next,2"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="HomeDomain\Library\AddressBook" FileName="AddressBook.sqlitedb"
+      Success="App,通话记录,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+
+  <!--IOS 短信-->
+  <PluginFeatureMathch app="短信">
+    <Rule ID="1" Type="FileExistPluginFeatureRule" Path="HomeDomain\Library\SMS" FileName="sms.db"
+      Success="App,短信,1.0"  Failure="Null"/>
+  </PluginFeatureMathch>
+  
+  <!--IOS 微信-->
+  <PluginFeatureMathch app="微信" OSType="IOS">
+    <Rule ID="1" Type="PathExistPluginFeatureRule" Path="com.tencent.xin"
+          Success="Next,3"  Failure="Null"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="com.tencent.xin" FileName="mmsetting.archive"
+          Success="Next,3"  Failure="Null"/>
+    <Rule ID="3" Type="TableExistPluginFeatureRule" Path="com.tencent.xin" DbFileName="WCDB_Contact.sqlite" TableName="Friend"
+          Success="App,微信,6.3.22"  Failure="Next,4"/>
+    <Rule ID="4" Type="TableExistPluginFeatureRule" Path="com.tencent.xin" DbFileName="MM.sqlite" TableName="Friend"
+          Success="App,微信,6.3.7"  Failure="App,微信,5.3.0"/>
+  </PluginFeatureMathch>
+
+  <!--IOS QQ-->
+  <PluginFeatureMathch app="QQ" OSType="IOS">
+    <Rule ID="1" Type="PathExistPluginFeatureRule" Path="com.tencent.mqq"
+          Success="Next,2"  Failure="Null"/>
+    <Rule ID="2" Type="FileExistPluginFeatureRule" Path="com.tencent.mqq" FileName="QQAccountsManager"
+          Success="Next,3"  Failure="Null"/>
+    <Rule ID="3" Type="FileExistPluginFeatureRule" Path="com.tencent.mqq" FileName="QQFriendList_v3.plist"
+          Success="App,QQ,6.0.0.424"  Failure="Next,4"/>  
+    <Rule ID="4" Type="FileExistPluginFeatureRule" Path="com.tencent.mqq" FileName="QQFriendList_v2.plist"
+          Success="App,QQ,4.6.0.1848"  Failure="Next,5"/>
+    <Rule ID="5" Type="FileExistPluginFeatureRule" Path="com.tencent.mqq" FileName="QQFriendList.plist"
+          Success="App,QQ,4.5.0.146"  Failure="App,QQ,4.0.1.1260"/>
+  </PluginFeatureMathch>
+
+</root>

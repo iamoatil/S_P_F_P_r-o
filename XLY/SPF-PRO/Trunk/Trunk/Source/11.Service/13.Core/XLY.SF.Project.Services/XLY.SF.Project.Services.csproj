@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D13C3F48-EA76-4AF7-9519-BAE2E64ABD3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XLY.SF.Project.Services</RootNamespace>
+    <AssemblyName>XLY.SF.Project.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.PortableDeviceApiLib">
+      <HintPath>..\..\..\..\Lib\MTP\Interop.PortableDeviceApiLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.PortableDeviceTypesLib">
+      <HintPath>..\..\..\..\Lib\MTP\Interop.PortableDeviceTypesLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\AudioDecodeHelper.cs" />
+    <Compile Include="Common\DecryptHelper.cs" />
+    <Compile Include="FileService\CellbriteDeviceService.cs" />
+    <Compile Include="FileService\CottageMirrorDeviceService.cs" />
+    <Compile Include="FileService\FileService.cs">
+      <DependentUpon>IFileService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileService\FileServiceAbstractX.cs" />
+    <Compile Include="FileService\IFileService.cs" />
+    <Compile Include="FileService\MirrorDeviceService.cs">
+      <DependentUpon>FileServiceAbstractX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileService\SDCardDeviceService.cs" />
+    <Compile Include="MTP\MTPDeviceManageService.cs" />
+    <Compile Include="PluginFeatureMathch\Comm\DbHelper.cs" />
+    <Compile Include="PluginFeatureMathch\Comm\DeCryptedDBHelper.cs" />
+    <Compile Include="PluginFeatureMathch\Comm\DirectoryHelper.cs" />
+    <Compile Include="PluginFeatureMathch\DefaultPluginFeatureMathch.cs" />
+    <Compile Include="PluginFeatureMathch\IPluginFeatureMathch.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureMathchResult.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureRule\FieldExistPluginFeatureRule.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureRule\FileExistPluginFeatureRule.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureRule\IPluginFeatureRule.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureRule\PathExistPluginFeatureRule.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureRule\TableExistPluginFeatureRule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchService.cs" />
+    <Compile Include="PluginFeatureMathch\PluginFeatureMathchService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Core.Base\XLY.SF.Framework.Core.Base.csproj">
+      <Project>{28682fe4-ec72-42a3-bb2c-27d19f55e14f}</Project>
+      <Name>XLY.SF.Framework.Core.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Language\XLY.SF.Framework.Language.csproj">
+      <Project>{95C796FD-57F1-4D2E-927F-4E34EA75E319}</Project>
+      <Name>XLY.SF.Framework.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Log4NetService\XLY.SF.Framework.Log4NetService.csproj">
+      <Project>{6e3193b7-7316-415a-b529-0f743d5f267b}</Project>
+      <Name>XLY.SF.Framework.Log4NetService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.BaseUtility\XLY.SF.Framework.BaseUtility.csproj">
+      <Project>{e58b3baa-0f89-4e6d-b34e-4607dfa8f805}</Project>
+      <Name>XLY.SF.Framework.BaseUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\21.Presentation\ProjectContext\ProjectExtend\XLY.SF.Project.Extension.csproj">
+      <Project>{e280c623-f0dd-47a8-ac87-80a0b5bbafdb}</Project>
+      <Name>XLY.SF.Project.Extension</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\11.Domains\XLY.SF.Project.Domains\XLY.SF.Project.Domains.csproj">
+      <Project>{68f2d8a3-05a8-4aaa-a9e2-00071188595b}</Project>
+      <Name>XLY.SF.Project.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\12.Persistable\XLY.SF.Project.Persistable\XLY.SF.Project.Persistable.csproj">
+      <Project>{e65aa84e-a943-4197-8d2b-631a7cd8565e}</Project>
+      <Name>XLY.SF.Project.Persistable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DllService\X64DllService\X64Service\X64Service.csproj">
+      <Project>{cc75b75f-fded-448f-8ac4-ac5e1e520cc7}</Project>
+      <Name>X64Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\PluginFeatureMathchConfig_Android.xml" />
+    <Content Include="Config\PluginFeatureMathchConfig_Android_en.xml" />
+    <Content Include="Config\PluginFeatureMathchConfig_IOS.xml" />
+    <Content Include="Config\PluginFeatureMathchConfig_IOS_en.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

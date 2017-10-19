@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F23E0222-6776-4D9B-904C-2771986A1825}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XLY.SF.Project.TestApp</RootNamespace>
+    <AssemblyName>XLY.SF.Project.TestApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\31.Build\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\31-Build\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Lib\Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fhjun_Test.cs" />
+    <Compile Include="HuJingDataFilterTest.cs" />
+    <Compile Include="HuJjingDataDumpTest.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Songbing_Test.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.BaseUtility\XLY.SF.Framework.BaseUtility.csproj">
+      <Project>{e58b3baa-0f89-4e6d-b34e-4607dfa8f805}</Project>
+      <Name>XLY.SF.Framework.BaseUtility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Core.Base\XLY.SF.Framework.Core.Base.csproj">
+      <Project>{28682fe4-ec72-42a3-bb2c-27d19f55e14f}</Project>
+      <Name>XLY.SF.Framework.Core.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\01.Framework\XLY.SF.Framework.Language\XLY.SF.Framework.Language.csproj">
+      <Project>{95c796fd-57f1-4d2e-927f-4e34ea75e319}</Project>
+      <Name>XLY.SF.Framework.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\11.Domains\XLY.SF.Project.Domains\XLY.SF.Project.Domains.csproj">
+      <Project>{68f2d8a3-05a8-4aaa-a9e2-00071188595b}</Project>
+      <Name>XLY.SF.Project.Domains</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\12.Persistable\XLY.SF.Project.Persistable\XLY.SF.Project.Persistable.csproj">
+      <Project>{e65aa84e-a943-4197-8d2b-631a7cd8565e}</Project>
+      <Name>XLY.SF.Project.Persistable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\13.Core\DllService\DllClient\DllClient.csproj">
+      <Project>{a6cc8605-4108-43ed-987a-dba25059805b}</Project>
+      <Name>DllClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\13.Core\DllService\X64DllService\X64Service\X64Service.csproj">
+      <Project>{cc75b75f-fded-448f-8ac4-ac5e1e520cc7}</Project>
+      <Name>X64Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\13.Core\XLY.SF.Project.DataFilter\XLY.SF.Project.DataFilter.csproj">
+      <Project>{22661b55-ad41-4232-8ee7-485cae0f4f3d}</Project>
+      <Name>XLY.SF.Project.DataFilter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\13.Core\XLY.SF.Project.DataPump\XLY.SF.Project.DataPump.csproj">
+      <Project>{90f36552-0b97-41cb-8d2b-ba66225dc3cb}</Project>
+      <Name>XLY.SF.Project.DataPump</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\13.Core\XLY.SF.Project.Devices\XLY.SF.Project.Devices.csproj">
+      <Project>{9eb7a2cf-ae03-47ee-b850-88a0fccdd0bd}</Project>
+      <Name>XLY.SF.Project.Devices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\13.Core\XLY.SF.Project.Services\XLY.SF.Project.Services.csproj">
+      <Project>{d13c3f48-ea76-4af7-9519-bae2e64abd3f}</Project>
+      <Name>XLY.SF.Project.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\14.Plugin\XLY.SF.Project.Plugin.Adapter\XLY.SF.Project.Plugin.Adapter.csproj">
+      <Project>{78424848-06cb-4d68-81d2-6338f56aacad}</Project>
+      <Name>XLY.SF.Project.Plugin.Adapter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\14.Plugin\XLY.SF.Project.Plugin.Android\XLY.SF.Project.Plugin.Android.csproj">
+      <Project>{a6ac1722-6e18-4d53-8f34-19d32d93854d}</Project>
+      <Name>XLY.SF.Project.Plugin.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\14.Plugin\XLY.SF.Project.Plugin.IOS\XLY.SF.Project.Plugin.IOS.csproj">
+      <Project>{4EAFDBB2-A575-4C73-9135-A4A226752425}</Project>
+      <Name>XLY.SF.Project.Plugin.IOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

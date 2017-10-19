@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="X86DLLService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CoreService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="AndroidMirrorAPIService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="VivoBackupAPIService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BlackBerryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="SIMcoreAPIService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9957/X86Service?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9957/X86Service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9957/X86Service?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:9957/X86Service?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/X86DllServer" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICoreService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_Leave_InputMessage">
+    <wsdl:part name="parameters" element="tns:Leave" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_Leave_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_ImageDataCallBack_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ImageDataCallBack" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_ImageDataCallBack_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ImageDataCallBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_VivoBackupCallBack_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackupCallBack" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_VivoBackupCallBack_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackupCallBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_BlackBerryImageDataCallBack_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerryImageDataCallBack" />
+  </wsdl:message>
+  <wsdl:message name="ICoreService_BlackBerryImageDataCallBack_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerryImageDataCallBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAndroidMirrorAPIService_AndroidMirror_OpenDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AndroidMirror_OpenDevice" />
+  </wsdl:message>
+  <wsdl:message name="IAndroidMirrorAPIService_AndroidMirror_OpenDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AndroidMirror_OpenDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAndroidMirrorAPIService_AndroidMirror_Initialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:AndroidMirror_Initialize" />
+  </wsdl:message>
+  <wsdl:message name="IAndroidMirrorAPIService_AndroidMirror_Initialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AndroidMirror_InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAndroidMirrorAPIService_AndroidMirror_ImageDataZone_InputMessage">
+    <wsdl:part name="parameters" element="tns:AndroidMirror_ImageDataZone" />
+  </wsdl:message>
+  <wsdl:message name="IAndroidMirrorAPIService_AndroidMirror_ImageDataZone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AndroidMirror_ImageDataZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_OpenDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_OpenDevice" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_OpenDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_OpenDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_Initialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_Initialize" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_Initialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_InitializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_GetAppIDList_InputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_GetAppIDList" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_GetAppIDList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_GetAppIDListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_BackupFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_BackupFiles" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_BackupFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_BackupFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_Close_InputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_Close" />
+  </wsdl:message>
+  <wsdl:message name="IVivoBackupAPIService_VivoBackup_Close_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VivoBackup_CloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_FindDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_FindDevices" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_FindDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_FindDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_Mount_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_Mount" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_Mount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_MountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_Close_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_Close" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_Close_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_CloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_GetAppDataInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_GetAppDataInfo" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_GetAppDataInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_GetAppDataInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_ImageAppData_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_ImageAppData" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_ImageAppData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_ImageAppDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_ReleaseBuffer_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_ReleaseBuffer" />
+  </wsdl:message>
+  <wsdl:message name="IBlackBerryDeviceAPIService_BlackBerry_ReleaseBuffer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlackBerry_ReleaseBufferResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_scanCom_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_scanCom" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_scanCom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_scanComResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readSimPhoneNoAndIMSI_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readSimPhoneNoAndIMSI" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readSimPhoneNoAndIMSI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readSimPhoneNoAndIMSIResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readAddressbook_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readAddressbook" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readAddressbook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readAddressbookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readlastCalled_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readlastCalled" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readlastCalled_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readlastCalledResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readSMS" />
+  </wsdl:message>
+  <wsdl:message name="ISIMcoreAPIService_SimCard_readSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SimCard_readSMSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICoreService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoreService/Login" message="tns:ICoreService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoreService/LoginResponse" message="tns:ICoreService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Leave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoreService/Leave" message="tns:ICoreService_Leave_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoreService/LeaveResponse" message="tns:ICoreService_Leave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ImageDataCallBack">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoreService/ImageDataCallBack" message="tns:ICoreService_ImageDataCallBack_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoreService/ImageDataCallBackResponse" message="tns:ICoreService_ImageDataCallBack_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackupCallBack">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoreService/VivoBackupCallBack" message="tns:ICoreService_VivoBackupCallBack_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoreService/VivoBackupCallBackResponse" message="tns:ICoreService_VivoBackupCallBack_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerryImageDataCallBack">
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoreService/BlackBerryImageDataCallBack" message="tns:ICoreService_BlackBerryImageDataCallBack_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoreService/BlackBerryImageDataCallBackResponse" message="tns:ICoreService_BlackBerryImageDataCallBack_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAndroidMirrorAPIService">
+    <wsdl:operation name="AndroidMirror_OpenDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_OpenDevice" message="tns:IAndroidMirrorAPIService_AndroidMirror_OpenDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_OpenDeviceResponse" message="tns:IAndroidMirrorAPIService_AndroidMirror_OpenDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AndroidMirror_Initialize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_Initialize" message="tns:IAndroidMirrorAPIService_AndroidMirror_Initialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_InitializeResponse" message="tns:IAndroidMirrorAPIService_AndroidMirror_Initialize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AndroidMirror_ImageDataZone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_ImageDataZone" message="tns:IAndroidMirrorAPIService_AndroidMirror_ImageDataZone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_ImageDataZoneResponse" message="tns:IAndroidMirrorAPIService_AndroidMirror_ImageDataZone_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IVivoBackupAPIService">
+    <wsdl:operation name="VivoBackup_OpenDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_OpenDevice" message="tns:IVivoBackupAPIService_VivoBackup_OpenDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_OpenDeviceResponse" message="tns:IVivoBackupAPIService_VivoBackup_OpenDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_Initialize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_Initialize" message="tns:IVivoBackupAPIService_VivoBackup_Initialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_InitializeResponse" message="tns:IVivoBackupAPIService_VivoBackup_Initialize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_GetAppIDList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_GetAppIDList" message="tns:IVivoBackupAPIService_VivoBackup_GetAppIDList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_GetAppIDListResponse" message="tns:IVivoBackupAPIService_VivoBackup_GetAppIDList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_BackupFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_BackupFiles" message="tns:IVivoBackupAPIService_VivoBackup_BackupFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_BackupFilesResponse" message="tns:IVivoBackupAPIService_VivoBackup_BackupFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_Close">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_Close" message="tns:IVivoBackupAPIService_VivoBackup_Close_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVivoBackupAPIService/VivoBackup_CloseResponse" message="tns:IVivoBackupAPIService_VivoBackup_Close_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IBlackBerryDeviceAPIService">
+    <wsdl:operation name="BlackBerry_FindDevices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_FindDevices" message="tns:IBlackBerryDeviceAPIService_BlackBerry_FindDevices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_FindDevicesResponse" message="tns:IBlackBerryDeviceAPIService_BlackBerry_FindDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_Mount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_Mount" message="tns:IBlackBerryDeviceAPIService_BlackBerry_Mount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_MountResponse" message="tns:IBlackBerryDeviceAPIService_BlackBerry_Mount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_Close">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_Close" message="tns:IBlackBerryDeviceAPIService_BlackBerry_Close_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_CloseResponse" message="tns:IBlackBerryDeviceAPIService_BlackBerry_Close_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_GetAppDataInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_GetAppDataInfo" message="tns:IBlackBerryDeviceAPIService_BlackBerry_GetAppDataInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_GetAppDataInfoResponse" message="tns:IBlackBerryDeviceAPIService_BlackBerry_GetAppDataInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_ImageAppData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_ImageAppData" message="tns:IBlackBerryDeviceAPIService_BlackBerry_ImageAppData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_ImageAppDataResponse" message="tns:IBlackBerryDeviceAPIService_BlackBerry_ImageAppData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_ReleaseBuffer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_ReleaseBuffer" message="tns:IBlackBerryDeviceAPIService_BlackBerry_ReleaseBuffer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_ReleaseBufferResponse" message="tns:IBlackBerryDeviceAPIService_BlackBerry_ReleaseBuffer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISIMcoreAPIService">
+    <wsdl:operation name="SimCard_scanCom">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_scanCom" message="tns:ISIMcoreAPIService_SimCard_scanCom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_scanComResponse" message="tns:ISIMcoreAPIService_SimCard_scanCom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readSimPhoneNoAndIMSI">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readSimPhoneNoAndIMSI" message="tns:ISIMcoreAPIService_SimCard_readSimPhoneNoAndIMSI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readSimPhoneNoAndIMSIResponse" message="tns:ISIMcoreAPIService_SimCard_readSimPhoneNoAndIMSI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readAddressbook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readAddressbook" message="tns:ISIMcoreAPIService_SimCard_readAddressbook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readAddressbookResponse" message="tns:ISIMcoreAPIService_SimCard_readAddressbook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readlastCalled">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readlastCalled" message="tns:ISIMcoreAPIService_SimCard_readlastCalled_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readlastCalledResponse" message="tns:ISIMcoreAPIService_SimCard_readlastCalled_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readSMS">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readSMS" message="tns:ISIMcoreAPIService_SimCard_readSMS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIMcoreAPIService/SimCard_readSMSResponse" message="tns:ISIMcoreAPIService_SimCard_readSMS_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CoreService" type="tns:ICoreService">
+    <wsp:PolicyReference URI="#CoreService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/ICoreService/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Leave">
+      <soap12:operation soapAction="http://tempuri.org/ICoreService/Leave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImageDataCallBack">
+      <soap12:operation soapAction="http://tempuri.org/ICoreService/ImageDataCallBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackupCallBack">
+      <soap12:operation soapAction="http://tempuri.org/ICoreService/VivoBackupCallBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerryImageDataCallBack">
+      <soap12:operation soapAction="http://tempuri.org/ICoreService/BlackBerryImageDataCallBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AndroidMirrorAPIService" type="tns:IAndroidMirrorAPIService">
+    <wsp:PolicyReference URI="#AndroidMirrorAPIService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="AndroidMirror_OpenDevice">
+      <soap12:operation soapAction="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_OpenDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndroidMirror_Initialize">
+      <soap12:operation soapAction="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_Initialize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AndroidMirror_ImageDataZone">
+      <soap12:operation soapAction="http://tempuri.org/IAndroidMirrorAPIService/AndroidMirror_ImageDataZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VivoBackupAPIService" type="tns:IVivoBackupAPIService">
+    <wsp:PolicyReference URI="#VivoBackupAPIService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="VivoBackup_OpenDevice">
+      <soap12:operation soapAction="http://tempuri.org/IVivoBackupAPIService/VivoBackup_OpenDevice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_Initialize">
+      <soap12:operation soapAction="http://tempuri.org/IVivoBackupAPIService/VivoBackup_Initialize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_GetAppIDList">
+      <soap12:operation soapAction="http://tempuri.org/IVivoBackupAPIService/VivoBackup_GetAppIDList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_BackupFiles">
+      <soap12:operation soapAction="http://tempuri.org/IVivoBackupAPIService/VivoBackup_BackupFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VivoBackup_Close">
+      <soap12:operation soapAction="http://tempuri.org/IVivoBackupAPIService/VivoBackup_Close" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BlackBerryService" type="tns:IBlackBerryDeviceAPIService">
+    <wsp:PolicyReference URI="#BlackBerryService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="BlackBerry_FindDevices">
+      <soap12:operation soapAction="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_FindDevices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_Mount">
+      <soap12:operation soapAction="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_Mount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_Close">
+      <soap12:operation soapAction="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_Close" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_GetAppDataInfo">
+      <soap12:operation soapAction="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_GetAppDataInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_ImageAppData">
+      <soap12:operation soapAction="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_ImageAppData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlackBerry_ReleaseBuffer">
+      <soap12:operation soapAction="http://tempuri.org/IBlackBerryDeviceAPIService/BlackBerry_ReleaseBuffer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SIMcoreAPIService" type="tns:ISIMcoreAPIService">
+    <wsp:PolicyReference URI="#SIMcoreAPIService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="SimCard_scanCom">
+      <soap12:operation soapAction="http://tempuri.org/ISIMcoreAPIService/SimCard_scanCom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readSimPhoneNoAndIMSI">
+      <soap12:operation soapAction="http://tempuri.org/ISIMcoreAPIService/SimCard_readSimPhoneNoAndIMSI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readAddressbook">
+      <soap12:operation soapAction="http://tempuri.org/ISIMcoreAPIService/SimCard_readAddressbook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readlastCalled">
+      <soap12:operation soapAction="http://tempuri.org/ISIMcoreAPIService/SimCard_readlastCalled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SimCard_readSMS">
+      <soap12:operation soapAction="http://tempuri.org/ISIMcoreAPIService/SimCard_readSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="X86DLLService">
+    <wsdl:port name="CoreService" binding="tns:CoreService">
+      <soap12:address location="net.pipe://localhost/CoreService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/CoreService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="AndroidMirrorAPIService" binding="tns:AndroidMirrorAPIService">
+      <soap12:address location="net.pipe://localhost/AndroidMirrorAPIService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/AndroidMirrorAPIService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="VivoBackupAPIService" binding="tns:VivoBackupAPIService">
+      <soap12:address location="net.pipe://localhost/VivoBackupAPIService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/VivoBackupAPIService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BlackBerryService" binding="tns:BlackBerryService">
+      <soap12:address location="net.pipe://localhost/BlackBerryService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/BlackBerryService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="SIMcoreAPIService" binding="tns:SIMcoreAPIService">
+      <soap12:address location="net.pipe://localhost/SIMcoreAPIService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/SIMcoreAPIService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

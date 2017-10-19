@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/X86DllServer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/X86DllServer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:9957/X86Service?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBlackPhoneInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BlackPhoneInfo" type="tns:BlackPhoneInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBlackPhoneInfo" nillable="true" type="tns:ArrayOfBlackPhoneInfo" />
+  <xs:complexType name="BlackPhoneInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="appfreeMemory" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="apptotalMemory" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="deviceIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="imei" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="modelStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pinStr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="softVersion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlackPhoneInfo" nillable="true" type="tns:BlackPhoneInfo" />
+  <xs:complexType name="ArrayOfBlackPhoneAppContentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BlackPhoneAppContentInfo" type="tns:BlackPhoneAppContentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBlackPhoneAppContentInfo" nillable="true" type="tns:ArrayOfBlackPhoneAppContentInfo" />
+  <xs:complexType name="BlackPhoneAppContentInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" nillable="true" type="xs:string" />
+      <xs:element name="recordCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlackPhoneAppContentInfo" nillable="true" type="tns:BlackPhoneAppContentInfo" />
+</xs:schema>

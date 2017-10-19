@@ -1,0 +1,1924 @@
+<?xml version="1.0"?>
+<ArrayOfBcpTable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./本地账户信息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./本地账户信息/*/好友列表/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./本地账户信息/*/好友消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./本地账户信息/*/群成员">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode=".." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="成员数" FK="None" />
+      <BcpColumn GAWACode="D010017" ColumnName="群公告" Property="公告" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020400" TableName="群组成员信息" Node="./本地账户信息/*/群成员/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="群组成员账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="群组成员昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="群组成员年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="群组成员个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B060003" ColumnName="群成员备注" Property="备注名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./本地账户信息/*/群消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送者" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <!--低版本QQ-->
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_021000" TableName="讨论组聊天记录信息" Node="./本地账户信息/*/讨论组消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送者" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ" GAWACode="WA_MFORENSICS_020900" TableName="最近联系人信息" Node="./本地账户信息/*/最近联系人">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode=".." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--低版本QQ-->
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./微信账户">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="微信账号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="绑定的手机号" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="绑定的邮箱" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./微信账户/*/通讯录">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." CF="XlyID" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="微信账号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B060003" ColumnName="好友备注" Property="备注名" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="手机号" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="邮箱地址" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./微信账户/*/消息列表/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="NodeText" FKNode="../.." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'Row','FKProperty':'B040004'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./微信账户/*/群">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="成员数" FK="None" />
+      <BcpColumn GAWACode="D010017" ColumnName="群公告" Property="公告" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_020400" TableName="群组成员信息" Node="./微信账户/*/群">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="群组成员账号" Property="" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="群组成员昵称" Property="" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./微信账户/*/群消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.."  CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="短信" GAWACode="WA_MFORENSICS_010700" TableName="短信记录信息" Node="./root">
+    <Columns>
+      <BcpColumn GAWACode="B020005" ColumnName="本机号码" Property="" FK="None" />
+      <BcpColumn GAWACode="B070003" ColumnName="对方号码" Property="联系人" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B070002" ColumnName="联系人姓名" Property="联系人" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="信息状态" FK="None" CF="XlySMSAction" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040001" ColumnName="短消息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" Property="读取状态" FK="None" CF="XlyViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="联系人" GAWACode="WA_MFORENSICS_010400" TableName="联系人基本信息" Node="./root">
+    <Columns>
+      <BcpColumn GAWACode="J020011" ColumnName="通讯录ID" Property="rowid" FK="Row" />
+      <BcpColumn GAWACode="B070002" ColumnName="联系人姓名" Property="联系人" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="联系人" GAWACode="WA_MFORENSICS_010500" TableName="单条联系人详细信息" Node="./root">
+    <Columns>
+      <BcpColumn GAWACode="J020011" ColumnName="通讯录ID" Property="rowid" FK="Row" />
+      <BcpColumn GAWACode="I010051" ColumnName="通讯录字段类型" Property="01" FK="Constant" />
+      <BcpColumn GAWACode="B070003" ColumnName="字段值" Property="联系人" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="通话记录" GAWACode="WA_MFORENSICS_010600" TableName="通话记录信息" Node="./root">
+    <Columns>
+      <BcpColumn GAWACode="B020005" ColumnName="本机号码" Property="" FK="None" />
+      <BcpColumn GAWACode="B070003" ColumnName="对方号码" Property="联系人" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B070002" ColumnName="联系人姓名" Property="联系人" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="B020019" ColumnName="通话状态" Property="类型" FK="None"  CF="XlyCallStatus" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="类型" FK="None"  CF="XlyCallAction" />
+      <BcpColumn GAWACode="H010015" ColumnName="通话开始时间" Property="时间" FK="None"  CF="XlyUTC" />
+      <BcpColumn GAWACode="H010030" ColumnName="通话时长" Property="通话时长" FK="None"  CF="XlySecond" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="日历信息" GAWACode="WA_MFORENSICS_010900" TableName="日历和备忘录记录信息" Node="./root">
+    <Columns>
+      <BcpColumn GAWACode="H020001" ColumnName="标题" Property="标题" FK="None" />
+      <BcpColumn GAWACode="H010015" ColumnName="开始时间" Property="开始时间" FK="None"  CF="XlyUTC" />
+      <BcpColumn GAWACode="H010016" ColumnName="结束时间" Property="结束时间" FK="None"  CF="XlyUTC" />
+      <BcpColumn GAWACode="I020017" ColumnName="地点" Property="时间位置" FK="None" />
+      <BcpColumn GAWACode="C080004" ColumnName="描述" Property="描述" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_070100" TableName="红包、转账-账号信息" Node="./微信账户">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="微信账号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="用户昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="绑定的手机号" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="绑定的邮箱" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_070400" TableName="红包、转账-交易记录" Node="./微信账户/*/消息列表/*" RowFilter="I010016='微信转账' or I010016='微信红包'">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="发送者" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="对方昵称" Property="接收者" FK="None" />
+      <BcpColumn GAWACode="I010015" ColumnName="交易时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="I010016" ColumnName="详细描述" Property="消息类型" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_070400" TableName="红包、转账-交易记录" Node="./微信账户/*/群消息/*" RowFilter="I010016='微信转账' or I010016='微信红包'">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="发送者" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="对方昵称" Property="接收者" FK="None" />
+      <BcpColumn GAWACode="I010015" ColumnName="交易时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="I010016" ColumnName="详细描述" Property="消息类型" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="微信" GAWACode="WA_MFORENSICS_070200" TableName="我的收藏-商品信息" Node="./微信账户/*/发现/我的收藏">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H150004" ColumnName="商品来源" Property="来源" FK="None" />
+      <BcpColumn GAWACode="C010001" ColumnName="商品名称" Property="数据类型" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="时间" Property="收藏时间" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="网址" Property="来源信息" FK="None" />
+      <BcpColumn GAWACode="H090017" ColumnName="商品内容描述" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+
+  <BcpTable Device="IOS" AppName="日历" GAWACode="WA_MFORENSICS_010900" TableName="日历和备忘录记录信息" Node="./日历">
+    <Columns>
+      <BcpColumn GAWACode="H020001" ColumnName="标题" Property="分类" FK="None" />
+      <BcpColumn GAWACode="H010015" ColumnName="开始时间" Property="开始日期" FK="None"  CF="XlyUTC" />
+      <BcpColumn GAWACode="H010016" ColumnName="结束时间" Property="结束日期" FK="None"  CF="XlyUTC" />
+      <BcpColumn GAWACode="C080004" ColumnName="描述" Property="备注信息" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./本地账户信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./本地账户信息/*/好友列表分组/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKProperty="" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./本地账户信息/*/好友消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKProperty="" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="NodeText" FKProperty="" FKNode="../.."  CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./本地账户信息/*/群成员">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKProperty="" FKNode=".." CF="XlyID"  />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" Property="群创建者" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="成员数" FK="None" />
+      <BcpColumn GAWACode="D010017" ColumnName="群公告" Property="公告" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_020400" TableName="群组成员信息" Node="./本地账户信息/*/群成员/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKProperty="" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="群组成员账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="群组成员昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="群组成员年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="群组成员个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./本地账户信息/*/群消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKProperty="" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送者" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ" GAWACode="WA_MFORENSICS_010600" TableName="通话记录信息" Node="./本地账户信息/*/QQ通话记录">
+    <Columns>
+      <BcpColumn GAWACode="B070003" ColumnName="对方号码" Property="手机号码" FK="None" />
+      <BcpColumn GAWACode="B070002" ColumnName="联系人姓名" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="H010015" ColumnName="通话开始时间" Property="通话时间" FK="None" />
+      <BcpColumn GAWACode="H010030" ColumnName="通话时长" Property="持续时长(秒)" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="微信" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./微信账户/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="微信账号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="绑定的手机号" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="绑定的邮箱" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="微信" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./微信账户/*/好友列表">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." CF="XlyID" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="微信账号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B060003" ColumnName="好友备注" Property="备注名" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="手机号" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="邮箱地址" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./微信账户/*/好友消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="NodeText" FKNode="../.." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'Row','FKProperty':'B040004'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./微信账户/*/群">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="成员数" FK="None" />
+      <BcpColumn GAWACode="D010017" ColumnName="群公告" Property="公告" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_020400" TableName="群组成员信息" Node="./微信账户/*/群">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="群组成员账号" Property="" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="群组成员昵称" Property="" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./微信账户/*/群消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.."  CF="XlyID" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_070100" TableName="红包、转账-账号信息" Node="./微信账户/*">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="微信账号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="用户昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="绑定的手机号" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="绑定的邮箱" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_070400" TableName="红包、转账-交易记录" Node="./微信账户/*/好友消息/*" RowFilter="I010016='微信转账' or I010016='微信红包'">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="发送者" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="对方昵称" Property="接收者" FK="None" />
+      <BcpColumn GAWACode="I010015" ColumnName="交易时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="I010016" ColumnName="详细描述" Property="消息类型" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="微信" GAWACode="WA_MFORENSICS_070400" TableName="红包、转账-交易记录" Node="./微信账户/*/群消息/*" RowFilter="I010016='微信转账' or I010016='微信红包'">
+    <Columns>
+      <BcpColumn GAWACode="G020031" ColumnName="软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="发送者" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="对方昵称" Property="接收者" FK="None" />
+      <BcpColumn GAWACode="I010015" ColumnName="交易时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="I010016" ColumnName="详细描述" Property="消息类型" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+
+
+  <BcpTable Device="Android,IOS" AppName="联系人" GAWACode="WA_MFORENSICS_010500" TableName="单条联系人详细信息" Node="./root">
+    <Columns>
+      <BcpColumn GAWACode="J020011" ColumnName="通讯录ID" Property="rowid" FK="Row" />
+      <BcpColumn GAWACode="I010051" ColumnName="通讯录字段类型" Property="01" FK="Constant" />
+      <BcpColumn GAWACode="B070003" ColumnName="字段值" Property="联系人" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="新浪微博" GAWACode="WA_MFORENSICS_030100" TableName="微博账号信息" Node="./*">
+    <Columns>
+      <BcpColumn GAWACode="B040004" ColumnName="用户昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="Uid" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="Uid" FK="None" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="新浪微博" GAWACode="WA_MFORENSICS_030200" TableName="微博好友信息" Node="./*/微博信息">
+    <Columns>
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="Uid" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None"  />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="Uid" FK="None" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="新浪微博" GAWACode="WA_MFORENSICS_030300" TableName="博文信息" Node="./*/微博信息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="好友账号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="发布者昵称" Property="发送者" FK="None" />
+      <BcpColumn GAWACode="H100006" ColumnName="内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H100027" ColumnName="消息类型" Property="消息类型" FK="None" />
+      <BcpColumn GAWACode="H100048" ColumnName="转发数" Property="转发次数" FK="None" />
+      <BcpColumn GAWACode="H100047" ColumnName="评论数" Property="评论数" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="新浪微博" GAWACode="WA_MFORENSICS_030400" TableName="私信信息" Node="./*/私信/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="NodeText" FKNode="../.." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'Row','FKProperty':'B040004'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+  <!--QQ浏览器 7.2.0.2930 [begin]-->
+  <BcpTable Device="Android" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050100" TableName="保存的网站密码信息" Node="./QQ浏览器/账号ID/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="用户名" Property="账号" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./QQ浏览器/账号ID/*/书签">
+    <Columns>
+      <BcpColumn GAWACode="C110001" ColumnName="名称" Property="标题" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="URL链接" FK="None" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" Property="创建时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./QQ浏览器/浏览记录">
+    <Columns>
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="网址" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050400" TableName="COOKIES信息" Node="./QQ浏览器/Cookies">
+    <Columns>
+      <BcpColumn GAWACode="C110006" ColumnName="COOKIE键名" Property="名称" FK="None" />
+      <BcpColumn GAWACode="C110007" ColumnName="COOKIE键值" Property="值" FK="None" />
+      <BcpColumn GAWACode="C110005" ColumnName="过期时间" Property="失效时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--QQ浏览器 7.2.0.2930 [end]-->
+  
+  <BcpTable Device="Android,IOS" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./书签">
+    <Columns>
+      <BcpColumn GAWACode="C110001" ColumnName="名称" Property="标题" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="URL链接" FK="None" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" Property="创建时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./历史记录">
+    <Columns>
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="URL链接" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" Property="_VisitTime" FK="None" />
+      <BcpColumn GAWACode="C110003" ColumnName="访问次数" Property="访问次数" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="QQ浏览器" GAWACode="WA_MFORENSICS_050400" TableName="COOKIES信息" Node="./Cookies">
+    <Columns>
+      <BcpColumn GAWACode="G010002" ColumnName="URL" Property="域名" FK="None" />
+      <BcpColumn GAWACode="C110006" ColumnName="COOKIE键名" Property="名称" FK="None" />
+      <BcpColumn GAWACode="C110007" ColumnName="COOKIE键值" Property="属性值" FK="None" />
+      <BcpColumn GAWACode="C110005" ColumnName="过期时间" Property="_ExpresTime" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="UC浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./书签">
+    <Columns>
+      <BcpColumn GAWACode="C110001" ColumnName="名称" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="网址" FK="None" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="UC浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./浏览记录">
+    <Columns>
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="网址" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" Property="访问时间" FK="None" />
+      <BcpColumn GAWACode="C110003" ColumnName="访问次数" Property="访问次数" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="UC浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./书签">
+    <Columns>
+      <BcpColumn GAWACode="C110001" ColumnName="名称" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="网址" FK="None" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="UC浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./浏览记录">
+    <Columns>
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="网址" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" Property="访问时间" FK="None" />
+      <BcpColumn GAWACode="C110003" ColumnName="访问次数" Property="访问次数" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+  <!--陌陌 7.3 [begin]-->
+  <BcpTable Device="Android" AppName="陌陌" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./陌陌/账号/*/帐号信息">
+    <Columns>
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="Merge" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" Property="帐号ID" FK="Merge" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="手机或邮箱" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B010014" ColumnName="出生年月" Property="生日" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None" />
+      <BcpColumn GAWACode="B030024" ColumnName="职业名称" Property="职业" FK="None" />
+      <BcpColumn GAWACode="B040035" ColumnName="星座" Property="星座" FK="None" />
+      <BcpColumn GAWACode="B040030" ColumnName="个人说明" Property="个人简介" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="群状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="陌陌" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./陌陌/账号/*/联系人">
+    <Columns>
+      <BcpColumn GAWACode="B040003" ColumnName="好友账号" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040003" ColumnName="好友昵称" Property="帐号ID" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="手机号码" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B010014" ColumnName="出生年月" Property="生日" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None" />
+      <BcpColumn GAWACode="B030024" ColumnName="职业名称" Property="职业" FK="None" />
+      <BcpColumn GAWACode="B040035" ColumnName="星座" Property="星座" FK="None" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="陌陌" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./陌陌/账号/*/加入的群">
+    <Columns>
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="创建者账号" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010018" ColumnName="群简介" Property="群介绍" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="群成员数" FK="None" />
+      <BcpColumn GAWACode="D010020" ColumnName="最大成员数" Property="群成员上限" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="陌陌" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./陌陌/账号/*/讨论组">
+    <Columns>
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="讨论组ID" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="讨论组名称" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="创建者账号" Property="创建者ID" FK="None" />
+      <BcpColumn GAWACode="D010018" ColumnName="群简介" Property="群介绍" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="讨论组人数" FK="None" />
+      <BcpColumn GAWACode="D010020" ColumnName="最大成员数" Property="成员上限" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="陌陌" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./陌陌/账号/*/消息列表/好友消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="帐号ID" FKNode="../../帐号信息" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../../帐号信息" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--陌陌 7.3 [end]-->
+  
+  <BcpTable Device="Android,IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./账号/*/消息列表/群组消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送人" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="接收人" FK="None" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./账号/*/消息列表/讨论组消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送人" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="接收人" FK="None" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./*">
+    <Columns>
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="Merge" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" Property="账号ID" FK="Merge" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="手机号码" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B010014" ColumnName="出生年月" Property="生日" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None" />
+      <BcpColumn GAWACode="B030024" ColumnName="职业名称" Property="职业" FK="None" />
+      <BcpColumn GAWACode="B040035" ColumnName="星座" Property="星座" FK="None" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./*/好友">
+    <Columns>
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" Property="账号ID" FK="None" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" Property="手机号码" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B010014" ColumnName="出生年月" Property="生日" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None" />
+      <BcpColumn GAWACode="B030024" ColumnName="职业名称" Property="职业" FK="None" />
+      <BcpColumn GAWACode="B040035" ColumnName="星座" Property="星座" FK="None" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./*/群组">
+    <Columns>
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="创建者账号" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010018" ColumnName="群简介" Property="群介绍" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="群成员数" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="群状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="陌陌" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./*/好友/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="账号ID" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./*/好友/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="账号ID" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="聊天内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="日期" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="消息发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="陌陌" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./*/群组/*">
+    <Columns>
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送人" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="接收人" FK="None" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+  <!--YY语音 5.12.2 [begin]-->
+  <BcpTable Device="Android" AppName="YY语音" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./YY语音/用户信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FKProperty="YY号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="YY语音" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./YY语音/用户信息/*/好友">
+    <Columns>
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FKProperty="好友ID" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="YY语音" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./YY语音/用户信息/*/群组">
+    <Columns>
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" FKProperty="群ID" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群组名" FK="None" />
+      <BcpColumn GAWACode="D010017" ColumnName="群公告" Property="公告" FK="None" />
+      <BcpColumn GAWACode="D010018" ColumnName="群简介" Property="群简介" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="YY语音" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./YY语音/用户信息/*/好友/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="YY号" FKNode="../." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="用户名称" FKNode="../." />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="YY语音" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./YY语音/用户信息/*/群组/*">
+    <Columns>
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="接收者" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送者ID" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--YY语音 5.12.2 [begin]-->
+  
+  <BcpTable Device="Android,IOS" AppName="YY语音" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FKProperty="YY号" FK="Merge" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="YY语音" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./*/好友分组/*">
+    <Columns>
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FKProperty="YY号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="YY语音" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./*/好友分组/*/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="YY号" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送用户" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="百度贴吧" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./百度贴吧">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FKProperty="ID" FK="Merge" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="百度贴吧" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./百度贴吧/*/好友">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="ID" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="ID" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="百度贴吧" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./百度贴吧/*/好友/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="ID" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="会话内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="QQ轻聊版" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./本地账户信息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="QQ轻聊版" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./本地账户信息/*/好友列表/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="QQ轻聊版" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./本地账户信息/*/好友列表/*/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+  <!--腾讯微博 6.1.2 [begin]-->
+  <BcpTable Device="Android" AppName="腾讯微博" GAWACode="WA_MFORENSICS_030100" TableName="微博账号信息" Node="./腾讯微博/账号信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="账号ID" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="用户昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="B040030" ColumnName="个人说明" Property="简介" FK="None" />
+      <BcpColumn GAWACode="B010014" ColumnName="出生年月" Property="生日" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="所在地" FK="None" />
+      <BcpColumn GAWACode="B040031" ColumnName="城市" Property="家乡" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="腾讯微博" GAWACode="WA_MFORENSICS_030200" TableName="微博好友信息" Node="./腾讯微博/微博内容/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="好友ID" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="好友昵称" FK="None"  />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="腾讯微博" GAWACode="WA_MFORENSICS_030400" TableName="私信信息" Node="./腾讯微博/微博内容/*/私信人/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode=".." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="."/>
+      <BcpColumn GAWACode="H040006" ColumnName="私信ID" Property="消息ID" FK="None" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'Row','FKProperty':'B040002'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--腾讯微博 6.1.2 [end]-->
+  
+  <BcpTable Device="Android,IOS" AppName="腾讯微博" GAWACode="WA_MFORENSICS_030100" TableName="微博账号信息" Node="./*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="微博账号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="用户昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="腾讯微博" GAWACode="WA_MFORENSICS_030200" TableName="微博好友信息" Node="./*/微博信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="微博账号" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="微博账号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None"  />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" Property="性别" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="腾讯微博" GAWACode="WA_MFORENSICS_030400" TableName="私信信息" Node="./*/私信/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="NodeText" FKNode="../.." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'Row','FKProperty':'B040004'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Twitter" GAWACode="WA_MFORENSICS_030100" TableName="微博账号信息" Node="./Twitter">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="用户名" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="用户昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="H100051" ColumnName="粉丝数量" Property="正在关注" FK="None" />
+      <BcpColumn GAWACode="H100052" ColumnName="关注数量" Property="关注" FK="None" />
+      <BcpColumn GAWACode="H100053" ColumnName="博文数量" Property="推文数量" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Twitter" GAWACode="WA_MFORENSICS_030200" TableName="微博好友信息" Node="./Twitter/*/相关用户">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="用户名" FKNode=".." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode=".." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="用户名" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None"  />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None"  />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="地址" FK="None"  />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Twitter" GAWACode="WA_MFORENSICS_030300" TableName="博文信息" Node="./Twitter/*/相关推文">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="用户名" FKNode=".." />
+      <BcpColumn GAWACode="B060002" ColumnName="发布者账号" Property="作者" FK="None" CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发布者昵称" Property="作者" FK="None" CF="XlyName" />
+      <BcpColumn GAWACode="H100006" ColumnName="内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="时间" Property="发送时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H100048" ColumnName="转发数" Property="转发数量" FK="None" />
+      <BcpColumn GAWACode="H100049" ColumnName="点赞数" Property="点赞数量" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Twitter" GAWACode="WA_MFORENSICS_030400" TableName="私信信息" Node="./Twitter/*/聊天记录/私聊/*">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="用户名" FKNode="../../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="私信内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="发送时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="飞信" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./账户信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="飞信号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="飞信" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./账户信息/*/联系人分组/我的好友">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="飞信号" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="好友账号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="飞信" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./账户信息/*/联系人分组/我的好友/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="飞信号" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="会话内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="飞信" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./账户信息/*/群组">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="飞信号" FKNode=".." />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="飞信" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./账户信息/*/群组/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="飞信号" FKNode="../.." />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送者" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="会话内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="淘宝旺信" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./旺信帐户">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="旺旺用户名" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="用户名" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="淘宝旺信" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./旺信帐户/*/好友分组/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="旺旺用户名" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="编号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="个性签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android,IOS" AppName="淘宝旺信" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./旺信帐户/*/所有聊天信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="旺旺用户名" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="用户名" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送用户" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+  
+  <BcpTable Device="Android" AppName="人人网" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./*/帐号信息">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" FK="None" Property="人人号" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="None" Property="用户名" />
+      <BcpColumn GAWACode="B010001" ColumnName="真实名" FK="None" Property="真实姓名" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="人人网" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./*/好友列表">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" FK="Merge" FKNode="../帐号信息" FKProperty="人人号" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../帐号信息" FKProperty="用户名" />
+      <BcpColumn GAWACode="B060004" ColumnName="好友用户ID" FK="None" Property="人人号" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="None" Property="姓名" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="None" Property="分组" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="人人网" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./*/群组信息">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" FK="Merge" FKNode="../帐号信息" FKProperty="人人号" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../帐号信息" FKProperty="用户名" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" FK="None" Property="群号" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" FK="None" Property="群名称" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" FK="None" Property="群主" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="人人网" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./*/群组信息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" FK="Merge" FKNode="../帐号信息" FKProperty="人人号" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../帐号信息" FKProperty="用户名" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" FK="Merge" FKNode="../群组信息" FKProperty="群号" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" FK="Merge" FKNode="../群组信息" FKProperty="群名称" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" FK="None" Property="发送人" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" FK="None" Property="内容" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" FK="None" Property="创建时间" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="人人网" GAWACode="WA_MFORENSICS_020700" TableName="动态信息" Node="./*/好友动态">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" FK="Merge" FKNode="../帐号信息" FKProperty="人人号" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../帐号信息" FKProperty="用户名" />
+      <BcpColumn GAWACode="B060005" ColumnName="发布者昵称" FK="None" Property="姓名" />
+      <BcpColumn GAWACode="H030008" ColumnName="时间" FK="None" Property="时间" />
+      <BcpColumn GAWACode="H100006" ColumnName="内容" FK="None" Property="评论" />
+      <BcpColumn GAWACode="H100048" ColumnName="转发数" FK="None" Property="分享" />
+      <BcpColumn GAWACode="H100049" ColumnName="点赞数" FK="None" Property="赞" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" FK="None" Property="来源" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040100" TableName="账号信息" Node="./本地邮箱列表/QQ邮箱/*">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="None" Property="邮箱地址" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="None" Property="名称" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040200" TableName="联系人信息" Node="./本地邮箱列表/QQ邮箱/*/通讯录">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="B060002" ColumnName="联系人账号" FK="None" Property="邮箱地址" />
+      <BcpColumn GAWACode="B060005" ColumnName="联系人昵称" FK="None" Property="好友名称" />
+      <BcpColumn GAWACode="B060003" ColumnName="联系人备注" FK="None" Property="备注" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_收件箱" Node="./本地邮箱列表/QQ邮箱/*/收件箱">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_已发送" Node="./本地邮箱列表/QQ邮箱/*/已发送">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_重要联系人" Node="./本地邮箱列表/QQ邮箱/*/重要联系人">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_QQ邮件订阅" Node="./本地邮箱列表/QQ邮箱/*/QQ邮件订阅">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_垃圾箱" Node="./本地邮箱列表/QQ邮箱/*/垃圾箱">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_已删除" Node="./本地邮箱列表/QQ邮箱/*/已删除">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_草稿箱" Node="./本地邮箱列表/QQ邮箱/*/草稿箱">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_群邮件" Node="./本地邮箱列表/QQ邮箱/*/群邮件">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_星标邮件" Node="./本地邮箱列表/QQ邮箱/*/星标邮件">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  
+  <!--谷歌浏览器 54.0.2840.85 [begin]-->
+  <BcpTable Device="Android" AppName="谷歌浏览器" GAWACode="WA_MFORENSICS_050100" TableName="保存的网站密码信息" Node="./谷歌浏览器/登陆账户信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="用户名" Property="登陆名" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="网址" Property="来源网站" FK="None" />
+      <BcpColumn GAWACode="B040005" ColumnName="密码" Property="密码" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="谷歌浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./谷歌浏览器/书签/*">
+    <Columns>
+      <BcpColumn GAWACode="C110001" ColumnName="名称" Property="名称" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="书签网址" FK="None" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" Property="创建时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="谷歌浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./谷歌浏览器/历史记录">
+    <Columns>
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" Property="标题" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="历史浏览地址" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" Property="最后访问时间" FK="None" />
+      <BcpColumn GAWACode="C110003" ColumnName="访问次数" Property="访问次数" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="谷歌浏览器" GAWACode="WA_MFORENSICS_050400" TableName="COOKIES信息" Node="./谷歌浏览器/Cookies">
+    <Columns>
+      <BcpColumn GAWACode="G010002" ColumnName="URL" Property="键名" FK="None" />
+      <BcpColumn GAWACode="C110006" ColumnName="COOKIE键名" Property="热键" FK="None" />
+      <BcpColumn GAWACode="C110007" ColumnName="COOKIE键值" Property="键值" FK="None" />
+      <BcpColumn GAWACode="C110005" ColumnName="过期时间" Property="过期时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--谷歌浏览器 54.0.2840.85 [end]-->
+
+  <!--欧朋浏览器 12.2.0.11 [begin]-->
+  <BcpTable Device="Android" AppName="欧朋浏览器" GAWACode="WA_MFORENSICS_050100" TableName="保存的网站密码信息" Node="./欧朋浏览器/用户信息">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="用户名" Property="用户名" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="网址" Property="头像链接地址" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="欧朋浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./欧朋浏览器/账号ID/*/书签">
+    <Columns>
+      <BcpColumn GAWACode="C110001" ColumnName="名称" Property="主题" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="网址" FK="None" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" Property="创建时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="欧朋浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./欧朋浏览器/历史记录">
+    <Columns>
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" Property="标题" FK="None" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" Property="历史浏览地址" FK="None" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" Property="时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="欧朋浏览器" GAWACode="WA_MFORENSICS_050400" TableName="COOKIES信息" Node="./欧朋浏览器/Cookies">
+    <Columns>
+      <BcpColumn GAWACode="G010002" ColumnName="URL" Property="键名" FK="None" />
+      <BcpColumn GAWACode="C110006" ColumnName="COOKIE键名" Property="热键" FK="None" />
+      <BcpColumn GAWACode="C110007" ColumnName="COOKIE键值" Property="键值" FK="None" />
+      <BcpColumn GAWACode="C110005" ColumnName="过期时间" Property="过期时间" FK="None" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <!--欧朋浏览器 12.2.0.11 [end]-->
+  <BcpTable Device="Android" AppName="Opera浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./Opera浏览器/快速链接">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="C110001" ColumnName="名称" FK="None" FKProperty="标题" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" FK="None" FKProperty="快速链接地址" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Opera浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./Opera浏览器/历史搜索">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" FK="Merge" FKProperty="标题" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" FK="None" Property="历史浏览地址" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Chrome浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./Chrome浏览器/首页网站">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="C110001" ColumnName="名称" FK="None" FKProperty="网站名" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" FK="None" FKProperty="网站网址" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Chrome浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./Chrome浏览器/历史记录">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" FK="Merge" FKProperty="网站名" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" FK="None" Property="网站网址" />
+      <BcpColumn GAWACode="C110003" ColumnName="访问次数" FK="None" Property="访问次数" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="去哪儿网" GAWACode="WA_MFORENSICS_060400" TableName="搜索记录信息" Node="./搜索记录信息">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="软件名称" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="C110004" ColumnName="时间" FK="Merge" FKProperty="时间" />
+      <BcpColumn GAWACode="H020005" ColumnName="关键词" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+
+
+  <BcpTable Device="IOS" AppName="人人网" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./*/用户信息">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="None" Property="用户名" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" FK="None" Property="手机" />
+      <BcpColumn GAWACode="B010011" ColumnName="性别" FK="None" Property="性别" />
+      <BcpColumn GAWACode="B040031" ColumnName="城市" FK="None" Property="家乡" />
+      <BcpColumn GAWACode="B030018" ColumnName="毕业院校" FK="None" Property="大学" />
+      <BcpColumn GAWACode="B010014" ColumnName="出生年月" FK="None" Property="生日" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="人人网" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./*/最近好友">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../用户信息" FKProperty="用户名" />
+      <BcpColumn GAWACode="B060004" ColumnName="好友用户ID" FK="None" Property="人人号" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="None" Property="姓名" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="人人网" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./*/最近群组">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../用户信息" FKProperty="姓名" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" FK="None" Property="人人号" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" FK="None" Property="姓名" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="人人网" GAWACode="WA_MFORENSICS_020700" TableName="动态信息" Node="./*/好友动态">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKNode="../帐号信息" FKProperty="姓名" />
+      <BcpColumn GAWACode="B060005" ColumnName="发布者昵称" FK="None" Property="姓名" />
+      <BcpColumn GAWACode="H030008" ColumnName="时间" FK="None" Property="时间" />
+      <BcpColumn GAWACode="H100006" ColumnName="内容" FK="None" Property="评论" />
+      <BcpColumn GAWACode="H100048" ColumnName="转发数" FK="None" Property="分享" />
+      <BcpColumn GAWACode="H100049" ColumnName="点赞数" FK="None" Property="赞" />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" FK="None" Property="来源" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="人人网" GAWACode="WA_MFORENSICS_020800" TableName="搜索记录信息" Node="./*/最近访问">
+    <Columns>
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040003" ColumnName="用户ID" FK="None" Property="人人号" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="None" Property="姓名" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040100" TableName="账号信息" Node="./本机账户信息/*">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="None" Property="邮箱地址" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="None" Property="名称" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_收件箱" Node="./本机账户信息/*/收件箱">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_已发送" Node="./本机账户信息/*/已发送">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_重要联系人" Node="./本机账户信息/*/重要联系人">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_QQ邮件订阅" Node="./本机账户信息/*/QQ邮件订阅">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_垃圾箱" Node="./本机账户信息/*/垃圾箱">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_已删除" Node="./本机账户信息/*/已删除">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_草稿箱" Node="./本机账户信息/*/草稿箱">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_群邮件" Node="./本机账户信息/*/群邮件">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="QQ邮箱" GAWACode="WA_MFORENSICS_040300" TableName="电子邮件信息_星标邮件" Node="./本机账户信息/星标邮件">
+    <Columns>
+      <BcpColumn GAWACode="H030006" ColumnName="邮箱软件类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="本机账号" FK="Merge" FKNode=".." FKProperty="邮箱地址" />
+      <BcpColumn GAWACode="H030002" ColumnName="发信人地址" FK="None" Property="发件人" />
+      <BcpColumn GAWACode="H030003" ColumnName="收信人地址" FK="None" Property="收件人" />
+      <BcpColumn GAWACode="H030008" ColumnName="邮件发送时间" FK="None" Property="发送时间" />
+      <BcpColumn GAWACode="H030001" ColumnName="邮件主题" FK="None" Property="主题" />
+      <BcpColumn GAWACode="H010019" ColumnName="邮件内容" FK="None" Property="内容摘要" />
+      <BcpColumn GAWACode="H030009" ColumnName="查看状态" FK="None" Property="阅读状态" CF="XlyMailViewStatus" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="Chrome浏览器" GAWACode="WA_MFORENSICS_050100" TableName="保存的网站密码信息" Node="./Chrome浏览器/登录的所有账户">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="用户名" FK="None" FKProperty="姓名" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="Chrome浏览器" GAWACode="WA_MFORENSICS_050200" TableName="收藏夹信息" Node="./Chrome浏览器/快速链接">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="C110001" ColumnName="名称" FK="None" FKProperty="主题" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" FK="None" FKProperty="URL地址" />
+      <BcpColumn GAWACode="C110002" ColumnName="创建时间" FK="None" FKProperty="更新时间" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="Chrome浏览器" GAWACode="WA_MFORENSICS_050300" TableName="历史记录信息" Node="./Chrome浏览器/历史搜索">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="浏览器类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H020002" ColumnName="网页标题" FK="Merge" FKProperty="主题" />
+      <BcpColumn GAWACode="G010002" ColumnName="URL地址" FK="None" Property="URL地址" />
+      <BcpColumn GAWACode="C110003" ColumnName="访问次数" FK="None" Property="访问次数" />
+      <BcpColumn GAWACode="C110004" ColumnName="访问时间" FK="None" Property="访问时间" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" FK="None" Property="数据状态" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="IOS" AppName="去哪儿网" GAWACode="WA_MFORENSICS_060100" TableName="账号信息" Node="./最后登录用户信息">
+    <Columns>
+      <BcpColumn GAWACode="C020006" ColumnName="软件名称" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="None" FKProperty="账号" />
+      <BcpColumn GAWACode="B020005" ColumnName="手机号码" FK="None" Property="电话" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" FK="None" Property="邮箱" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Skype" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./Skype/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="Skype用户名" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="全名" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="邮箱地址" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="注册地址" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Skype" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./Skype/*/好友信息/联系人">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="Skype用户名" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="Skype用户名" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="全名" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="邮箱地址" FK="None" />
+      <BcpColumn GAWACode="B020008" ColumnName="联系地址" Property="注册地址" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Skype" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./Skype/*/会话记录/好友会话记录/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="Skype用户名" FKNode="../../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="消息内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="发送时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="企业QQ" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./本地账户信息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="企业QQ" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./本地账户信息/*/好友列表/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060006" ColumnName="好友分组信息" FK="NodeText" FKNode="." />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="企业QQ" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./本地账户信息/*/好友消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="企业QQ" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./本地账户信息/*/群成员">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode=".." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="成员数" FK="None" />
+      <BcpColumn GAWACode="D010017" ColumnName="群公告" Property="公告" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="企业QQ" GAWACode="WA_MFORENSICS_020400" TableName="群组成员信息" Node="./本地账户信息/*/群成员/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="群组成员账号" Property="QQ号码" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="群组成员昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="群组成员年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="群组成员个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B060003" ColumnName="群成员备注" Property="备注名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="企业QQ" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./本地账户信息/*/群消息/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ号码" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送者" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送者" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+
+  <BcpTable Device="Android" AppName="Zello" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./本地账号/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="账号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="用户名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Zello" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./本地账号/*/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="账号" FKNode="../.." />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="好友昵称" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="Zello" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./本地账户信息/*/*/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="账号" FKNode="../.." />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="Merge" FKProperty="好友昵称" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="消息内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="发送时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送者" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+
+  <BcpTable Device="Android" AppName="米聊" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="帐号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="米聊" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./*/好友">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="帐号" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="帐号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="米聊" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./*/好友/*">
+    <Columns>
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="发送人" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="接收人" FK="None" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None" CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="消息类别" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="米聊" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./*/我的群">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="帐号" FKNode=".." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="None" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="None" />
+      <BcpColumn GAWACode="D010014" ColumnName="创建者昵称" Property="创建人" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="群成员数" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="米聊" GAWACode="WA_MFORENSICS_020400" TableName="群组成员信息" Node="./*/我的群/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="帐号" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="群组成员账号" Property="帐号" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="群组成员昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="群组成员年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040029" ColumnName="群组成员个性签名" Property="签名" FK="None" />
+      <BcpColumn GAWACode="B060003" ColumnName="群成员备注" Property="备注名" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="米聊" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./*/我的群/*/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="帐号" FKNode="../.." />
+      <BcpColumn GAWACode="B040017" ColumnName="群组ID" Property="群号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="群名称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="发送者账号" Property="发送人" FK="None"  CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送人" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ空间" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./QQ空间">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="QQ帐号" FK="None" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B010015" ColumnName="年龄" Property="年龄" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="QQ空间" GAWACode="WA_MFORENSICS_020700" TableName="动态信息" Node="./QQ空间/*/访客">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="QQ帐号" FKNode="../.." />
+      <BcpColumn GAWACode="B060002" ColumnName="发布者账号" Property="访客" FK="None" />
+      <BcpColumn GAWACode="B060005" ColumnName="发布者昵称" Property="访客昵称" FK="None" />
+      <BcpColumn GAWACode="H100006" ColumnName="内容" Property="访问内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="时间" Property="访问时间" FK="None" CF="XlyUTC"  />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+
+  <BcpTable Device="Android" AppName="TalkBox" GAWACode="WA_MFORENSICS_020100" TableName="账号信息" Node="./*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" Property="ID" FK="None" CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B040023" ColumnName="邮箱地址" Property="邮箱" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="TalkBox" GAWACode="WA_MFORENSICS_020200" TableName="好友信息" Node="./*/好友列表">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="ID" FKNode=".." />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" Property="全称" FK="None" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="TalkBox" GAWACode="WA_MFORENSICS_020500" TableName="好友聊天记录信息" Node="./*/好友列表/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="NodeText" FKNode="../.." CF="XlyID" />
+      <BcpColumn GAWACode="B040004" ColumnName="昵称" FK="NodeText" FKNode="../.." CF="XlyName" />
+      <BcpColumn GAWACode="B060002" ColumnName="好友账号" FK="NodeText" FKNode="." CF="XlyID" />
+      <BcpColumn GAWACode="B060005" ColumnName="好友昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="会话内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None" CF="XlyAction" CFParam="[{'FK':'Row','FKProperty':'B040004'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None"  CF="XlyDataState" />
+    </Columns>
+  </BcpTable>
+
+  <BcpTable Device="Android" AppName="TalkBox" GAWACode="WA_MFORENSICS_020300" TableName="群组信息" Node="./*/群组列表">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="ID" FKNode=".." />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="昵称" FK="None" />
+      <BcpColumn GAWACode="D010019" ColumnName="人数" Property="成员" CF="XlyCntMember" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+  <BcpTable Device="Android" AppName="TalkBox" GAWACode="WA_MFORENSICS_020600" TableName="群组聊天记录信息" Node="./*/群组列表/*">
+    <Columns>
+      <BcpColumn GAWACode="B040002" ColumnName="账号" FK="Merge" FKProperty="ID" FKNode="../.." />
+      <BcpColumn GAWACode="B040024" ColumnName="群组名称" Property="昵称" FK="NodeText" FKNode="." CF="XlyName" />
+      <BcpColumn GAWACode="B060005" ColumnName="发送者昵称" Property="发送人" FK="None"  CF="XlyName" />
+      <BcpColumn GAWACode="H040001" ColumnName="即时信息内容" Property="会话内容" FK="None" />
+      <BcpColumn GAWACode="H030008" ColumnName="发送时间" Property="时间" FK="None" CF="XlyUTC" />
+      <BcpColumn GAWACode="H040002" ColumnName="本地动作" Property="发送人" FK="None"  CF="XlyAction" CFParam="[{'FK':'NodeText','FKNode':'../..'}]" />
+      <BcpColumn GAWACode="B040006" ColumnName="账号类型" Property="AppName" FK="Constant" />
+      <BcpColumn GAWACode="H010029" ColumnName="删除状态" Property="数据状态" FK="None" CF="XlyDataState"  />
+    </Columns>
+  </BcpTable>
+
+</ArrayOfBcpTable>

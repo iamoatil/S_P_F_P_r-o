@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="XLY.SF.Project.DataView.ConversionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XLY.SF.Project.DataView"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ConversionTemplateSelector  x:Key="tmSelector"></local:ConversionTemplateSelector>
+        <DataTemplate x:Key="left_txt">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border BorderThickness="1" Width="30" Height="30"  BorderBrush="Blue" CornerRadius="4" ClipToBounds="True" Background="#88aa88">
+                    
+                </Border>
+                <Border Grid.Column="1" BorderThickness="1" BorderBrush="Blue" CornerRadius="4" ClipToBounds="True" Background="#88aa88">
+                    <TextBlock Text="{Binding Content}" TextWrapping="WrapWithOverflow"></TextBlock>
+                </Border>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="right_txt">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="1" BorderThickness="1" Width="30" Height="30" BorderBrush="Blue" CornerRadius="4" ClipToBounds="True" Background="#88aa88">
+
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Blue" CornerRadius="4" ClipToBounds="True" Background="#88aa88">
+                    <TextBlock Text="{Binding Content}" TextWrapping="WrapWithOverflow"></TextBlock>
+                </Border>
+            </Grid>
+        </DataTemplate>
+        <Style x:Key="left_style" TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+        <Style x:Key="right_style" TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+        </Style>
+        <local:ConversionStyleSelector x:Key="conSelector"
+                                       StyleLeft="{StaticResource left_style}" 
+                                       StyleRight="{StaticResource right_style}">
+        </local:ConversionStyleSelector>
+    </UserControl.Resources>
+    
+    <Grid>
+        <ListBox x:Name="lsb1" ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource tmSelector}" ItemContainerStyleSelector="{StaticResource conSelector}" SelectionChanged="ListBox_SelectionChanged"></ListBox> 
+    </Grid>
+</UserControl>

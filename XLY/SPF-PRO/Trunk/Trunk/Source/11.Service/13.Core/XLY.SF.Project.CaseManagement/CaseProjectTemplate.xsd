@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CaseProjectTemplate"
+    targetNamespace="http://tempuri.org/CaseProjectTemplate.xsd"
+    elementFormDefault="qualified"
+           xmlns="http://tempuri.org/CaseProjectTemplate.xsd"
+    xmlns:mstns="http://tempuri.org/CaseProjectTemplate.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            >
+
+  <xs:simpleType name="stringType">
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="replace"/>
+      <xs:minLength value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="PropertyGroup">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="Name" type="stringType" />
+        <xs:element name="Number" type="stringType" />
+        <xs:element name="Type" type="stringType" />
+        <xs:element name="Author" type="stringType" />
+        <xs:element name="Timestamp" type="xs:dateTime" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ReferenceInclude">
+    <xs:complexType>
+      <xs:attribute name="Include" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ReferenceExclude">
+    <xs:complexType>
+      <xs:attribute name="Exclude" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ItemGroup" >
+    <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+        <xs:choice>
+          <xs:element ref="ReferenceInclude"/>
+          <xs:element ref="ReferenceExclude"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Case">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PropertyGroup" maxOccurs="1" minOccurs="1"/>
+        <xs:element ref="ItemGroup" maxOccurs="1" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

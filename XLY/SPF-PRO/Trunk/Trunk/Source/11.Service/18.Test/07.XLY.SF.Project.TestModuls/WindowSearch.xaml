@@ -1,0 +1,164 @@
+﻿<Window x:Class="_07.XLY.SF.Project.TestModuls.WindowSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_07.XLY.SF.Project.TestModuls"
+        mc:Ignorable="d"
+        Title="WindowSearch" Height="400" Width="600" Loaded="Window_Loaded">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisible"/>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="visibleTextBox">
+            <Setter Property="Control.Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding SearchTypeItem}" Value="StringContains">
+                    <Setter Property="Control.Visibility" Value="Visible"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding SearchTypeItem}" Value="Account">
+                    <Setter Property="Control.Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="visibleDate">
+            <Setter Property="Control.Visibility" Value="Collapsed"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding SearchTypeItem}" Value="DateTimeRange">
+                    <Setter Property="Control.Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="visibleListbox">
+            <Setter Property="Control.Visibility" Value="Visible"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding SearchTypeItem}" Value="StringContains">
+                    <Setter Property="Control.Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding SearchTypeItem}" Value="Account">
+                    <Setter Property="Control.Visibility" Value="Collapsed"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding SearchTypeItem}" Value="DateTimeRange">
+                    <Setter Property="Control.Visibility" Value="Collapsed"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Margin" Value="3 0 3 0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="Bd" BorderBrush="Gray" BorderThickness="1" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Button Grid.Column="1" Background="{TemplateBinding Background}" BorderThickness="0" Click="Button_Click">×</Button>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#eeeeee"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="0 10 0 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="筛选条件:"></TextBlock>
+        <ListBox x:Name="lsboxFilter" ItemsSource="{Binding SearchConditions}" Grid.Column="1" BorderThickness="0">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+        <CheckBox x:Name="chAdv" IsChecked="False" Grid.Column="2">高级</CheckBox>
+        <Button x:Name="BtnStartSearch" Grid.Column="3" Margin="4" Click="BtnStartSearch_Click">搜索</Button>
+
+        <Popup x:Name="pop1" IsOpen="{Binding IsChecked, ElementName=chAdv}" PlacementTarget="{Binding ElementName=chAdv}" Placement="Left">
+            <Border Background="White" BorderBrush="Gray" BorderThickness="1" Padding="10">
+            <StackPanel Orientation="Horizontal" Background="White">
+                <ComboBox x:Name="cbType" ItemsSource="{Binding SearchTypes}" SelectedItem="{Binding SearchTypeItem}" Width="150" Margin="0 0 20 0"></ComboBox>
+
+                <TextBox Text="{Binding SearchText}" Width="300" Style="{StaticResource visibleTextBox}"></TextBox>
+                
+                <DatePicker SelectedDate="{Binding StartDate}" Style="{StaticResource visibleDate}"></DatePicker>
+                <TextBlock Text="-" Style="{StaticResource visibleDate}"></TextBlock>
+                <DatePicker SelectedDate="{Binding EndDate}" Style="{StaticResource visibleDate}"></DatePicker>
+
+                <ListBox x:Name="lbox1" ItemsSource="{Binding SearchConditionItems}" Style="{StaticResource visibleListbox}" SelectionMode="Multiple">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                </ListBox>
+
+                    <Button x:Name="btnAddConditon" Click="btnAddConditon_Click">添加</Button>
+                </StackPanel>
+        </Border>
+        </Popup>
+        
+        <!--数据展示区-->
+        <Grid Grid.Row="2" Grid.ColumnSpan="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+
+            <TabControl x:Name="tbcView">
+                <TabItem x:Name="rootViewDef" Header="树形视图">
+                </TabItem>
+            </TabControl>
+            <GridSplitter VerticalAlignment="Stretch" Width="3"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+
+                <!--数据展示-->
+                <TabControl x:Name="tabView1">
+
+                </TabControl>
+                <GridSplitter HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="3"/>
+                <!--预览-->
+                <TabControl x:Name="tbPre" Grid.Row="1">
+                    <TabItem Header="详细信息"></TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
