@@ -1,0 +1,5 @@
+<Popup AllowsTransparency="True" Placement="Top" VerticalOffset="3" PlacementTarget="{Binding ElementName=PART_Root}" 
+	   IsOpen="{Binding Path=IsMouseOver,ElementName=PART_Root, Mode=OneWay}">
+
+    <local:GridViewDetailActiveControl></local:GridViewDetailActiveControl>
+</Popup>

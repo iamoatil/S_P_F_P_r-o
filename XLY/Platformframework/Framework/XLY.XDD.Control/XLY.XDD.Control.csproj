@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4422CBDE-41DB-4AC5-8855-568E3FFC9F64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XLY.XDD.Control</RootNamespace>
+    <AssemblyName>XLY.XDD.Control</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\21-Build\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>..\..\21-Build\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\21-Build\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\21-Build\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=1.1.0.0, Culture=neutral, PublicKeyToken=9a0d19ffd4e7fe67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\AForge\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=1.1.0.0, Culture=neutral, PublicKeyToken=d604c8342bbdeba9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\AForge\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=1.1.0.0, Culture=neutral, PublicKeyToken=ec69efb6646d15f1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\AForge\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Charts.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Data.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Mvvm.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Office.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Pdf.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Printing.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.RichEdit.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Spreadsheet.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Spreadsheet.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.Core.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.Docking.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.Grid.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v14.1.Core, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.Grid.v14.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.PdfViewer.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.PdfViewer.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.Ribbon.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.RichEdit.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.RichEdit.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\DevExpress\DevExpress.Xpf.Spreadsheet.v14.1.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.4.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ppt\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="IconLib, Version=0.73.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\Icon\IconLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\Lib\donetdll\NPOI\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.Core, Version=1.6.5407.31385, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.FileList, Version=1.0.5407.31385, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.FileList.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.ImageBox, Version=2.0.4.2, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.ImageBox.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.Library, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.Plugins, Version=1.1.5407.31385, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.Services, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.Theme, Version=1.5.5407.31386, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.Theme.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageGlass.ThumbBar, Version=2.0.5205.41597, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\donetdll\ImageGlass\ImageGlass.ThumbBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IWshRuntimeLibrary">
+      <HintPath>..\..\Lib\donetdll\com\Interop.IWshRuntimeLibrary.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>..\..\Lib\donetdll\ppt\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Shell32, Version=1.2.107.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Lib\donetdll\com\Interop.Shell32.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\Lib\donetdll\NPOI\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MoonPdfLib">
+      <HintPath>..\..\Lib\vcdll\pdf\x86\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\..\Lib\donetdll\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\Lib\donetdll\NPOI\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\Lib\donetdll\NPOI\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\Lib\donetdll\NPOI\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\Bar\XlyRectangle.cs" />
+    <Compile Include="Control\Bar\XlyRectangleValueConverter.cs" />
+    <Compile Include="Control\BreadcrumbBar\AeroChrome.cs" />
+    <Compile Include="Control\BreadcrumbBar\ApplyPropertiesEventArgs.cs" />
+    <Compile Include="Control\BreadcrumbBar\BreadcrumbBar.cs" />
+    <Compile Include="Control\BreadcrumbBar\BreadcrumbButton.cs" />
+    <Compile Include="Control\BreadcrumbBar\BreadcrumbItem.cs" />
+    <Compile Include="Control\BreadcrumbBar\BreadcrumbItemEventArgs.cs" />
+    <Compile Include="Control\BreadcrumbBar\FolderItems.cs" />
+    <Compile Include="Control\BreadcrumbBar\PathConversionEventArgs.cs" />
+    <Compile Include="Control\Button\XlyActionButton\IXlyActionButtonProvider.cs" />
+    <Compile Include="Control\Button\XlyActionButton\XlyActionButton.cs" />
+    <Compile Include="Control\FIcon\FIcon.xaml.cs">
+      <DependentUpon>FIcon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileDialog\ResourceBrowser.cs">
+      <DependentUpon>ResourceBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileDialog\ResourceBrowserChildNodesSelector.cs" />
+    <Compile Include="Control\FileDialog\ResourceBrowserEventArgs.cs" />
+    <Compile Include="Control\FileDialog\ResourceBrowserFilterItem.cs" />
+    <Compile Include="Control\FileDialog\ResourceBrowserHelper.cs" />
+    <Compile Include="Control\FileDialog\ResourceBrowserItem.cs" />
+    <Compile Include="Control\FileDialog\ResourceBrowserType.cs" />
+    <Compile Include="Control\FileViewer\Config\FileViewerConfigItemExtension.cs" />
+    <Compile Include="Control\FileViewer\Config\FileViewerType.cs" />
+    <Compile Include="Control\FileViewer\DetailViewer\FileDetailInfo.cs" />
+    <Compile Include="Control\FileViewer\DetailViewer\DetailViewer.cs">
+      <DependentUpon>DetailViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\ExcelViewer\ExcelViewer.xaml.cs">
+      <DependentUpon>ExcelViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\FileViewerArgs.cs" />
+    <Compile Include="Control\FileViewer\FileViewerArgsType.cs" />
+    <Compile Include="Control\FileViewer\FileViewerMultiCollection.cs" />
+    <Compile Include="Control\FileViewer\FileViewerMultiContainer.cs">
+      <DependentUpon>FileViewerMultiContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\BuiltInContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\ByteCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\BytePositionInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\DataBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\DataMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\Design\HexFontEditor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\DynamicByteProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\DynamicFileByteProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\Big5Prober.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\BitPackage.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\CharDistributionAnalyser.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\CharsetProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\Charsets.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\CodingStateMachine.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\EscCharsetProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\EscSM.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\EUCJPProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\EUCKRProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\EUCTWProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\GB18030Prober.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\HebrewProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\JapaneseContextAnalyser.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\LangBulgarianModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\LangCyrillicModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\LangGreekModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\LangHebrewModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\LangHungarianModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\LangThaiModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\Latin1Prober.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\MBCSGroupProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\MBCSSM.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\SBCharsetProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\SBCSGroupProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\SequenceModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\SJISProber.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\SMModel.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\UniversalDetector.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude.Core\UTF8Prober.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude\CharsetDetector.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude\DetectionConfidence.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\EncodingChecker\Ude\ICharsetDetector.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\FileByteProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\FileDataBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\HexBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\UpdateVScrollEventArgs.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\HexCasing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\HexViewer.xaml.cs">
+      <DependentUpon>HexViewer.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\IByteProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\MemoryDataBlock.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\NativeMethods.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\HexViewer\Ribbon.Designer.cs" />
+    <Compile Include="Control\FileViewer\HexViewer\Util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\IFileViewerArgs.cs" />
+    <Compile Include="Control\FileViewer\Config\FileViewerConfig.cs" />
+    <Compile Include="Control\FileViewer\Config\FileViewerConfigItem.cs" />
+    <Compile Include="Control\FileViewer\FileViewerContainer.cs">
+      <DependentUpon>FileViewerContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\HtmlViewer\HtmlViewer.xaml.cs">
+      <DependentUpon>HtmlViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\IFileViewer.cs" />
+    <Compile Include="Control\FileViewer\IFileViewerHighlightArgs.cs" />
+    <Compile Include="Control\FileViewer\ImageViewer\EditableBitmap.cs" />
+    <Compile Include="Control\FileViewer\ImageViewer\ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\ImageViewer\PicturePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\ImageViewer\PicturePanel.Designer.cs">
+      <DependentUpon>PicturePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\MediaViewer\MediaViewer.cs" />
+    <Compile Include="Control\FileViewer\NoneViewer.cs">
+      <DependentUpon>NoneViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\PdfViewer\PdfViewer.xaml.cs">
+      <DependentUpon>PdfViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\PptViewer\PptViewer.xaml.cs">
+      <DependentUpon>PptViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\PptViewer\PreviewHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\CompoundBinaryFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Entity\DirectoryEntry.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Entity\PieceElement.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Entity\PowerPointRecord.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Helper\BitHelper.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Helper\NodeHelper.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Helper\StringHelper.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\IOfficeFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\OfficeFileFactory.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\OfficeOpenXMLFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Summary\DocumentSummaryInformation.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Summary\DocumentSummaryInformationType.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Summary\SummaryInformation.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\BaseOffice\Summary\SummaryInformationType.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Excel\ExcelFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Excel\IExcelFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Html\HtmlFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Html\HtmlToText.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Html\IHtmlFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\PDF\IPDFFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\PDF\PDFFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\PPT\IPowerPointFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\PPT\PowerPointFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\PPT\PowerPointOOXMLFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\ReadToTxtHelper.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Text\ITextFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Text\TextFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Word\IWordFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Word\WordBinaryFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\ReadToTxt\Word\WordOOXMLFile.cs" />
+    <Compile Include="Control\FileViewer\TextViewer\TextViewer.cs">
+      <DependentUpon>TextViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\FileViewer\TextViewer\TextViewerEventArgs.cs" />
+    <Compile Include="Control\FileViewer\WordViewer\WordViewer.xaml.cs">
+      <DependentUpon>WordViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\GridView\Extensions\GridViewConversation\GridViewConversationActionButtonProvider.cs" />
+    <Compile Include="Control\GridView\Extensions\GridViewConversation\GridViewConversationContainer.cs" />
+    <Compile Include="Control\GridView\Extensions\GridViewConversation\GridViewConversationContainerMessageType.cs" />
+    <Compile Include="Control\GridView\Extensions\GridViewConversation\GridViewConversationContainerRole.cs" />
+    <Compile Include="Control\GridView\Detail\GridViewDetailActiveControlIsOpenConverter.cs" />
+    <Compile Include="Control\GridView\Extensions\GridViewItemsSourceMoveHelper.cs" />
+    <Compile Include="Control\GridView\Extensions\GridViewRowDataEqualityComparer.cs" />
+    <Compile Include="Control\GridView\Extensions\GridViewTimeLine\GridViewTimeLineContainer.cs" />
+    <Compile Include="Control\GridView\GridViewRowEventArgs.cs" />
+    <Compile Include="Control\Loading\XlyLoading.cs">
+      <DependentUpon>XlyLoading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MessageBox\XlyMessageBoxLoading.cs" />
+    <Compile Include="Control\MultiMedia\Expressions\LongImageExpression.cs" />
+    <Compile Include="Control\MultiView\IXlyMultiView.cs" />
+    <Compile Include="Control\MultiView\IXlyMultiViewLinkedControl.cs" />
+    <Compile Include="Control\MultiView\XlyMultiView.cs" />
+    <Compile Include="Control\MultiView\XlyMultiViewInfo.cs" />
+    <Compile Include="Control\MultiView\XlyMultiNoneView.cs" />
+    <Compile Include="Control\MultiView\XlyMultiViewViewsCollection.cs" />
+    <Compile Include="Control\ProgressBar\XlyProgressPanel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Control\Text\XlyHighlightMode.cs" />
+    <Compile Include="Control\Text\XlyLabel.cs" />
+    <Compile Include="Control\Text\XlyNumberTextBox.cs">
+      <DependentUpon>XlyNumberTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Text\XlyTextBox.cs" />
+    <Compile Include="Control\ThumbnailImage\EnumThumbnail.cs" />
+    <Compile Include="Control\ThumbnailImage\ImageThumbnailProvider.cs">
+      <DependentUpon>IThumbnailProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ThumbnailImage\IThumbnailProvider.cs" />
+    <Compile Include="Control\ThumbnailImage\ThumbnailProviderFactory.cs" />
+    <Compile Include="Control\ThumbnailImage\VedioThumbnailProvider.cs">
+      <DependentUpon>IThumbnailProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ThumbnailImage\WebImageThumbnailProvider.cs">
+      <DependentUpon>IThumbnailProvider.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ThumbnailImage\ThumbnailImage.cs" />
+    <Compile Include="BusinessControl\ThumbnailViewer\ThumbnailViewer.xaml.cs">
+      <DependentUpon>ThumbnailViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessControl\Timeline\TimelineCellTemplateSelector.cs" />
+    <Compile Include="BusinessControl\Timeline\TimelineControl..xaml.cs">
+      <DependentUpon>TimelineControl..xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessControl\Timeline\TimelineItemWidthConverter.cs" />
+    <Compile Include="BusinessControl\Timeline\TimelineScaleControl.xaml.cs">
+      <DependentUpon>TimelineScaleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessControl\Timeline\TimelineItemExpandImageConverter.cs">
+      <DependentUpon>TimelineScaleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessControl\Timeline\FileXTimelineControl..xaml.cs">
+      <DependentUpon>FileXTimelineControl..xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Button\XlyIconButton.cs" />
+    <Compile Include="Control\ComboBox\AppendUpdateXlyComboBoxText.cs" />
+    <Compile Include="Control\ComboBox\DefaultUpdateXlyComboBoxText.cs" />
+    <Compile Include="Control\ComboBox\IUpdateXlyComboBoxText.cs" />
+    <Compile Include="Control\ComboBox\XlyComboBox.cs" />
+    <Compile Include="Control\GridView\GridViewCellTemplateProvider.cs" />
+    <Compile Include="Control\GridView\GridView.xaml.cs">
+      <DependentUpon>GridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\GridView\GridViewColumn.cs" />
+    <Compile Include="Control\GridView\GridViewColumnBase.cs" />
+    <Compile Include="Control\GridView\Tools\GridViewColumnChooser.cs" />
+    <Compile Include="Control\GridView\GridViewColumnCollection.cs" />
+    <Compile Include="Control\GridView\GridViewColumnType.cs" />
+    <Compile Include="Control\GridView\Detail\GridViewDetailActiveControl.cs" />
+    <Compile Include="Control\GridView\Detail\GridViewDetailControl.cs" />
+    <Compile Include="Control\GridView\Detail\GridViewDetailInfo.cs" />
+    <Compile Include="Control\GridView\GridViewHighlightLabel.cs" />
+    <Compile Include="Control\GridView\GridViewIndex.cs" />
+    <Compile Include="Control\GridView\Tools\GridViewCount.cs" />
+    <Compile Include="Control\GridView\Tools\GridViewSearch.cs" />
+    <Compile Include="Control\GridView\IGridViewCellTemplateProvider.cs" />
+    <Compile Include="Control\GridView\IGridViewColumn.cs" />
+    <Compile Include="Control\GridView\Tools\IGridViewTool.cs" />
+    <Compile Include="Control\GridView\Providers\GridViewHighlit\GridViewHighlitCellTemplateProvider.cs" />
+    <Compile Include="Control\GridView\Providers\GridViewHighlit\GridViewHighlitColumn.cs" />
+    <Compile Include="Control\MessageBox\XlyMessageBox.cs" />
+    <Compile Include="Control\MessageBox\XlyMessageBoxInfo.cs" />
+    <Compile Include="Control\MessageBox\XlyMessageBoxWarning.cs" />
+    <Compile Include="Control\Navigation\XlyNavigation.cs" />
+    <Compile Include="Control\Navigation\XlyNavigationConfig.cs" />
+    <Compile Include="Control\Navigation\XlyNavigationEventArgs.cs" />
+    <Compile Include="Control\Navigation\XlyNavigationViewModelBase.cs" />
+    <Compile Include="Control\Text\XlyHighlightLabel.cs" />
+    <Compile Include="Control\Text\XlyHighlightTextBox.cs" />
+    <Compile Include="Control\Text\XlyHyperlink.cs" />
+    <Compile Include="Control\TreeView\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TreeView\TreeViewExpand.xaml.cs">
+      <DependentUpon>TreeViewExpand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TreeView\TreeViewIndent.cs">
+      <DependentUpon>TreeViewIndent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Window\XlyMoveActionBar.cs" />
+    <Compile Include="Control\Window\XlyWindowDrag.cs" />
+    <Compile Include="Converter\BoolImageConverter.cs" />
+    <Compile Include="Converter\DefaultStringConverter.cs" />
+    <Compile Include="Converter\FileSizeDisplayConverter.cs" />
+    <Compile Include="Converter\IconImageSourceConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converter\IntDescriptionConverter.cs" />
+    <Compile Include="Converter\NullStringLocalPathConverter.cs" />
+    <Compile Include="Converter\MillisecondsTimeFormatConverter.cs" />
+    <Compile Include="Converter\PercentDisplayConverter.cs" />
+    <Compile Include="Converter\StringLengthConverter.cs" />
+    <Compile Include="Converter\StringNullVisibilityConverter.cs" />
+    <Compile Include="Converter\StringUlongConverter.cs" />
+    <Compile Include="Converter\TypeBoolConverter.cs" />
+    <Compile Include="Extensions\EnumInfo.cs" />
+    <Compile Include="Extensions\IEnumerableExtension.cs" />
+    <Compile Include="Extensions\MenuActionInfo.cs" />
+    <Compile Include="Extensions\XDDGlobal.cs" />
+    <Compile Include="Converter\BoolDoubleConverter.cs" />
+    <Compile Include="Converter\BoolStringConverter.cs" />
+    <Compile Include="Converter\BoolVisibilityConverter.cs" />
+    <Compile Include="Converter\DateTimeFormatConverter.cs" />
+    <Compile Include="Converter\DateTimeStringFormatConverter.cs" />
+    <Compile Include="Converter\EnumDescriptionConverter.cs" />
+    <Compile Include="Converter\ImageThumbnialConverter.cs" />
+    <Compile Include="Converter\NullOpacityConverter.cs" />
+    <Compile Include="Converter\NullVisibilityConverter.cs" />
+    <Compile Include="Converter\StringImageConverter.cs" />
+    <Compile Include="Converter\TrueFalseConverter.cs" />
+    <Compile Include="Extensions\ControlExtension.cs" />
+    <Compile Include="Extensions\InvokeArgs.cs" />
+    <Compile Include="Extensions\ViewModelBase.cs" />
+    <Compile Include="Extensions\XlyResourceHelper.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\AudioTrack.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\Instance.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCException.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.Core.AsynchronousEvents.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.Core.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.Core.ErrorHandling.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.Media.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.MediaList.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.MediaPlayer.AudioControls.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.MediaPlayer.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\LibVLCLibrary.MediaPlayer.VideoControls.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\MediaPlayer.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\MediaPlayerEvent.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\MediaPlayerState.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\PixelFormat.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\SubtitleTrack.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\Track.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\VideoBuffer.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\VideoFormat.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\VideoTrack.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Lib\WeakReference.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Presentation\AudioStream.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Presentation\CommonStrings.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\MediaElement.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Presentation\MediaElementState.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Presentation\MediaStream.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Presentation\SubtitleStream.cs" />
+    <Compile Include="Control\FileViewer\MediaViewer\Presentation\VideoStream.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XLYRelayCommand.cs" />
+    <Compile Include="ResLocalizer\XlyOfficeResLocalizer.cs" />
+    <Compile Include="ResLocalizer\XlyResLocalizerHelper.cs" />
+    <Compile Include="ResLocalizer\XlyXtraRichEditResLocalizer.cs" />
+    <Compile Include="ResLocalizer\XlyXtraSpreadsheetResLocalizer.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="{Core}\ControlHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\System.Utility\System.Utility.csproj">
+      <Project>{425fc769-9426-440b-ba62-b6d89fabd5e8}</Project>
+      <Name>System.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XLY.XDD.ForensicService\XLY.XDD.ForensicService.csproj">
+      <Project>{6153c4b3-ba2b-4e51-a3ea-5b59280f7d00}</Project>
+      <Name>XLY.XDD.ForensicService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BusinessControl\ThumbnailViewer\ThumbnailViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BusinessControl\Timeline\TimelineControl..xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BusinessControl\Timeline\TimelineScaleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BusinessControl\Timeline\FileXTimelineControl..xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Bar\XlyRectangle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\BreadcrumbBar\Breadcrumresource.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Button\XlyActionButton\XlyActionButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\ComboBox\XlyComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FIcon\FIcon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileDialog\ResourceBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\DetailViewer\DetailViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\ExcelViewer\ExcelViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\FileViewerContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\FileViewerMultiContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\HexViewer\HexViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\HtmlViewer\HtmlViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\ImageViewer\ImageViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\FileViewer\MediaViewer\MediaViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\NoneViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\PdfViewer\PdfViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\PptViewer\PptViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\TextViewer\TextViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\FileViewer\WordViewer\WordViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\GridView\Extensions\GridViewTimeLine\GridViewTimeLineContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\GridView\GridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\GridView\Extensions\GridViewConversation\GridViewConversationContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Loading\XlyLoading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\MultiMedia\Expressions\LongImageExpression.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\MultiView\XlyMultiNoneView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\MultiView\XlyMultiView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Navigation\XlyNavigation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\Text\XlyNumberTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\TreeView\TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\TreeView\TreeViewExpand.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Control\TreeView\TreeViewIndent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Window\XlyMoveActionBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GridView\GridViewColumnChooser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GridView\GridViewCount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GridView\GridViewDetailActiveControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GridView\GridViewDetailControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GridView\GridViewIndex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\GridView\GridViewSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MessageBox\XlyMessageBoxInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MessageBox\XlyMessageBoxLoading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MessageBox\XlyMessageBoxQuestion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MessageBox\XlyMessageBoxWarning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MessageBox\XlyMessageBoxInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\MessageBox\XlyMessageBoxSuccess.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Style\TextBox\TextBox_For_None.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Style\TextBox\XlyHyperlink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Text\XlyHighlightLabel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Text\XlyHighlightTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Text\XlyHyperlink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Text\XlyTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Window\NoneWindowStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Window\XlyWindowDrag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\FileViewer\HexViewer\HexBox.resx">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\FileViewer\HexViewer\Ribbon.de.resx" />
+    <EmbeddedResource Include="Control\FileViewer\HexViewer\Ribbon.resx" />
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\MessageBox\XlyMessageBoxError.cs" />
+    <Compile Include="Control\MessageBox\XlyMessageBoxInput.cs" />
+    <Compile Include="Control\MessageBox\XlyMessageBoxQuestion.cs" />
+    <Compile Include="Control\MessageBox\XlyMessageBoxSuccess.cs" />
+    <Resource Include="Resources\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Include="Resources\subtract.png" />
+    <Page Include="Themes\MessageBox\XlyMessageBoxError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StringTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DateTimeTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EnumTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HyperlinkTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ThumbnailImageTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HighlitColumnTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BoolTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\busy24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Control\FileViewer\Config\FileViewerConfig.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DetailActionButtonTemplate_For_GridView.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DetailActionButtonTemplate_For_TreeView.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\drive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\file.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IntTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DetailActionButtonTemplate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\suoxiao.png" />
+    <Resource Include="Resources\youxuanzhuan.png" />
+    <Resource Include="Resources\zuoxianzhuan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fangda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

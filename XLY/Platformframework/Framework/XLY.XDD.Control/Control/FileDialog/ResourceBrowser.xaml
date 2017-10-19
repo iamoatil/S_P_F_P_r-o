@@ -1,0 +1,222 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xdd="clr-namespace:XLY.XDD.Control">
+    <xdd:ResourceBrowserChildNodesSelector x:Key="ResourceBrowserChildNodesSelector"></xdd:ResourceBrowserChildNodesSelector>
+    <xdd:IconImageSourceConverter x:Key="IconImageSourceConverter"></xdd:IconImageSourceConverter>
+
+    <ControlTemplate x:Key="OpenFileTemplate" TargetType="{x:Type xdd:ResourceBrowser}">
+        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PART_Up" Content="向上"></Button>
+                    <TextBox x:Name="PART_TextBox" Grid.Column="1"></TextBox>
+                </Grid>
+                <xdd:TreeView x:Name="PART_Tree" Grid.Row="1" Margin="0,0,5,0" ChildNodesSelector="{StaticResource ResourceKey=ResourceBrowserChildNodesSelector}">
+                    <xdd:TreeView.ColumnsSource>
+                        <xdd:GridViewColumnCollection>
+                            <xdd:GridViewColumn IsDistinct="False" IsSort="False" Type="Custom">
+                                <xdd:GridViewColumn.Template>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" UseLayoutRounding="True">
+                                            <Image Margin="0,0,5,0" Width="20" Height="20" Source="{Binding Path=Data.Icon, Converter={StaticResource ResourceKey=IconImageSourceConverter}}" VerticalAlignment="Center"></Image>
+                                            <TextBlock Text="{Binding Path=Data.Name}" Foreground="White" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </xdd:GridViewColumn.Template>
+                            </xdd:GridViewColumn>
+                        </xdd:GridViewColumnCollection>
+                    </xdd:TreeView.ColumnsSource>
+                </xdd:TreeView>
+                <GridSplitter Width="5" Grid.Row="1" HorizontalAlignment="Right"></GridSplitter>
+                <xdd:GridView x:Name="PART_Grid" Grid.Row="1" Grid.Column="1" IsAutoColumnWidth="True" IsSelectedFirstWhenItemsSourceChanged="False">
+                    <xdd:GridView.ColumnsSource>
+                        <xdd:GridViewColumnCollection>
+                            <xdd:GridViewColumn IsDistinct="False" IsSort="False" Type="Custom">
+                                <xdd:GridViewColumn.Template>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" UseLayoutRounding="True">
+                                            <Image Margin="0,0,5,0" Width="20" Height="20" Source="{Binding Path=Data.Icon, Converter={StaticResource ResourceKey=IconImageSourceConverter}}" VerticalAlignment="Center"></Image>
+                                            <TextBlock Text="{Binding Path=Data.Name}" Foreground="White" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </xdd:GridViewColumn.Template>
+                            </xdd:GridViewColumn>
+                        </xdd:GridViewColumnCollection>
+                    </xdd:GridView.ColumnsSource>
+                </xdd:GridView>
+                <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="PART_FileName" ></TextBox>
+                    <ComboBox x:Name="PART_ComboBox" Grid.Column="1" SelectedIndex="0" DisplayMemberPath="DisplayLabel"
+                          ItemsSource="{Binding Path=Filters, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type xdd:ResourceBrowser}}}"></ComboBox>
+                </Grid>
+                <Button x:Name="PART_CreateFloder" Content="新建文件夹" Grid.Row="3" HorizontalAlignment="Left"></Button>
+                <Grid Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PART_Enter" Grid.Column="0" Content="打 开"></Button>
+                    <Button x:Name="PART_Cancel" Grid.Column="1" Content="取 消" Margin="20,0,0,0"></Button>
+                </Grid>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="OpenDirectory" TargetType="{x:Type xdd:ResourceBrowser}">
+        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PART_Up" Content="向上" Margin="0,0,2,0"></Button>
+                    <TextBox x:Name="PART_TextBox" IsReadOnly="True" Grid.Column="1" VerticalAlignment="Center"></TextBox>
+                </Grid>
+                <xdd:TreeView x:Name="PART_Tree" Margin="0,0,5,0" Grid.Row="1" ChildNodesSelector="{StaticResource ResourceKey=ResourceBrowserChildNodesSelector}">
+                    <xdd:TreeView.ColumnsSource>
+                        <xdd:GridViewColumnCollection>
+                            <xdd:GridViewColumn IsDistinct="False" IsSort="False" Type="Custom">
+                                <xdd:GridViewColumn.Template>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" UseLayoutRounding="True">
+                                            <Image Margin="0,0,5,0" Width="20" Height="20" Source="{Binding Path=Data.Icon, Converter={StaticResource ResourceKey=IconImageSourceConverter}}" VerticalAlignment="Center"></Image>
+                                            <TextBlock Text="{Binding Path=Data.Name}" Foreground="White" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </xdd:GridViewColumn.Template>
+                            </xdd:GridViewColumn>
+                        </xdd:GridViewColumnCollection>
+                    </xdd:TreeView.ColumnsSource>
+                </xdd:TreeView>
+                <Button x:Name="PART_CreateFloder" Content="新建文件夹" Grid.Row="2" HorizontalAlignment="Left"></Button>
+                <Grid Grid.Row="2" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PART_Enter" Content="打 开"></Button>
+                    <Button x:Name="PART_Cancel" Grid.Column="1" Content="取 消" Margin="20,0,0,0"></Button>
+                </Grid>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SaveFile" TargetType="{x:Type xdd:ResourceBrowser}">
+        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PART_Up" Content="向上"></Button>
+                    <TextBox x:Name="PART_TextBox" Grid.Column="1"></TextBox>
+                </Grid>
+                <xdd:TreeView x:Name="PART_Tree" Grid.Row="1" Margin="0,0,5,0" ChildNodesSelector="{StaticResource ResourceKey=ResourceBrowserChildNodesSelector}">
+                    <xdd:TreeView.ColumnsSource>
+                        <xdd:GridViewColumnCollection>
+                            <xdd:GridViewColumn IsDistinct="False" IsSort="False" Type="Custom">
+                                <xdd:GridViewColumn.Template>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" UseLayoutRounding="True">
+                                            <Image Margin="0,0,5,0" Width="20" Height="20" Source="{Binding Path=Data.Icon, Converter={StaticResource ResourceKey=IconImageSourceConverter}}" VerticalAlignment="Center"></Image>
+                                            <TextBlock Text="{Binding Path=Data.Name}" Foreground="White" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </xdd:GridViewColumn.Template>
+                            </xdd:GridViewColumn>
+                        </xdd:GridViewColumnCollection>
+                    </xdd:TreeView.ColumnsSource>
+                </xdd:TreeView>
+                <GridSplitter Width="5" Grid.Row="1" HorizontalAlignment="Right"></GridSplitter>
+                <xdd:GridView x:Name="PART_Grid" Grid.Row="1" Grid.Column="1" IsAutoColumnWidth="True" IsSelectedFirstWhenItemsSourceChanged="False">
+                    <xdd:GridView.ColumnsSource>
+                        <xdd:GridViewColumnCollection>
+                            <xdd:GridViewColumn IsDistinct="False" IsSort="False" Type="Custom">
+                                <xdd:GridViewColumn.Template>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" UseLayoutRounding="True">
+                                            <Image Margin="0,0,5,0" Width="20" Height="20" Source="{Binding Path=Data.Icon, Converter={StaticResource ResourceKey=IconImageSourceConverter}}" VerticalAlignment="Center"></Image>
+                                            <TextBlock Text="{Binding Path=Data.Name}" Foreground="White" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </xdd:GridViewColumn.Template>
+                            </xdd:GridViewColumn>
+                        </xdd:GridViewColumnCollection>
+                    </xdd:GridView.ColumnsSource>
+                </xdd:GridView>
+                <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="PART_FileName" Grid.Column="0" IsReadOnly="True"></TextBox>
+                    <ComboBox x:Name="PART_ComboBox" Grid.Column="1" SelectedIndex="0" DisplayMemberPath="DisplayLabel"
+                          ItemsSource="{Binding Path=Filters, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type xdd:ResourceBrowser}}}"></ComboBox>
+                </Grid>
+                <Button x:Name="PART_CreateFloder" Content="新建文件夹" Grid.Row="3" HorizontalAlignment="Left"></Button>
+                <Grid Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PART_Enter" Grid.Column="0" Content="保 存"></Button>
+                    <Button x:Name="PART_Cancel" Grid.Column="1" Content="取 消" Margin="20,0,0,0"></Button>
+                </Grid>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type xdd:ResourceBrowser}">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=OpenFileTemplate}"></Setter>
+        <Style.Triggers>
+            <Trigger Property="ResourceBrowserType" Value="OpenDirectory">
+                <Setter Property="Template" Value="{StaticResource ResourceKey=OpenDirectory}"></Setter>
+            </Trigger>
+            <Trigger Property="ResourceBrowserType" Value="SaveFile">
+                <Setter Property="Template" Value="{StaticResource ResourceKey=SaveFile}"></Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

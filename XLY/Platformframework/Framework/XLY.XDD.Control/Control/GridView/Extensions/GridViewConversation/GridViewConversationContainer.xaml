@@ -1,0 +1,235 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XLY.XDD.Control">
+
+    <local:GridViewConversationActionButtonProvider x:Key="GridViewConversationActionButtonProvider"></local:GridViewConversationActionButtonProvider>
+
+    <Style TargetType="{x:Type local:GridViewConversationContainer}">
+        <Style.Triggers>
+            <!--String**********************************************************************************************************************-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Role" Value="Other"></Condition>
+                    <Condition Property="MessageType" Value="String"></Condition>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type local:GridViewConversationContainer}">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid HorizontalAlignment="Left" MaxWidth="{Binding Path=ContentMaxWidth, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <local:ThumbnailImage Grid.RowSpan="2" ThumbnailSource="{Binding Path=Avatar, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Sender, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Time, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                        </StackPanel>
+                                        <TextBox TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" IsReadOnly="True" Text="{Binding Path=Message,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBox>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Role" Value="Self"></Condition>
+                    <Condition Property="MessageType" Value="String"></Condition>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type local:GridViewConversationContainer}">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid HorizontalAlignment="Right" MaxWidth="{Binding Path=ContentMaxWidth, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Sender, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Time, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                        </StackPanel>
+                                        <TextBox TextWrapping="Wrap" Grid.Row="1" Grid.RowSpan="2" IsReadOnly="True" Text="{Binding Path=Message,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBox>
+                                        <local:ThumbnailImage Grid.RowSpan="2" Grid.Column="1" ThumbnailSource="{Binding Path=Avatar, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <!--Image**********************************************************************************************************************-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Role" Value="Other"></Condition>
+                    <Condition Property="MessageType" Value="Image"></Condition>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type local:GridViewConversationContainer}">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid HorizontalAlignment="Left" MaxWidth="{Binding Path=ContentMaxWidth, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <local:ThumbnailImage Grid.RowSpan="2" ThumbnailSource="{Binding Path=Avatar, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Sender, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Time, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                        </StackPanel>
+                                        <local:ThumbnailImage Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" ThumbnailSource="{Binding Path=Message,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                        <local:XlyActionButton Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" ActionProvider="{StaticResource ResourceKey=GridViewConversationActionButtonProvider}"
+                                                               Type="{Binding Path=MessageType, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"
+                                                               Args="{Binding Path=Message, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:XlyActionButton>
+
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Role" Value="Self"></Condition>
+                    <Condition Property="MessageType" Value="Image"></Condition>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type local:GridViewConversationContainer}">
+                                <Border Background="{TemplateBinding Background}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid HorizontalAlignment="Right" MaxWidth="{Binding Path=ContentMaxWidth, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Sender, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Time, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                        </StackPanel>
+                                        <local:ThumbnailImage Grid.Row="1" Grid.RowSpan="2" ThumbnailSource="{Binding Path=Message,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                        <local:XlyActionButton Grid.Row="1" Grid.RowSpan="2" ActionProvider="{StaticResource ResourceKey=GridViewConversationActionButtonProvider}"
+                                                               Type="{Binding Path=MessageType, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"
+                                                               Args="{Binding Path=Message, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:XlyActionButton>
+                                        <local:ThumbnailImage Grid.RowSpan="2" Grid.Column="1" ThumbnailSource="{Binding Path=Avatar, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <!--超链接**********************************************************************************************************************-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Role" Value="Other"></Condition>
+                    <Condition Property="MessageType" Value="Hyperlinks"></Condition>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type local:GridViewConversationContainer}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid HorizontalAlignment="Left" MaxWidth="{Binding Path=ContentMaxWidth, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <local:ThumbnailImage Grid.RowSpan="2" ThumbnailSource="{Binding Path=Avatar, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Sender, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Time, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                        </StackPanel>
+                                        <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" TextDecorations="Underline" Foreground="Blue" Cursor="Hand">
+                                            <Hyperlink x:Name="hlink" Command="{Binding Path=HyperClick,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor,AncestorType={x:Type local:GridViewConversationContainer}}}" CommandParameter="{Binding Path=NavigateUri,ElementName=hlink}" NavigateUri="{Binding Path=HyperUrl,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor,AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                                <Run Text="{Binding Path=Message,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor,AncestorType={x:Type local:GridViewConversationContainer}}}"></Run>
+                                            </Hyperlink>
+                                        </TextBlock>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="Role" Value="Self"></Condition>
+                    <Condition Property="MessageType" Value="Hyperlinks"></Condition>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type local:GridViewConversationContainer}">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid HorizontalAlignment="Left" MaxWidth="{Binding Path=ContentMaxWidth, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="60"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Path=Sender, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Time, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></TextBlock>
+                                        </StackPanel>
+                                        <TextBlock TextWrapping="Wrap" Grid.Row="1" Grid.RowSpan="2" TextDecorations="Underline" Foreground="Blue" Cursor="Hand">
+                                            <Hyperlink x:Name="hlink" Command="{Binding Path=HyperClick,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor,AncestorType={x:Type local:GridViewConversationContainer}}}" CommandParameter="{Binding Path=NavigateUri,ElementName=hlink}" NavigateUri="{Binding Path=HyperUrl,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor,AncestorType={x:Type local:GridViewConversationContainer}}}">
+                                                <Run Text="{Binding Path=Message,RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor,AncestorType={x:Type local:GridViewConversationContainer}}}"></Run>
+                                            </Hyperlink>
+                                        </TextBlock>
+                                        <local:ThumbnailImage Grid.RowSpan="2" Grid.Column="1" ThumbnailSource="{Binding Path=Avatar, RelativeSource={RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridViewConversationContainer}}}"></local:ThumbnailImage>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

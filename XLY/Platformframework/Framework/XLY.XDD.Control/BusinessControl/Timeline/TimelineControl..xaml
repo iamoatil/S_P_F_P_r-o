@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="XLY.XDD.Control.TimelineControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" xmlns:my="clr-namespace:XLY.XDD.Control">
+    <UserControl.Resources>
+        <my:TimelineItemTemplateSelector x:Key="itemSelector"/>
+        <my:TimelineItemWidthConverter x:Key="widthConverter"/>
+        
+        <DataTemplate x:Key="Year">
+            <Button Width="100" Height="30" FontFamily="Tahoma" FontSize="14" Click="btnItem_Click" >
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Rectangle Width="{Binding Converter={StaticResource widthConverter},Path=RowData.Row.Total,ConverterParameter=100}" HorizontalAlignment="Left" Height="20"  VerticalAlignment="Center">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Goldenrod" Offset="0" />
+                                        <GradientStop Color="DarkOrange" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding Path=RowData.Row.Total}" Foreground="Black" TextAlignment="Center"  Width="100"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DataTemplate>
+        <DataTemplate x:Key="Month">
+            <Button Width="100" Height="20" FontFamily="Tahoma" FontSize="12" Click="btnItem_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Rectangle Width="{Binding Converter={StaticResource widthConverter},Path=RowData.Row.Total,ConverterParameter=100}" HorizontalAlignment="Left" Height="16"  VerticalAlignment="Center">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Goldenrod" Offset="0" />
+                                        <GradientStop Color="DarkOrange" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding Path=RowData.Row.Total}" Foreground="Black" TextAlignment="Center"  Width="100"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DataTemplate>
+        <DataTemplate x:Key="Day">
+            <Button Width="100" Height="12" FontFamily="Tahoma" FontSize="10" Click="btnItem_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Rectangle Width="{Binding Converter={StaticResource widthConverter},Path=RowData.Row.Total,ConverterParameter=100}" HorizontalAlignment="Left" Height="12"  VerticalAlignment="Center">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                        <GradientStop Color="Goldenrod" Offset="0" />
+                                        <GradientStop Color="DarkOrange" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding Path=RowData.Row.Total}" Foreground="Black" TextAlignment="Center"  Width="100"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </DataTemplate>
+    </UserControl.Resources>
+    <my:TimelineScaleControl x:Name="timelineScaleControl1" ItemWidth="110" TimelineItemTemplateSelector="{StaticResource itemSelector}"  />
+</UserControl>

@@ -1,0 +1,10 @@
+<Popup AllowsTransparency="True" PopupAnimation="Fade" Placement="Top" VerticalOffset="3" PlacementTarget="{Binding ElementName=PART_Root}" >
+    <Popup.IsOpen>
+        <MultiBinding Converter="{StaticResource GridViewDetailActiveControlIsOpenConverter}">
+            <Binding Path="IsMouseOver" ElementName="PART_Root" Mode="OneWay" />
+            <Binding ElementName="PART_Root" Mode="OneWay" />
+            <Binding Path="SelectedItem" Mode="OneWay" RelativeSource="{RelativeSource AncestorLevel=1,Mode=FindAncestor, AncestorType={x:Type local:GridView}}"></Binding>
+		</MultiBinding>
+    </Popup.IsOpen>
+    <local:GridViewDetailActiveControl></local:GridViewDetailActiveControl>
+</Popup>

@@ -1,0 +1,86 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:XLY.XDD.Control">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/GridView/GridViewIndex.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/GridView/GridViewDetailActiveControl.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/GridView/GridViewDetailControl.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/GridView/GridViewSearch.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/GridView/GridViewColumnChooser.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/GridView/GridViewCount.xaml"></ResourceDictionary>
+        <!--<ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/Loading/XlyLoading.xaml"></ResourceDictionary>-->
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/TreeView/TreeViewIndent.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/TreeView/TreeViewExpand.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/GridView/Extensions/GridViewConversation/GridViewConversationContainer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/GridView/Extensions/GridViewTimeLine/GridViewTimeLineContainer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/Text/XlyHyperlink.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/Text/XlyHighlightLabel.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/Text/XlyHighlightTextBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/Text/XlyTextBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxInfo.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxSuccess.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxWarning.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxError.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxQuestion.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxInput.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/MessageBox/XlyMessageBoxLoading.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Themes/Window/XlyWindowDrag.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/ComboBox/XlyComboBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileViewer/FileViewerContainer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileViewer/MediaViewer/MediaViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileViewer/DetailViewer/DetailViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileViewer/TextViewer/TextViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileViewer/NoneViewer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileViewer/FileViewerMultiContainer.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/Button/XlyActionButton/XlyActionButton.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/MultiView/XlyMultiView.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/MultiView/XlyMultiNoneView.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/Navigation/XlyNavigation.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/Window/XlyMoveActionBar.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FileDialog/ResourceBrowser.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/Bar/XlyRectangle.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/MultiMedia/Expressions/LongImageExpression.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/BreadcrumbBar/Breadcrumresource.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/Text/XlyNumberTextBox.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/XLY.XDD.Control;component/Control/FIcon/FIcon.xaml"></ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    <!--<DataTemplate xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:local="clr-namespace:XLY.XDD.Control;assembly=XLY.XDD.Control">
+            <Grid x:Name="PART_Root" Background="Transparent">
+                <local:XlyHighlightLabel VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="Wrap"
+                            HighlightText="{Binding Path=#HighlightText}"   
+                            HighlightTextForeground="#HighlightTextForeground"
+                            HighlightTextBrush="#HighlightTextBrush"
+                            IsIgnoringCase="#IsIgnoringCase"
+				            MaxHeight="#CellMaxHeight#"
+				            Text="{Binding Path=#FieldName#}"
+				            Foreground="#Foreground#"
+				            FontSize="#FontSize#"
+				            FontFamily="#FontFamily#"                                
+				            Width="#ContentWidth#" 
+                            Height="#ContentHeight#"
+				            TextBlock.TextAlignment="#TextAlignment#">
+                    <local:XlyHighlightLabel.ToolTip>
+                        <local:XlyHighlightLabel VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" MaxHeight="600" MaxWidth="800"
+                                        HighlightText="{Binding Path=#HighlightText}"   
+                                        HighlightTextForeground="#HighlightTextForeground"
+                                        HighlightTextBrush="#HighlightTextBrush"
+                                        IsIgnoringCase="#IsIgnoringCase"
+				                        Text="{Binding Path=#FieldName#}"
+				                        Foreground="#Foreground#"
+				                        FontSize="#FontSize#"
+				                        FontFamily="#FontFamily#"                                
+				                        Width="#ContentWidth#" 
+                                        Height="#ContentHeight#"
+				                        TextBlock.TextAlignment="#TextAlignment#" />
+                    </local:XlyHighlightLabel.ToolTip>
+                </local:XlyHighlightLabel>
+                #Detail#
+        </Grid>
+    </DataTemplate>-->
+
+</ResourceDictionary>

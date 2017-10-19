@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileViewerConfig>
+  <!--**********************************************************************************************************************-->
+  <!--Html Viewer-->
+  <FileViewerConfigItem FileViewer="Html" IsSupportStream="True">
+    <FileViewerConfigItemExtension Extension=".html" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".htm" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".xml" Priority="1" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Word Viewer-->
+  <FileViewerConfigItem FileViewer="Word" IsSupportStream="True">
+    <FileViewerConfigItemExtension Extension=".doc" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".docx" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".txt" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".html" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".htm" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".xml" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".xaml" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".rtf" Priority="1" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Text Viewer-->
+  <FileViewerConfigItem FileViewer="Text" IsSupportStream="True">
+    <FileViewerConfigItemExtension Extension=".txt" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".log" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".config" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".js" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".rtf" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".ini" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".doc" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".docx" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".csv" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".xls" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".xlsx" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".html" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".htm" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".xml" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".xaml" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".wps" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".wpt" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".dpt" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".ppt" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".pptx" Priority="2" />
+    <FileViewerConfigItemExtension Extension=".pdf" Priority="2" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Excel Viewer-->
+  <FileViewerConfigItem FileViewer="Excel" IsSupportStream="True">
+    <FileViewerConfigItemExtension Extension=".csv" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".xls" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".xlsx" Priority="1" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Pdf Viewer-->
+  <FileViewerConfigItem FileViewer="Pdf" IsSupportStream="False">
+    <FileViewerConfigItemExtension Extension=".pdf" Priority="1" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Ppt Viewer-->
+  <FileViewerConfigItem FileViewer="Ppt" IsSupportStream="False">
+    <FileViewerConfigItemExtension Extension=".ppt" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".pptx" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".pps" Priority="1" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Media Viewer-->
+  <FileViewerConfigItem FileViewer="Media" IsSupportStream="False">
+    <FileViewerConfigItemExtension Extension=".rm" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".rmvb" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".mpg" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".mp3" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".mp4" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".wmv" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".asf" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".swf" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".flv" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".f4v" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".mov" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".avi" Priority="1" />
+   <FileViewerConfigItemExtension Extension=".mkv" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".wma" Priority="1" />
+  </FileViewerConfigItem>
+  <!--**********************************************************************************************************************-->
+  <!--Image Viewer-->
+  <FileViewerConfigItem FileViewer="Image" IsSupportStream="true">
+    <FileViewerConfigItemExtension Extension=".jpg" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".jpe" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".jpeg" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".bmp" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".wbf" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".pdd" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".psd" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".dib" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".png" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".dwg" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".emf" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".wmf" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".tif" Priority="1" />
+    <FileViewerConfigItemExtension Extension=".tiff" Priority="1" />
+  </FileViewerConfigItem>
+  <!--Map-->
+  <FileViewerConfigItem FileViewer="Map" IsSupportStream="true">
+    <FileViewerConfigItemExtension Extension=".map" Priority="1" />
+  </FileViewerConfigItem>
+</FileViewerConfig>

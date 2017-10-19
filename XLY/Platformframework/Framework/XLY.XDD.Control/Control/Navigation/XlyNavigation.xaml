@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:XLY.XDD.Control">
+
+    <local:NullVisibilityConverter x:Key="NullVisibilityConverter" NullVisibility="Visible" NotNullVisibility="Hidden"></local:NullVisibilityConverter>
+    <local:NullVisibilityConverter x:Key="NullVisibilityConverterEx" NullVisibility="Collapsed" NotNullVisibility="Visible"></local:NullVisibilityConverter>
+
+    <Style TargetType="{x:Type local:XlyNavigation}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:XlyNavigation}">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" ClipToBounds="True">
+                            <Grid x:Name="PART_Root">
+
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

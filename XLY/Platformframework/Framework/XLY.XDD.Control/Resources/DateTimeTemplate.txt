@@ -1,0 +1,30 @@
+<DataTemplate xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:XLY.XDD.Control">
+    <DataTemplate.Resources>
+        <local:DateTimeFormatConverter x:Key="DateTimeFormatConverter" IsReturnInvalidValue="False" Format="#Format#"></local:DateTimeFormatConverter>
+		<local:GridViewDetailActiveControlIsOpenConverter x:Key="GridViewDetailActiveControlIsOpenConverter"></local:GridViewDetailActiveControlIsOpenConverter>
+	</DataTemplate.Resources>
+
+    <Grid x:Name="PART_Root" Background="Transparent">
+        <TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+				   MaxHeight="#CellMaxHeight#"
+				   Text="{Binding Path=#FieldName#, Converter={StaticResource ResourceKey=DateTimeFormatConverter}}"
+				   Foreground="#Foreground#"
+				   FontSize="#FontSize#"
+				   FontFamily="#FontFamily#"
+				   Width="#ContentWidth#" 
+                   Height="#ContentHeight#"
+				   TextAlignment="#TextAlignment#">
+			<TextBlock.ToolTip>
+				<TextBlock VerticalAlignment="Center" TextTrimming="CharacterEllipsis" TextWrapping="Wrap" MaxHeight="600" MaxWidth="800"
+							Text="{Binding Path=#FieldName#, Converter={StaticResource ResourceKey=DateTimeFormatConverter}}"
+							Foreground="#Foreground#"
+							FontSize="#FontSize#"
+							FontFamily="#FontFamily#" />
+			</TextBlock.ToolTip>
+		</TextBlock>
+		#Detail#
+    </Grid>
+</DataTemplate>

@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xly="clr-namespace:XLY.XDD.Control">
+    <Style TargetType="{x:Type xly:FIcon}">
+        <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/XLY.XDD.Control;component/Resources/#FontAwesome" />
+        <Setter Property="TextBlock.TextAlignment" Value="Center"></Setter>
+        <Setter Property="TextBlock.Foreground" Value="Green"></Setter>
+    </Style>
+</ResourceDictionary>
